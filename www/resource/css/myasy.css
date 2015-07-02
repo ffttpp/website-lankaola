@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+.myasy{ margin-top:18px;}
+.myasy .tiptype1{ padding:0 10px; height:23px; line-height:23px; float: left;}
+.asicon{ display:block; width:54px; height:54px; background:url(http://img.lankaola.com/images/anshuye.png) 0 0 no-repeat; float:left; margin-left:8px;}
+.asyInfo{ width:881px; float:left; margin-left:17px; padding-top:10px; position:relative;}
+.asy-count{ font-size:18px; font-weight:bold;}
+.myasy .rules{ position:absolute; right:0; bottom:0px;}
+.myasy .rules a{ padding-right:10px;}
+.myasy .sgnav a{ width:70px;}
+.asytab td.asy_shuom{ width:208px;}
+.asytab td.asy_data{ width:224px;}
+.charge{margin-left: 10px; position: relative; top: -2px;}

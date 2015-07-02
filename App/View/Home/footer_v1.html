@@ -1,0 +1,106 @@
+<a id="gotoTop"></a>
+<div class="main smain">
+    <div class="block snav clearfix">
+
+        <%
+        var cat_bgcp = cat_bgjj = cat_bghj = cat_qyfw = cat_xwc = cat_zxzs = {s:[]};
+        for (var i = 0; i < category.length; i++) {
+            var cat = category[i];
+            if (cat.cat_id == 1) {
+                cat_bgcp = cat;
+            } else if (cat.cat_id == 77) {
+                cat_bgjj = cat;
+            } else if (cat.cat_id == 78) {
+                cat_bghj = cat;
+            } else if (cat.cat_id == 79) {
+                cat_qyfw = cat;
+            } else if (cat.cat_id == 80) {
+                cat_xwc = cat;
+            } else if (cat.cat_id == 94) {
+                cat_zxzs = cat;
+            }
+        }
+        %>
+
+
+        <dl class="subnav-item">
+            <dt class="subnav-tit"><b class="ico"></b><%=cat_qyfw.cat_name%></dt>
+            <dd class="subnav-des">
+                <%
+                for (var j = 0; j < cat_qyfw.s.length; j++) {
+                var s = cat_qyfw.s[j];
+                %>
+                <a href="/list-<%=cat_qyfw.cat_id%>-<%=s.cat_id%>-0.html"><%=s.cat_name%></a>
+                <%}%>
+            </dd>
+        </dl>
+        <dl class="subnav-item">
+            <dt class="subnav-tit"><b class="ico"></b><%=cat_bgcp.cat_name%></dt>
+            <dd class="subnav-des">
+                <%
+                for (var j = 0; j < cat_bgcp.s.length; j++) {
+                var s = cat_bgcp.s[j];
+                %>
+                <a href="/list-<%=cat_bgcp.cat_id%>-<%=s.cat_id%>-0.html"><%=s.cat_name%></a>
+                <%}%>
+            </dd>
+        </dl>
+        <dl class="subnav-item">
+            <dt class="subnav-tit"><b class="ico"></b><%=cat_bgjj.cat_name%></dt>
+            <dd class="subnav-des">
+                <%
+                for (var j = 0; j < cat_bgjj.s.length; j++) {
+                var s = cat_bgjj.s[j];
+                %>
+                <a href="/list-<%=cat_bgjj.cat_id%>-<%=s.cat_id%>-0.html"><%=s.cat_name%></a>
+                <%}%>
+            </dd>
+        </dl>
+        <dl class="subnav-item">
+            <dt class="subnav-tit"><b class="ico"></b><%=cat_zxzs.cat_name%></dt>
+            <dt class="subnav-tit"><b class="ico"></b><%=cat_bghj.cat_name%></dt>
+            <dt class="subnav-tit"><b class="ico"></b><%=cat_xwc.cat_name%></dt>
+        </dl>
+        <div class="contact">
+            <dl class="subnav-item subnav-contact">
+                <dt class="subnav-tit">关于我们</dt>
+                <dd class="subnav-des">
+                    <a href="/aboutus" target="_blank">公司简介</a>
+                </dd>
+            </dl>
+            <dl class="subnav-item">
+                <dt class="subnav-tit">帮助中心</dt>
+                <dd class="subnav-des">
+                    <a href="/help/shopping" target="_blank">购物指南</a>
+                    <a href="/help/refund" target="_blank">售后服务</a>
+                </dd>
+            </dl>
+            <div class="telnum">
+                <div class="number"><b class="telico"></b><img src="<%=imgPath%>tel.png" alt=""></div>
+                <div class="stime">周一至周日  9:00-18:00</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--
+<div class="main links">
+    <div class="block blinks">
+        <a href="#" target="_blank">米木匠</a> | <a href="#" target="_blank">米木匠</a> | <a href="#" target="_blank">米木匠</a> | <a href="#" target="_blank">米木匠</a> | <a href="#" target="_blank">米木匠</a> | <a href="#" target="_blank">米木匠</a> | <a href="#" target="_blank">米木匠</a> | <a href="#" target="_blank">米木匠</a> | <a href="#" target="_blank">米木匠</a> | <a href="#" target="_blank">米木匠</a>
+    </div>
+
+</div>
+-->
+<div class="footer">
+    <div class="block">
+        <p class="copyright">Copyright@2014 lankaola.com All rights reserved 京ICP备14029475号-2</p>
+    </div>
+</div>
+<div style="display:none">
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F455cd0af65c775a59e7f055d4b593b69' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+</body>
+</html>

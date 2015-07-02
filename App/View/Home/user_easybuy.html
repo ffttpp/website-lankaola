@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>收货信息 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,easybuy.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <% include bread.html %>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include user_nav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent shouhuoManager">
+                <div class="ltMw1">
+                    <h3 class="hf3">收货信息管理</h3>
+
+                    <div>
+                        <% if (address.count < 20) { %>
+                        <div class="clear btnarea mt20 addEasy">
+                            <a class="btn btn_middle btn_blue fl">新增收货地址</a>
+                            <span>您已创建<%= address.count %>个收货地址，最多可创建20个</span>
+                        </div>
+                        <% } %>
+                        <% for(var i = 0; i < address.data.length; i++) { var item = address.data[i] %>
+                            <div class="sm easebuy-m" id="addresssDiv-<%= item.address_id %>">
+                                <div class="smt">
+                                    <h3>
+                                        <% if (item.alias) { %>
+                                        <%= item.alias %>
+                                        <% } else { %>
+                                        <%= item.name + (item.county_name ? item.county_name : '') %>
+                                        <% } %>
+                                    </h3>
+
+                                    <div class="extra">
+                                        <a href="javascript:;" class="btn-9"
+                                           onclick="alertEditAddressDiag(<%= item.address_id %>);">编辑</a>
+                                        <a href="javascript:;" class="btn-9 del"
+                                           onclick="alertDelAddressDiag(<%= item.address_id %>)">删除</a>
+                                    </div>
+                                </div>
+                                <div class="smc">
+                                    <div class="items new-items">
+                                        <div class="item-lcol">
+                                            <div class="item">
+                                                <span class="label">收货人：</span>
+
+                                                <div class="fl">
+                                                    <%= item.name %>
+                                                </div>
+                                                <div class="clr"></div>
+                                            </div>
+                                            <div class="item">
+                                                <span class="label">所在地区：</span>
+
+                                                <div class="fl">
+                                                    <%= item.province_name + item.city_name + item.county_name %>
+                                                </div>
+                                                <div class="clr"></div>
+                                            </div>
+                                            <div class="item">
+                                                <span class="label">地址：</span>
+
+                                                <div class="fl">
+                                                    <%= item.address %>
+                                                </div>
+                                                <div class="clr"></div>
+                                            </div>
+                                            <div class="item">
+                                                <span class="label">手机：</span>
+
+                                                <div class="fl">
+                                                    <%= item.phone %>
+                                                </div>
+                                                <div class="clr"></div>
+                                            </div>
+
+                                        </div>
+                                        <div class="clr"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (address.count < 20 && address.count > 5) { %>
+                        <div class="clear btnarea addEasy">
+                            <a class="btn btn_middle btn_blue fl">新增收货地址</a>
+                            <span>您已创建<%= address.count %>个收货地址，最多可创建20个</span>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js,easybuy.min.js"></script>
+
+<% include footer.html %>
+</body>
+</html>

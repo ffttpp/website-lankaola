@@ -1,0 +1,29 @@
+<div class="nav">
+    <div class="bnav" id="nav">
+        <div class="search">
+            <div class="sear">
+                <input type="text" class="search-input">
+                <span class="sear-icon" id="search"></span>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-item nav-sel first-item" href="/">首页</a>
+        </div>
+        <%
+        for (var i = 0; i < category.length; i++) {
+        var cat = category[i];
+        %>
+        <div class="nav-item slide-item">
+            <a href="<%=(cat.cat_id == 79 ? '/service' : 'list-' + cat.cat_id + '-0-0.html')%>" title=""><%=cat.cat_name%></a>
+            <ul class="sub">
+                <%
+                for (var j = 0; j < cat.s.length; j++) {
+                    var s = cat.s[j];
+                %>
+                <li><a href="<%=(cat.cat_id == 79 ? '/service' : 'list-' + cat.cat_id + '-' + s.cat_id + '-0.html')%>"><%=s.cat_name%></a> </li>
+                <%}%>
+            </ul>
+        </div>
+        <%}%>
+    </div>
+</div>

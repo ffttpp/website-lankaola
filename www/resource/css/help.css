@@ -1,0 +1,14 @@
+#aboutus{width: 1000px; margin: 0 auto;}
+#aboutus h3{margin: 60px 0 30px; text-align: center;}
+#aboutus p {margin-bottom: 30px; text-indent: 2em;}
+
+.leftMenu{height: 218px;}
+.rightBox{width: 1020px; padding: 0 20px; border: 1px solid #ebebeb;}
+.hf3{border-bottom: 0;}
+.helpPara{ line-height: 30px; margin-bottom: 40px;}
+.helpPara h3{color: #333333; font-weight: bold; font-size: 14px;}
+.helpPara .blue{color: #3465aa;}
+.helpPara p{color: #666666;}
+.bought-table{width: 600px; margin: 10px auto;}
+.bought-table .textAlignLeft{text-align: left;}
+.bought-table .textAlignRight{text-align: right;}

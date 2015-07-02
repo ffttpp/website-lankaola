@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%=cat.cat_name%> - 时效服务、正品低价、品质保障、货到付款、配送及时、放心服务、享受服务！- 蓝考拉</title>
+    <meta name="Keywords" content="企业服务,企业服务平台,办公服务，办公服务平台，笔记本,电脑,办公耗材，办公服务，企业服务，法律服务，注册服务，公司注册，蓝考拉企业服务平台">
+    <meta name="description" content="蓝考拉LANKAOLA.COM-专业企业服务综合平台，在线销售办公用品、企业服务、法律服务、公司注册、办公服务、办公设备、电脑、办公家具、耗材、文具/耗材、食品、在线产品定制等数千牌千万种优质商品。便捷、诚信的服务，为您提供愉悦的办公服务体验!">
+    <link rel="stylesheet" type="text/css" href="<%=cssPath%>reset.css,v2.0/common.css,v2.0/goods2.css" />
+</head>
+<body>
+<%include header.html%>
+<div id="section1">
+    <img src="<%=imgPath%>goods/<%=sku.sku_id%>.jpg">
+</div>
+<div id="section2">
+    <div class="wrap">
+        <div class="main_title"><%=cat.cat_name%></div>
+        <div class="main_content">
+            <div class="main_left">
+                <p><%=sku.goods_brief%></p>
+                <!--<p>配套空间：水吧、更衣室、阅览室、休闲娱乐室<span style="color: #487bd5">（可选1-2种）</span></p>-->
+                <div class="main_item">
+                    <label>选择面积：</label>
+                    <div>
+                        <%for (var i = 0; i < goodsList.length; i++) {%>
+                        <a href="/decoration/view/<%=goodsList[i].sku_id%>" <%if(goodsList[i].sku_id == sku.sku_id){%>class="sel"<%}%>><%=goodsList[i].goods_name%></a>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+            <div class="main_right">
+                <div class="price">
+                    <i>￥</i>
+                    <span><%=parseFloat(sku.sku_sn).toFixed(2)%>/平米</span>
+                </div>
+                <a id="book" href="/cart/add?pid=<%=sku.sku_id%>">
+                    <span class="product-btn-text">立即预定</span>
+                    <span class="product-btn-arrow"><img src="<%=imgPath%>v2.0/product-btn-arrow-white.png" /></span>
+                </a>
+                <p>预付99元抵200元</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="section3">
+    <div class="wrap">
+        <div id="intro">
+            <%-sku.goods_desc%>
+        </div>
+        <div id="img_list">
+            <ul>
+                <%
+                for (var i = 0; i < sku.img.length; i++) {
+                var img = sku.img[i];
+                %>
+                <li>
+                    <img src="<%=productImgPath%><%=img.img_350%>" width="280" height="280" />
+                </li>
+                <%}%>
+            </ul>
+
+            <%if (sku.img.length >= 5){%>
+            <a id="prev"></a>
+            <a id="next"></a>
+            <%}%>
+        </div>
+    </div>
+</div>
+<div id="section4">
+    <div class="wrap">
+        <div id="process">
+            <div id="process_title">服务流程</div>
+            <ul>
+                <li>免费出设计方案</li>
+                <li>双方确定用料和方案</li>
+                <li>免费设计效果图，并签订合同</li>
+                <li>开始装修</li>
+                <li>验收，服务结束</li>
+            </ul>
+        </div>
+        <!--
+        <div id="tips">
+            <div id="tips_title"><i></i>温馨提示</div>
+        </div>
+        -->
+        <div id="slogo">
+            <img src="<%=imgPath%>v2.0/slogo.jpg" />
+        </div>
+    </div>
+</div>
+<%include footer.html%>
+<script src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+<script>
+    $(function () {
+        <%if (sku.img.length >= 5){%>
+            $('#img_list').slide({
+            mainCell: 'ul',
+            autoPage: true,
+            effect: 'leftLoop',
+            autoPlay: true,
+            vis: 4,
+            prevCell: '#prev',
+            nextCell: '#next',
+            interTime: 5000
+        })
+        <%}%>
+        $('#book').hover(function () {
+            $(this).find('.product-btn-text').stop().animate({left: -15}, 200);
+            $(this).find('.product-btn-arrow').stop().animate({right: 15, opacity: 1}, 200);
+        }, function () {
+            $(this).find('.product-btn-text').stop().animate({left: 0}, 200);
+            $(this).find('.product-btn-arrow').stop().animate({right: 35, opacity: 0}, 200);
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%if(status == 0 ){%>支付失败<%}else{%>支付成功<%}%> - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,v2.0/common.css">
+    <style>
+        .success{font-size: 0; padding-top: 80px; text-align: left; padding-left: 300px;}
+        .success-b, .success-i{display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+        .success-i{background: url("http://img.lankaola.com/images/lankaola.png") 20px -417px no-repeat; width: 56px; height: 40px; }
+        .success-i-failure{background-position: -57px -490px;}
+        .success-b{ width: 504px; height: 40px; text-align: left; padding-left: 20px;}
+        .success-b h3{font-size: 24px; line-height: 40px; color: #7abd54;}
+        .success-b-failure h3{color: #ffd83a;}
+        .cart-next{font-size: 12px; padding-left: 76px;}
+        .cart-next a{ height: 36px; line-height: 36px; margin-right: 20px; color: #666;}
+        .cart-next .btn-continue{width: 94px; height: 36px; color: #5182e8;}
+        #goToCart{display: block; width: 100px; height: 25px; line-height: 25px; color: #fff; background: #ed4145; text-align: center;}
+    </style>
+</head>
+<body>
+<%include header.html%>
+<div class="clear comWidth">
+    <div class="success">
+        <div class="success-i <%if(status == 0 ){%>success-i-failure<%}%>"></div>
+        <div class="success-b <%if(status == 0 ){%>success-b-failure<%}%>">
+            <h3><%=msg%></h3>
+        </div>
+        <div class="cart-next">
+            <%if(orderId){%><p>订单编号：<%=orderId%> &nbsp;|&nbsp;<a class="btn-continue" href="/order/item?orderid=<%=orderId%>">查看订单详情</a></p><%}%>
+            <a id="goToCart" href="/">继续逛逛</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+<%include footer.html%>
+</body>
+</html>

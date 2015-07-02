@@ -1,0 +1,41 @@
+
+/*首页banner*/
+.indexBanner{width:627px; height:279px; position:relative; float:left; margin-left:170px;}
+/*服务*/
+.serviceBar{width:203px; height:282px;float:right; background-color:#fff; z-index:2; position:relative;}
+.serviceIcon{height:99px; background-color:#f4f3f3;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);}
+.serviceIcon li{width:58px; float:left; text-align:center; color:#666666;margin-left:7px; margin-top:10px;}
+.serviceIcon li i{display:block; height:57px; width:58px; margin-bottom:3px;}
+.serviceIcon li.hd i{background:url(http://img.lankaola.comimages/hdfkIcon.png) 0 0 no-repeat;}
+.serviceIcon li.mb i{background:url(http://img.lankaola.comimages/byIcon.png) 0 0 no-repeat;}
+.serviceIcon li.tc i{background:url(http://img.lankaola.comimages/tczdIcon.png) 0 0 no-repeat;}
+/*每日特惠*/
+.everyDay .t{height:32px;}
+.everyDay .t .bg{display:block;height:2px; background-color:#ee5457; line-height:0; width:100%; position:absolute; top:15px;}
+.everyDay .t h3{width:189px; height:32px; background:url(http://img.lankaola.comimages/mrth.png) center 0 no-repeat #f7f7f7; margin:0 auto;z-index:11; position:relative; padding:0 38px; text-indent:-9999px; overflow:hidden;}
+.everyDay .item{width:235px; float:left; margin-right:20px; position:relative;}
+.everyDay .item img{width:233px; height:223px; border:1px solid #edebeb; border-bottom:none; vertical-align:top;}
+.everyDay .des{height:44px; padding-left:10px;padding-top:7px; width:160px; background-color:#4475db; color:#fff;}
+.everyDay .des em{display:block;font-style:normal;}
+.everyDay .des span{font-size:14px;}
+.everyDay .goBuy{display:block;width:57px; padding-left:8px;height:46px; background-color:#ffa800; color:#fff;font:14px/1 "Microsoft YaHei","微软雅黑"; line-height:20px; padding-top:5px; position:relative; cursor:pointer;}
+.everyDay .goBuy i{position:absolute; display:block; width:20px; height:34px; background:url(http://img.lankaola.comimages/arrow_qg.png) 0 0 no-repeat; top:10px; right:3px;}
+.everyDay .slider{margin-top:20px;}
+.yhLabel{position:absolute; width:70px; height:70px; background:url(http://img.lankaola.comimages/yhLabel_bg.png) 0 0 no-repeat; top:5px; right:30px;}
+.yhLabel i{display:block; font-size:30px; font-family:"Arial"; position:absolute; top:8px; right:15px; font-style:normal; color:#fff;}
+/*首页分类展示*/
+.classTitle{height:32px; border-bottom:1px solid #dddddd; position:relative; line-height:25px;}
+.classTitle h3{font:20px/25px "Microsoft YaHei","微软雅黑"; padding-left:30px;}
+.classTitle h3 i{display:block; width:25px; height:25px; position:absolute; top:0; left:0;}
+.classTitle .sub{position:absolute; right:-5px; color:#999; top:0;}
+.classTitle .sub a{padding:0 5px;}
+.classTitle .arrow{display:block; width:8px; height:6px; background:url(http://img.lankaola.comimages/icon/groupArrow.png) 0 0 no-repeat; position:absolute; left:40px; bottom:-1px;}
+.classMain{margin-top:10px;}
+.classAd,.classAd img{width:170px; height:280px;}
+.classMain .item{width:196px; height:278px; float:left;border:1px solid #edebeb; margin-left:9px; background-color:#fff;}
+.classMain .item img{width:151px; height:132px; margin:25px 25px 0;}
+.classMain .t{color:#4e4e4e; padding-top:42px;font-weight:normal; display:block; padding-left:12px; padding-right:12px;}
+.classMain .money{display:block;color:#e64545; font-size:14px;font-family:"Arial"; padding:5px 12px 0;}
+.showGroup1 h3{color:#43ccb4;}
+.showGroup2 h3{color:#e4567e;}
+.showGroup3 h3{color:#5c9ce0;}

@@ -1,0 +1,88 @@
+.goodsItem { font-size: 0; margin-bottom: 40px; }
+.preview, .summary { display: inline-block; vertical-align: top; }
+.preview { width: 480px; margin-right: 50px; position: relative; }
+.spec-list { width: 105px; height: 372px; position: relative; display: inline-block; vertical-align: top; }
+.spec-control { width: 80px; height: 11px; display: block; background-image: url("http://img.lankaola.com/images/lankaola.png"); background-repeat: no-repeat; position: absolute; left: 1px; top: 0; }
+#spec-forward { background-position: -243px -505px; }
+#spec-forward:hover { background-position: -243px -585px; }
+#spec-backward { background-position: -158px -505px; top: auto; bottom: 0px; }
+#spec-backward:hover { background-position: -158px -585px; }
+.spec-items { width: 82px; height: 318px; overflow: hidden; position: absolute; top: 26px; left: 0; }
+.spec-items ul { width: 100%; height: auto; }
+.spec-items li { width: 100%; height: 82px; padding: 12px 0; cursor: pointer; }
+.spec-items li img { width: 80px; height: 80px; display: block; border: 1px solid #d3d3d3; }
+.spec-items li.cur img { border: 1px solid #e4393c }
+#spec-n1 { width: 370px; height: 370px; border: 1px solid #d3d3d3; display: inline-block; vertical-align: top; position: relative; cursor: pointer; }
+#spec-n1 img { width: 100%; height: 100%; display: block; }
+.summary { width: 660px; height: auto; }
+.fullSummary{width: 100%;}
+#goods-name { font-size: 16px; line-height: 24px; font-family: "Microsoft YaHei", "微软雅黑"; padding-bottom: 10px; }
+#goods-name strong { color: #e4393c; }
+.summary-item { margin: 10px 0; }
+.summary-label, .summary-content { font-size: 12px; line-height: 26px; display: inline-block; *display: inline; zoom: 1; vertical-align: top; }
+.summary-label { width: 70px; text-align: right; }
+.summary-content{width: 580px;}
+#summary-price .summary-label, #summary-price .summary-content { vertical-align: bottom; }
+#summary-price .summary-content { color: #ed4145; font-size: 0; vertical-align: bottom; }
+.summary-price-s, .summary-price-t{font-family: arial, helvetica, sans-serif; font-size: 14px; vertical-align: bottom;}
+.summary-price-t { font-size: 24px; position: relative; top: -3px; line-height: 24px;}
+.sku-item { display: inline-block; *display: inline; zoom: 1; vertical-align: middle; padding: 0 5px; border: 1px solid #d3d3d3; margin-right: 8px; color: #666666; margin-bottom: 10px;}
+.sku-item:hover { color: #dd3333; }
+.sku-item.cur { border: 1px solid #4879dc; background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowNkU1MzE2RjcwQjYxMUU0QjY1QkI4RDdDRDlEODc0OCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowNkU1MzE3MDcwQjYxMUU0QjY1QkI4RDdDRDlEODc0OCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA2RTUzMTZENzBCNjExRTRCNjVCQjhEN0NEOUQ4NzQ4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjA2RTUzMTZFNzBCNjExRTRCNjVCQjhEN0NEOUQ4NzQ4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+VS6MfAAAAGFJREFUeNpi+P//PwOx2KPyzn8mBiKBZ9Xd/yCaiRTFRGlAVkxQA7pivBqwKcapAZvi7W3K2DXgUwwG6OEMwjCAzgZhRpBCbCYjmwqUQ/UDNmfAFCErBgFGkDUMJACAAAMAt/RvsZLwhqUAAAAASUVORK5CYII=") right bottom no-repeat; }
+#summary-num .summary-content, #summary-num .summary-label { vertical-align: middle; }
+#summary-num .summary-content { font-size: 0; }
+#summary-num a, #summary-num input { display: inline-block; *display: inline; zoom: 1; border: 1px solid #d3d3d3; font-size: 14px; vertical-align: middle; }
+#summary-num a { width: 16px; height: 32px; text-align: center; line-height: 32px; color: #666666; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+#summary-num a:hover { color: #4879dc; }
+#summary-num input { border-left: 0; border-right: 0; border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; width: 54px; height: 32px; text-align: center; outline: none; }
+#summary-btn { margin-top: 50px; }
+#addCart { display: inline-block; *display: inline; zoom: 1; width: 100px; height: 40px; padding-left: 50px; background: #3465aa; color: #fff; position: relative; line-height: 40px; font-family: "Microsoft YaHei", "微软雅黑"; font-size: 16px; vertical-align: middle; }
+#addCart:hover { background: #dd3333; }
+#addCart i { display: block; width: 20px; height: 20px; position: absolute; left: 15px; top: 10px; background: url("http://img.lankaola.com/images/lankaola.png") no-repeat -6px -201px; }
+#addFollow { display: inline-block; *display: inline; zoom: 1; zoom: 1; width: 40px; height: 40px; background: url("http://img.lankaola.com/images/lankaola.png") #b9bcc1 no-repeat -79px -257px; vertical-align: middle; margin-left: 20px; }
+.goods-intro { width: 1198px; height: auto; border: 1px solid #d3d3d3; border-top: 2px solid #3465aa; }
+.goods-intro-title { color: #3465aa; line-height: 36px; font-size: 14px; font-weight: bold; padding: 0 15px; width: 1168px; height: 36px; border-bottom: 1px solid #d3d3d3; }
+.goods-intro-brief { width: 1168px; height: auto; font-size: 0; padding: 15px; border-bottom: 1px solid #d3d3d3; }
+.goods-intro-item { width: 292px; height: 24px; line-height: 24px; display: inline-block; *display: inline; zoom: 1; font-size: 12px; overflow: hidden; }
+.goods-pack-list { width: 1168px; padding: 15px; border-bottom: 1px solid #d3d3d3; }
+.goods-intro-content { width: 1168px; padding: 15px; overflow: hidden; text-align: center; }
+.goods-intro-promise { width: 1168px; padding: 15px; border-top: 1px solid #d3d3d3; }
+.goods-pack-list-title { font-weight: bolder; margin-bottom: 5px; }
+.goods-pack-list-content { margin: 10px 0; }
+
+/*jQzoom*/
+.jqzoom {
+    border: 1px solid #BBB;
+    float: left;
+    position: relative;
+    padding: 0px;
+    cursor: pointer;
+}
+div.zoomdiv {
+    z-index: 999;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 200px;
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    display: none;
+    text-align: center;
+    overflow: hidden;
+}
+div.jqZoomPup {
+    z-index: 999;
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #aaa;
+    background: #ffffff;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    filter: alpha(Opacity=50);
+}

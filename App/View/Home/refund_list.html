@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>退换货列表 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,tuihuanhuo.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <% include bread.html %>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include user_nav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="sgnav"><a href="/refund">申请/退换货</a><a class="cur">退换货记录</a></div>
+            <div class="mcontent">
+                <div class="ltMw1">
+                    <div class="clearfix">
+                        <table class="bought-table">
+                            <thead class="col-name">
+                            <tr>
+                                <td class="nobor order_no">订单编号</td>
+                                <td class="nobolr" colspan="2">退/换货商品</td>
+                                <td class="nobolr">申请方式/时间</td>
+                                <td class="nobolr">数量</td>
+                                <td class="nobolr">退/换货原因</td>
+                                <td class="nobolr" style="width: 120px;">退换货信息</td>
+                                <td class="nobol opt">状态</td>
+                            </tr>
+                            </thead>
+                            <tbody class="col-body1">
+                            <%
+                            for (var i = 0; i < returnList.length; i++) {
+                            var returns = returnList[i];
+                            %>
+                            <%
+                            for (var j = 0; j < returns.length; j++ ) {
+                            var sku = returns[j];
+                            var title = [sku.brand_name, sku.goods_name, sku.skuName].join(' ');
+                            %>
+                            <tr>
+                                <%if (j == 0 ) {%>
+                                <td class="agcenter" rowspan="<%=returns.length%>"><a
+                                        href="/order/item?orderid=<%=sku.order_id%>" class="icson_blue" target="_blank"><%=sku.order_id%></a>
+                                </td>
+                                <%}%>
+                                <td class="nobor agright"><a href="/item-<%=sku.sku_id%>.html" target="_blank"><img
+                                        align="middle" src="<%=(sku.img_50 ? (productImgPath+sku.img_50) : (imgPath+'lankaola_product.jpg'))%>" alt="<%=title%>" title="<%=title%>"
+                                        width="50" height="50"></a></td>
+                                <td class="nobol agleft"><a href="/item-<%=sku.sku_id%>.html"
+                                                            target="_blank"><%=title%></a></td>
+                                <td><%=(sku.type == 1 ? '退货' : '换货')%><br><%=sku.timestamp%></td>
+                                <td><%=sku.quantity%></td>
+                                <td><%=sku.return_reason%></td>
+                                <td>
+                                    <%=sku.return_name%><br>
+                                    <%=sku.return_phone%><br>
+                                    <%=sku.return_address%>
+                                </td>
+                                <td>
+                                    <%if (sku.status == 0) {%>
+                                    审核中
+                                    <%} else if (sku.status == 1) {%>
+                                    审核通过
+                                    <%} else if (sku.status == 2) {%>
+                                    审核不通过
+                                    <%} else if (sku.status == 3) {%>
+                                    已完成退/换货
+                                    <%}%>
+                                </td>
+                            </tr>
+                            <%}%>
+                            <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--服务承诺-->
+                    <div class="bx_commit mt30">
+                        <div class="bx_commit_tit"><h3>服务承诺</h3></div>
+                        <div class="bx_commit_bd">
+                            <ul class="bx_commit_list">
+                                <li class="seven_days"><i class="bx_commit_icon"></i>
+
+                                    <div class="bx_commit_cont">7日内，您可以选择退货或者换货。<p class="mt10"><a title="了解详情" href="#"
+                                                                                                   class="icson_blue">了解详情</a>
+                                    </p></div>
+                                </li>
+                                <li class="after_7days"><i class="bx_commit_icon"></i>
+
+                                    <div class="bx_commit_cont">第8日至第15日内，您可以选择换货。<p class="mt10"><a title="了解详情"
+                                                                                                     href="#"
+                                                                                                     class="icson_blue">了解详情</a>
+                                    </p></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--服务承诺end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js,order.min.js"></script>
+
+<%include footer.html%>
+</body>
+</html>

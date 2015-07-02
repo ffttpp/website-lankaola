@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>发票说明 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<%include nav.html%>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <%include help_bread.html%>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include helpnav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent">
+                <div class="ltMw1">
+                    <h3 class="hf3">购物流程<!--<span class="n">（带<b class="icson_red">*</b>号的项目为必填项）</span>--></h3>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+<% include footer.html %>
+</body>
+</html>

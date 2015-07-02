@@ -1,0 +1,87 @@
+body { font-family: "Microsoft YaHei", "微软雅黑"; min-width: 1200px; }
+a{color: #000;}
+#top{border-bottom: 0;}
+#banner{width: 100%; min-height: 650px; background: url("http://img.lankaola.com/images/v2.0/bannerbg.jpg") center center no-repeat fixed; background-size: cover;}
+#banner img{display: block; margin: 0 auto; padding-top: 185px; }
+
+.item-title{width: 750px; height: 2px; margin: 87px auto 0; background: #dddddd; position: relative;}
+.item-title h2{font-size: 30px; text-align: center; width: 400px; position: absolute; top: -14px; height: 30px; line-height: 30px; left: 175px; background: #fff; font-family: arial, sans-serif;}
+#services ul{width: 1200px; overflow: hidden; font-size: 0; margin: 67px auto 0;}
+#services ul li{display: inline-block; *display: inline; zoom: 1; width: 400px; vertical-align: top; text-align: center; margin-bottom: 60px;}
+#services ul li a{display: block;}
+.service-item-icon{display: block; width: 110px; height: 110px; position: relative; margin: 0 auto; overflow: hidden;}
+.service-item-icon img{display: block; position: absolute; left: 0; top: 0; }
+.service-item-cover{display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: url("http://img.lankaola.com/images/v2.0/sprite.png") 0 -401px no-repeat; z-index: 10;}
+.service-item-title{display: block; font-size: 20px; line-height: 24px; padding: 34px 0 15px;}
+.service-item-info{display: block; font-size: 14px; line-height: 24px;}
+
+#product{width: 1920px; height: 740px; display: none; position: relative;}
+.product-item{float: left; height: 370px; overflow: hidden; font-size: 0; position: relative;}
+.product-big{width: 1440px;}
+.product-small{width: 480px;}
+.product-intro-big, .product-img-big{display: inline-block; *display: inline; zoom: 1; vertical-align: top; position: relative;}
+.product-img-big{width: 960px; height: 370px;}
+.product-img-big img{display: block; width: 100%; height: 100%;}
+.product-intro-big{width: 480px; height: 370px; text-align: center; font-size: 14px; }
+.product-intro-big h3{font-size: 28px; line-height: 70px; padding-top: 20px; font-family: Arial, sans-serif; color: #333333; font-weight: 100;}
+.product-intro-big p{line-height: 30px; color: #333333; letter-spacing: 2px}
+.product-intro-big p:first-letter{font-size: 24px; color: #487bd5;}
+.product-btn-area{margin-top: 100px; font-size: 0;}
+.product-btn{display: inline-block; *display: inline; zoom: 1; vertical-align: top; font-size: 14px; color: #333333; border: 1px solid #333333; position: relative; width: 130px; height: 38px; line-height: 38px; cursor: pointer;}
+.product-btn-area .nobl{border-left: 0;}
+.product-btn-text{display: block; position: absolute; width: 100%; height: 100%; left: 0;}
+.product-btn-arrow{position: absolute; width: 19px; height: 38px; right: 35px; top: 0; line-height: 38px; opacity: 0; filter: alpha(opacity=0);}
+.product-btn-arrow img{ width: 100%; height: 100%;}
+.product-arrow{ position: absolute; top: 50%; width: 13px; height: 26px; margin-top: -13px; }
+#product1 .product-arrow{left: 0;}
+#product4 .product-arrow{right: 0;}
+.product-arrow img{width: 100%; height: 100%;}
+.product-img-small{width: 480px; height: 370px; display: block;}
+.product-img-small img{width: 100%; height: 100%;}
+.product-intro-small{position: absolute; height: 55px; width: 100%; left: 0; bottom: 0; background: url("http://img.lankaola.com/images/v2.0/product-small-bg.png"); text-align: center;}
+.product-intro-title{display: block; line-height: 55px; color: white; font-size: 16px; position: relative; height: 55px;}
+.product-toggle{display: block; width: 22px; height: 8px; position: absolute; top: 50%; right: 10px; margin-top: -4px; background: url("http://img.lankaola.com/images/v2.0/sprite.png") -161px -13px no-repeat;}
+.product-intro-text{display: block; font-size: 14px; line-height: 30px; color: white;  letter-spacing: 1px}
+.line{position: absolute; background: #000; opacity: .15; filter: alpha(opacity = 15);}
+#line1{width: 100%; height: 1px; left: 0; top: 0;}
+#line2{width: 100%; height: 1px; left: 0; bottom: 0;}
+#line3{width: 1px; height: 100%; left: 479px; top: 0;}
+#line4{width: 1px; height: 100%; left: 959px; top: 0;}
+#line5{width: 1px; height: 100%; left: 1441px; top: 0;}
+
+#ic-service{font-size: 0; margin: 70px 0;}
+.ic-item{vertical-align: top;}
+#ic-left{width: 460px; height: 460px; position: relative; margin-left: 70px; }
+#ic-left span{display: block; position: absolute; overflow: hidden; width: 0; height: 0; left: 50%; top: 50%;}
+#ic-left img{width: 100%; height: 100%;}
+#ic-left #ic-animate6{z-index: 1; display: none; width: 460px; height: 460px; left: 0; top: 0;}
+#ic-left #ic-animate5{z-index: 2}
+#ic-left #ic-animate3{z-index: 3}
+#ic-left #ic-animate3{z-index: 4}
+#ic-left #ic-animate2{z-index: 5}
+#ic-left #ic-animate1{z-index: 6}
+#ic-left #ic-logo{z-index: 7; display: none; width: 126px; height: 20px; line-height: 20px; font-size: 16px; color: white; left: 167px; top: 220px; text-align: center;}
+#ic-right{width: 480px; margin-left: 100px; padding-top: 60px; font-family: arial, sans-serif;}
+#ic-right h2{font-size: 30px; line-height: 60px; color: #333333;}
+#ic-right p{font-size: 16px; line-height: 24px; margin: 30px 0; color: #666666;}
+#ic-btn{display: block; font-size: 16px; width: 150px; height: 46px; background: #1c8ce0; color: #ffffff; margin-top: 50px; position: relative; text-align: center; line-height: 46px;}
+#ic-btn > span {display: block; position: absolute; top: 0;}
+.ic-btn-text{width: 150px; height: 46px; left: 0;}
+.ic-btn-arrow{width: 19px; height: 46px; right: 45px; opacity: 0; filter: alpha(opacity=0);}
+
+#supply{width: 100%; height: 588px; overflow: hidden; position: relative; text-align: center; color: #333333;}
+#supply-wrap{width: 1920px; height: 588px; position: absolute; left: 50%; top: 0; margin-left: -960px; background: url("http://img.lankaola.com/images/v2.0/supplybg.jpg") center center no-repeat;}
+#supply-title{padding: 200px 0 35px; font-size: 36px; line-height: 50px; font-family: arial, sans-serif; margin-top: -300px; position: relative; z-index: 10; opacity: 0; filter: alpha(opacity=0);}
+#supply-text{font-size: 16px; line-height: 30px; margin-top: 400px; position: relative; z-index: 9; opacity: 0; filter: alpha(opacity=0);}
+#supply-item{display: none;}
+.supply-item{position: absolute; z-index: 1;}
+.supply-item img{width: 100%; height: 100%;}
+
+#advantage{width: 1200px; margin: 100px auto 0; font-size: 0;}
+.advantage-item {width: 600px; vertical-align: top; display: inline-block; *display: inline; zoom: 1; font-size: 14px; line-height: 36px; text-align: center;}
+.advantage-item > div{width: 110px; height: 110px; margin: 0 auto; background: url("http://img.lankaola.com/images/v2.0/sprite.png") no-repeat;}
+#advantage-item1{background-position: -229px -150px;}
+#advantage-item2{background-position: -107px -150px;}
+.advantage-item > h3{font-size: 20px; margin: 30px 0 10px;}
+
+

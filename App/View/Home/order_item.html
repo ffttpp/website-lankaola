@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的订单 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,order.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <div class="navigate mt18"><a>交易管理</a> &gt; <a href="/order">订单中心</a> &gt; <span>订单：<%=order.order_id%></span></div>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="mcontent">
+            <div class="ltMw1">
+                <h3 class="hf3">订单查看</h3>
+
+                <div class="tiptype1 mt10 pl10 pr10">
+                    <div class="topInfo"><span>订单号:<em><%=order.order_id%></em></span>
+                    <%if (order.cancel == 1) {%>
+                        <span class="pl30">状态：<b class="icson_green">申请取消</b><a style="margin-left: 10px;" href="/order/cancelOrderList" target="_blank"  class="confirmReceive">取消进度</a></span>
+                        </div>
+                        <p class="icson_999 mt10">您已申请取消订单，期待您下次在蓝考拉购物。</p>
+                    <%} else if (order.cancel == 2){%>
+                        <span class="pl30">状态：<b class="icson_green">已取消</b></span>
+                    </div>
+                    <p class="icson_999 mt10">订单已取消，期待您下次在蓝考拉购物。</p>
+                    <%} else {%>
+                        <%if (order.order_status == 6) {%>
+                            <span class="pl30">状态：<b class="icson_green">完成</b></span>
+                        </div>
+                        <p class="icson_999 mt10">订单已经完成，感谢您在蓝考拉购物。</p>
+                        <%} else if (order.order_status == 7) {%>
+                            <span class="pl30">状态：<b class="icson_green">已取消</b></span>
+                        </div>
+                        <p class="icson_999 mt10">订单已经取消，期待您下次在蓝考拉购物。</p>
+                        <%} else if (order.order_status == 2 && (order.pay_type == 2 || order.pay_type == 3)) {%>
+                            <span class="pl30">状态：<b class="icson_red pr10">等待付款</b><a href="javascript:;" onclick="toPayment(<%=order.order_id%>)" class="paybtn">支付</a><a href="javascript:;" class="confirmReceive"  onclick="cancelOrder('<%=order.order_id%>')">取消订单</a></span>
+                        </div>
+                        <p class="icson_999 mt10">尊敬的客户，我们还未收到该订单的款项，请您尽快付款。<br>该订单会为您保留24小时（从下单之日算起），24小时之后如果还未付款，系统匠自动取消该订单。</p>
+                        <%} else if (order.order_status == 2 && order.pay_type == 1) {%>
+                            <span class="pl30">状态：<b class="icson_green">商品出库</b><!--<a href="#" class="confirmReceive">确认收货</a>--></span>
+                        </div>
+                        <p class="icson_999 mt10">尊敬的客户，您的订单商品正在出库。</p>
+                        <%} else if (order.order_status == 5) {%>
+                            <span class="pl30">状态：<b class="icson_green">等待收货</b><!--<a href="#" class="confirmReceive">确认收货</a>--></span>
+                        </div>
+                        <p class="icson_999 mt10">尊敬的客户，您的订单商品已经从库房发出，请您做好收货准备。</p>
+                        <%} else if ( order.order_status == 3) {%>
+                            <span class="pl30">状态：<b class="icson_green">付款成功</b><!--<a href="#" class="confirmReceive">确认收货</a>--></span>
+                        </div>
+                        <p class="icson_999 mt10">尊敬的客户，您已经付款成功，等待商品出库。</p>
+                        <%} else if ( order.order_status == 4) {%>
+                        <span class="pl30">状态：<b class="icson_green">商品出库</b><!--<a href="#" class="confirmReceive">确认收货</a>--></span>
+                        </div>
+                        <p class="icson_999 mt10">尊敬的客户，您的订单商品正在出库。</p>
+                        <%}%>
+                    <%}%>
+        </div>
+        <!--订单信息-->
+        <div class="bx_commit mt10">
+            <div class="bx_commit_tit">
+                <h3>订单信息</h3>
+            </div>
+            <div class="bx_commit_bd">
+                <div class="orderInfo_group"><em>收货人信息</em>
+
+                    <p> 收 货 人：<%=order.name%><br>
+                        地&nbsp;&nbsp;&nbsp;&nbsp;址：<%=order.province_name%><%=order.city_name%><%=order.county_name%><%=order.address%><br>
+                        手机号码：<%=order.phone%> </p>
+                </div>
+                <div class="orderInfo_group"><em>支付及配送方式</em>
+
+                    <p> 支付方式：<%=order.pay_name%><br>
+                        运&nbsp;&nbsp;&nbsp;&nbsp;费：¥<%=parseFloat(order.freight || 0).toFixed(2)%><br>
+                </div>
+                <div class="orderInfo_group"><em>发票信息</em>
+
+                    <%if (order.invoice_type_name) {%>
+                    <p> 发票类型：<%=order.invoice_type_name%><br>
+                        发票抬头：<%=order.title%><br>
+                        发票内容：<%=order.invoice_content%> </p>
+                    <%} else {%>
+                    <p>不开发票</p>
+                    <%}%>
+                </div>
+                <div class="orderInfo_list"><em>商品清单</em>
+                    <table class="bought-table qdlist">
+                        <thead class="col-name">
+                        <tr>
+                            <td class="nobolr qd_no">商品编号</td>
+                            <td class="nobolr qd_pic">商品图片</td>
+                            <td class="nobolr qd_name">商品名称</td>
+                            <td class="nobolr qd_dj">单价</td>
+                            <td class="nobolr qd_num">商品数量</td>
+                        </tr>
+                        </thead>
+                        <tbody class="col-body1">
+                        <%if (hasSub) {%>
+                        <%for (var i = 0; i < subOrder.length; i++) {
+                        var subOrderItem = subOrder[i];
+                        %>
+                        <tr class="col-name">
+                            <td class="tl nobolr" colspan="5">
+                                订单编号：<%=subOrderItem.order_id%>
+                                <!--
+                                <span style="color: #f00">
+                                    (<%=subOrderItem.order_name%>)
+                                </span>
+                                -->
+                            </td>
+                        </tr>
+                        <%for (var j = 0; j < subOrderItem.skuList.length; j++) {
+                        var sku = subOrderItem.skuList[j]
+                        %>
+                        <tr>
+                            <td class="nobolr"><%=sku.sku_id%></td>
+                            <td class="nobolr"><a href="/item-<%=sku.sku_id%>.html" target="_blank"><img src="<%=(sku.img_50 ? (productImgPath+sku.img_50) : (imgPath+'lankaola_product.jpg'))%>" width="50" height="50"
+                                                                                                         title="<%=sku.skuName%>"
+                                                                                                         alt="<%=sku.skuName%>"></a></td>
+                            <td class="nobolr"><a href="/item-<%=sku.sku_id%>.html" target="_blank"><%=sku.skuName%></a></td>
+                            <td class="nobolr"><%=parseFloat(sku.price).toFixed(2)%></td>
+                            <td class="nobolr"><%=sku.quantity%></td>
+                        </tr>
+                        <%}%>
+
+                        <%}%>
+                        <%} else {%>
+                        <%
+                        for (var i = 0; i < order.skuList.length; i++) {
+                        var sku = order.skuList[i]
+                        %>
+                        <tr>
+                            <td class="nobolr"><%=sku.sku_id%></td>
+                            <td class="nobolr"><a href="/item-<%=sku.sku_id%>.html" target="_blank"><img src="<%=(sku.img_50 ? (productImgPath+sku.img_50) : (imgPath+'lankaola_product.jpg'))%>" width="50" height="50"
+                                                                                                         title="<%=sku.skuName%>"
+                                                                                                         alt="<%=sku.skuName%>"></a></td>
+                            <td class="nobolr"><a href="/item-<%=sku.sku_id%>.html" target="_blank"><%=sku.skuName%></a></td>
+                            <td class="nobolr"><%=parseFloat(sku.price).toFixed(2)%></td>
+                            <td class="nobolr"><%=sku.quantity%></td>
+                        </tr>
+                        <%}%>
+                        <%}%>
+                        </tbody>
+                    </table>
+                    <p class="js-f">总商品金额：¥<%=parseFloat(order.amount).toFixed(2)%><br>-桉树叶：¥<%=parseFloat(order.leaves/100).toFixed(2)%><br>+运费：¥<%=parseFloat(order.freight || 0).toFixed(2)%><br>-余额使用：￥<%=parseFloat(order.cash).toFixed(2)%></p>
+                    <p class="js-c">应付金额：<span class="red">¥<%=parseFloat(order.pay_amount).toFixed(2)%></span></p>
+                </div>
+            </div>
+        </div>
+        <!--订单信息 end-->
+    </div>
+</div>
+</div>
+</div>
+</div>
+<!--删除提示-->
+<div class="rl-modal dialog cancelOrder">
+    <div class="bg"></div>
+    <div class="inner">
+        <div class="rtitle"><h3 class="dlgT">提示</h3><a href="javascript:;" class="closeBtn"></a></div>
+        <div class="m">
+            <p class="dlgtip ml165"><i></i>订单取消申请</p>
+            <div class="quxbox">
+                <div class="clearfix">
+                    <label class="t">取消原因：</label>
+                    <div class="quxk">
+                        <div class="quxk-inner">
+                            <span class="ctnarea"></span><a href="javascript:;" class="xlarrow"></a>
+                        </div>
+                        <div class="yylist">
+                            <ul id="reasonList">
+                            </ul>
+                            <input type="hidden" id="cancelReason" name="cancelReason" value="0" />
+                            <input type="hidden" id="cancelOrderid" name="cancelOrderid" value="0" />
+                        </div>
+                    </div>
+
+                </div>
+                <p class="tip red">
+                    温馨提示：<br>
+                        <span>订单成功取消后无法恢复<br>
+						该订单已付金额将返还银行卡</span>
+                </p>
+            </div>
+            <div class="mt50 btncenter"><a id="submitCancel" class="btn btn_small btn_blue mr15">确定</a><a id="cancelCancel" class="btn btn_small btn_gray">取消</a></div>
+        </div>
+    </div>
+</div>
+<!--弹窗遮罩层-->
+<div class="modal-backdrop"></div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js,select.min.js,order.min.js"></script>
+
+<%include footer.html%>
+</body>
+</html>

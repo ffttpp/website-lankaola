@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>账户安全 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,zhanquan.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <% include bread.html %>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include user_nav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent safe-sevi">
+                <div class="ltMw1">
+                    <h3 class="hf3">账户安全管理</h3>
+
+                    <div class="step step01 mt20" id="step<%= step %>">
+                        <ul>
+                            <li class="fore1">1.验证身份<b></b></li>
+                            <li class="fore2">2.修改登录密码<b></b></li>
+                            <li class="fore3">3.完成<b></b></li>
+                        </ul>
+                    </div>
+                    <% if (step == 1) { %>
+                    <div class="form form01 clearfix">
+                        <div class="row-group">
+                            <div class="label_col">
+                                <label>已验证手机：</label>
+                            </div>
+                            <div class="con_col">
+                                <b class="icson_333"><%= phone %></b><br>
+                                <a href="#" class="btn btn_blue btn_middle mt10" id="send_code">获取短信验证码</a>
+
+                                <p class="icson_999" style="display: none;" id="code_tip">验证码已发出，请注意查收短信，如果没有收到，你可以在<b
+                                        class="icson_red">60</b>秒后要求系统重新发送</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form form02 clearfix">
+                        <div class="row-group">
+                            <div class="label_col">
+                                <label for="code">请填写手机验证码：</label>
+                            </div>
+                            <div class="con_col">
+                                <input class="text type01 fl" name="code" id="code">
+                                <p class="tip" style="display: none;"><i></i>验证码错误</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear tc mt10">
+                        <a style="float: left; margin-left: 182px;" class="btn btn_middle btn_blue mr15" id="submit1">提交</a>
+                    </div>
+                    <% } else if (step == 2) { %>
+                    <input type="hidden" name="hash" id="hash" value="<%= crypted %>" />
+                    <div class="form form03">
+                        <div class="row-group">
+                            <div class="label_col">
+                                <label for="password">新密码：</label>
+                            </div>
+                            <div class="con_col">
+                                <input class="text type01 fl" name="password" id="password" type="password">
+
+                                <p class="tip" style="display: none;"><i></i>请输入新密码</p>
+                            </div>
+                        </div>
+                        <div class="row-group">
+                            <div class="label_col">
+                                <label for="password_confirm">确认新密码：</label>
+                            </div>
+                            <div class="con_col">
+                                <input class="text type01 fl" type="password" name="password_confirm" id="password_confirm">
+
+                                <p class="tip" style="display: none;"><i></i>两次输入不同</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear tc mt30">
+                        <a class="btn btn_middle btn_blue mr15" id="submit2">确定</a>
+                    </div>
+                    <% } else { %>
+                    <div class="success">
+                        <i class="duihao"></i>
+
+                        <p>恭喜您，密码修改成功！</p>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js,pwd.min.js"></script>
+<% include footer.html %>
+</body>
+</html>

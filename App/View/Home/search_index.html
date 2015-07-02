@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%=qs%>-商品搜索-蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,list.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth searchRes">
+    <div class="navigate mt18"><span>“<%=qs%>”的搜索结果</span></div>
+    <div class="listCon">
+        <%if (pagerData.data.length > 0) {%>
+        <div class="sortBar">
+            <a>排序</a>
+            <a id="sortDefault" class="<%if(order == 0){%>selected<%}%>" href="/<%=defaultSort%>">默认</a>
+            <a id="sortPrice" class="<%if(order == 1){%>selected <%if(sort == 0){%>priceAsc<%}else{%>priceDesc<%}}%>" href="/<%=priceSort%>">价格</a>
+        </div>
+        <ul id="goodsList">
+            <%
+            for (var i = 0; i < pagerData.data.length; i++) {
+            var item = pagerData.data[i];
+            var title = [item.brand_name, item.goods_name, item.skuName].join(' ')
+            %>
+            <li>
+                <a href='/item-<%=item.sku_id%>.html' target="_blank">
+                    <img class="lazy" data-original="<%=productImgPath%><%=item.img_220%>" src="<%=imgPath%>lazyload.png" alt="<%=title%>" title="<%=title%>" />
+                </a>
+
+                <h3><a href='/item-<%=item.sku_id%>.html' target="_blank"><%=title%></a>
+                </h3>
+
+                <div class="goodsOp">
+                    <span>￥<%=parseFloat(item.price).toFixed(2)%></span>
+                    <a href="/cart/add?pid=<%=item.sku_id%>" target="_blank">
+                        <i></i>
+                        <b>加入购物车</b>
+                    </a>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+        <% include pager.html %>
+        <%} else {%>
+        <div id="listnotfound">
+            <div id="listnotfoundicon"></div>
+            <div id="listnotfoundtext">
+                抱歉，没有找到与“<%=qs%>”相关的产品，<br>您可以去<a href="/">首页</a>挑选其他商品
+            </div>
+        </div>
+        <%}%>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,jquery.lazyload.js,global.min.js"></script>
+
+<script>
+    $(function () {
+        $('img.lazy').lazyload({ threshold : 200 });
+        if ($(window).scrollTop() > 360) {
+            $('#gotoTop').show()
+        }
+
+        $(window).scroll(function () {
+            if($(this).scrollTop() > 360){
+                $('#gotoTop').show()
+            }else{
+                $('#gotoTop').hide()
+            }
+        })
+
+        $('#gotoTop').bind('click', function (e) {
+            e.preventDefault();
+            $('body, html').animate({scrollTop: 0}, 500)
+        })
+    })
+</script>
+<%include footer.html%>
+</body>
+</html>

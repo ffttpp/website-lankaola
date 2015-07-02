@@ -1,0 +1,113 @@
+.head-rgt{display: none;}
+.cartTitle{margin: 15px 0 5px; font-weight: bold; line-height: 24px; font-size: 14px;}
+.cart-empty{width: 1188px; height: 98px; border: 1px solid #ccc; font-size: 0; text-align: center; background: #f3f3f3;}
+.cart-empty > div, .cart-empty > p {display: inline-block; *display: inline; zoom: 1; font-size: 12px; line-height: 98px; vertical-align: middle;}
+.cart-empty-i{width: 98px; height: 98px; background: url("http://img.lankaola.com/images/cart-empty-bg.png") center center no-repeat;}
+.bought-table{background: #fff; margin-bottom: 20px;}
+.bought-table .col-name td{background: #eee;}
+.bought-table input{cursor: pointer;}
+.cart-td-check{width: 50px;}
+.cart-td-goods{text-align: left !important;}
+.wrap_input{ overflow:hidden;zoom:1;margin-left:10px;padding-bottom:10px; display:inline-block;*display:inline;*zoom:1; font-size:12px; font-weight:normal;vertical-align:-16px;*vertical-align:-10px;margin-right:10px;}
+.wrap_input .input{ border:1px solid #e0e0e0;float:left;margin-left:-1px;font-size:0;}
+.wrap_input input{ width:40px;  height:20px;line-height:20px;*height:18px;*line-height:18px;text-align:center; color:#666666; background-color:#fff; font-size:12px;}
+.wrap_input .btn-add, .wrap_input .btn-reduce{border:1px solid #e0e0e0;float:left; margin-left:-1px; width:20px; height:20px; line-height:20px; font-size:16px; cursor:pointer; text-align:center; background-color:#eeeeee; color: #666; user-select:none; -webkit-user-select:none; -moz-user-select: none; -ms-user-select: none;}
+.wrap_input .btn-add:hover, .wrap_input .btn-reduce:hover{color: #3465aa;}
+.wrap_input .btn-reduce{margin-left:0;}
+#remove-batch{display: block; float: left; padding-left: 30px; height: 24px; line-height: 24px; background: url("http://img.lankaola.com/images/lankaola.png") 0 -840px no-repeat;}
+.cart-toolbar{float: right; margin-right: 5px;}
+.amount{border-bottom: 1px solid #e0e0e0; line-height: 24px; color: #666;}
+.amountL{margin-right: 10px;}
+.amountR{width: 180px;}
+.amountR span{float: right;}
+.total, #finalPrice{line-height: 30px; vertical-align: bottom; color: #999999;}
+#finalPrice{color: #ed4145; font-size: 18px; float: right;}
+#submitCart{float: right; display: block; clear: both; width: 160px; height: 40px; line-height: 40px; font-size: 14px; color: #fff; background: #ee5457; text-align: center; margin-top: 20px;}
+
+.cartStep{width: 100%; height: 90px; background: rgb(75, 105, 162); position: relative;}
+#cartStep{position: absolute; right: 20px; top: 25px; width: 420px; height: 60px;}
+#cartStep1{height: 20px; width: 100%; background: url("http://img.lankaola.com/images/lankaola.png") -992px -20px no-repeat;}
+#cartStep2{height: 20px; width: 100%; background: url("http://img.lankaola.com/images/lankaola.png") -992px -77px no-repeat;}
+#cartStep3{height: 20px; width: 100%; background: url("http://img.lankaola.com/images/lankaola.png") -992px -136px no-repeat;}
+#stepDetail{position: relative; width: 100%; height: 40px;}
+#stepDetail span{display: block; position: absolute; line-height: 40px; height: 40px; top: 0; color: #fff;}
+#cartStepD1{left: 17px;}
+#cartStepD2{left: 178px;}
+#cartStepD3{left: 342px;}
+
+.inlineBlock{display: inline-block; *display: inline; zoom: 1; vertical-align: middle;}
+.tips{display: none;}
+
+.itemTitle{height: 30px; width: 1198px; border: 1px solid #e0e0e0; border-bottom: 0; line-height: 30px; text-indent: 20px; font-size: 14px; font-weight: bold; }
+.orderInfoItem .edit{font-size: 10px; margin-left: 10px;}
+#addressList li {line-height: 28px; height: 28px; margin-bottom: 5px;}
+.itemList li input{margin-right: 5px; cursor: pointer;}
+#editAddress{padding-left: 50px;}
+#addressAddNew{color: #999999;}
+.addressItem > div{display: inline-block; *display: inline; zoom: 1; vertical-align: middle; line-height: 36px;}
+.addressLabel {width: 85px; margin-right: 5px; vertical-align: middle; text-align: right;}
+.addressLabel em{color: #ed4145; margin-right: 10px;}
+.addressInput input, .addressInput select{border: 1px solid #e0e0e0; margin-right: 10px;}
+.addressInput input{padding: 3px 5px;}
+#addressAdress{width: 200px;}
+.saveBtn{background: #5182e8; width: 120px; height: 30px; line-height: 30px; text-align: center ;color: #fff; display: block; margin-top: 10px;}
+.delAddress{margin-left: 20px;}
+
+.payType{cursor: pointer;}
+#alipayBankList{padding-left: 50px; display: none; }
+#alipayBankList > div{margin-right: 20px; height: 60px; line-height: 60px;}
+#alipayBankList input, #alipayBankList img{line-height: 60px; vertical-align: middle;}
+#alipayBankList input{margin-right: 10px; cursor: pointer;}
+
+#invoiceAddNew{padding-left: 30px; display: none;}
+.invoiceItem{margin: 10px 0;}
+#invoiceAddNew input{margin-right: 5px; cursor: pointer;}
+.invoiceLabel{width: 95px; margin-right: 5px; text-align: right;}
+.invoiceTypeRadio, .invoiceTitleList, .invoiceContentRadio{margin-right: 30px;}
+#invoiceTitleValue{border: 1px solid #e0e0e0; margin-left: -20px; width: 180px; padding: 3px 5px; display: none;}
+.invoiceTip{color: #ed4145;}
+#invoiceList a {margin-left: 20px;}
+
+#goodsItem{width: 1198px; border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; }
+#goodsItem .itemTitle{border-left: 0; border-right: 0;}
+.itemContent{height: auto; width: 1158px; border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; background: #fff;padding: 5px 0 20px 40px; line-height: 22px;}
+.itemList{display: none;}
+#backToCart{float: right; font-size: 12px; margin-right: 35px;}
+#submitOrderBar{width: 100%; height: 50px; line-height: 50px; clear: both; background: #eeeeee;}
+#submitOrderBtn{display: block; width: 180px; height: 50px; background: #ee5457; color: #fff; background: #ee5457; float: right; text-align: center; font-size: 14px; font-weight: bold;}
+#submitOrderBar p{float: right; line-height: 50px; font-weight: bold; vertical-align: middle; font-weight: bold; font-size: 14px; margin-right: 20px;}
+#submitOrderBar p b {font-size: 18px; color: #ed4145;}
+
+#orderSuccessWrap{padding: 20px 200px; border: 1px solid #e0e0e0;}
+#orderSuccessTitle{ border-bottom: 1px solid #eeeeee; padding-bottom: 10px;}
+#orderSuccessTitle h3{font-size: 14px; font-weight: bold; line-height: 36px; height: 36px; }
+#orderSuccessTitle h3 i{display: block; float: left; width: 50px; height: 40px; background: url("http://img.lankaola.com/images/lankaola.png") -80px -420px no-repeat; }
+#orderSuccessTitle p{color: #999999;}
+#orderSuccessC{padding-left: 50px; margin-top: 5px;}
+#orderSuccessC p{line-height: 24px;}
+#orderSuccessC .green{color: rgb(130,187, 34);}
+#orderSuccessC p strong{display: inline-block; zoom: 1; *display: inline; width: 100px; text-align: right;}
+#orderSuccessC img {margin: 10px 0;}
+#orderSuccessC #payBtn{display: block; background: #ed4145; text-align: center; width: 100px; height: 25px; line-height: 25px; color: #fff; margin: 10px 30px;}
+
+
+.item{clear: both; margin-left: 20px; margin-bottom: 20px;}
+.toggle-title{user-select: none; -webkit-user-select: none; -moz-user-select: none;display: block; padding-left: 30px; margin: 5px 0; height: 15px; line-height: 15px; background-image: url("http://img.lankaola.com/images/lankaola.png"); background-repeat: no-repeat;}
+.leavesHide{background-position: -1px -987px;}
+.leavesShow{background-position: -1px -1002px;}
+.toggle-wrap{margin-left: 30px; padding: 0 20px; width: 1000px; border: 1px solid #ccc; display: none;}
+.toggle-wrap p{line-height: 50px; height: 50px; width: 100%; vertical-align: middle;}
+.toggle-input{ border-bottom: 1px dashed #e0e0e0;}
+.toggle-input input, #pay_pwd{width: 98px; height: 23px; border: 1px solid #e0e0e0; margin:  0 10px; padding: 0 5px;}
+.toggle-input a{width: 65px; height: 25px; line-height: 25px; color: #fff; display: inline-block; *display: inline; zoom: 1; margin-left: 15px; background: #ee5457; text-align: center; }
+.toggle-input a.disable{background: #fff; color: #dcdcdc; cursor: not-allowed; border: 1px solid #e0e0e0;}
+.toggle-tips{color: #999999;}
+.toggle-tips .black{color: #666666; font-weight: bold;}
+.toggle-tips .red{color: #ed4145; font-weight: bold;}
+.toggle-tips a{margin-left: 20px;}
+.toggle-allowed-tip{color: #ee5457; display: none;}
+.toggle-use-amount{display: none;}
+.toggle-result{display: none; line-height: 50px;}
+.toggle-result a{margin-left: 10px;}
+
+.p_pay_pwd{display: none;}

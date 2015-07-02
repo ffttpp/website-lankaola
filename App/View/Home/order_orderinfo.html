@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单结算 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,v2.0/cart.css,v2.0/common.css,v2.0/cart.css">
+</head>
+<body>
+<%include header.html%>
+<div class="cartStep">
+    <div class="wrap">
+        <div id="cartStep">
+            <div id="cartStep2"></div>
+            <div id="stepDetail">
+                <span id="cartStepD1" class="orange">我的购物车</span>
+                <span id="cartStepD2" class="orange">填写核对订单</span>
+                <span id="cartStepD3">订单提交成功</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear comWidth">
+    <h2 class="cartTitle">填写并核对订单信息</h2>
+    <div class="orderInfoItem" id="addressItem">
+        <input type="hidden" id="orderAddressId" value="<%=oaid%>">
+        <h3 class="itemTitle">收货人信息<a class="edit" id="orderAddressEditBtn">[修改]</a></h3>
+        <div class="itemContent">
+            <div id="addressResult" style="display: <%=(address.length == 0 ? 'none' : 'block')%>;">
+                <%if (oaid) {%>
+                <input type="hidden" id="selectedAddress" value="<%=oaid%>">
+                <p><%=oaItem.name%>&nbsp;&nbsp;&nbsp;<%=oaItem.phone%></p>
+                <p><%=oaItem.province_name%>&nbsp;<%=oaItem.city_name%>&nbsp;<%=oaItem.county_name%>&nbsp;&nbsp;&nbsp;<%=oaItem.address%></p>
+                <%}%>
+            </div>
+            <div id="addressList" class="itemList" style="display: <%=(address.length == 0 ? 'block' : 'none')%>;"> <!---->
+                <ul>
+                    <%
+                    for (var i = 0; i < address.length; i++) {
+                    var item = address[i];
+                    %>
+                    <li id="address_<%=item.address_id%>">
+                            <input type="radio" class="address" name="address" <%=(item.address_id == oaid ? 'checked' : '')%> value="<%=item.address_id%>" <%if (i == 0) {%>checked="checked"<%}%> />
+                        <span class="addressNameSpan"> <%=item.name%></span>&nbsp;<span class="addressAreaSpan"><%=item.province_name%><%=item.city_name%><%=item.county_name%></span><span class="addressAddressSpan"><%=item.address%></span>&nbsp;<span class="addressPhoneSpan"><%=item.phone%></span><a class="delAddress">删除</a>
+                    </li>
+                    <%}%>
+                    <li><input type="radio" name="address" class="address" value="0">新增收货地址</li>
+                </ul>
+                <!--<a id="addressAddNew">+&nbsp;新增收货地址</a>-->
+                <div id="editAddress">
+
+                </div>
+                <a id="saveAddress" class="saveBtn" onclick="saveAddress()">保存收货人信息</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="orderInfoItem" id="payItem">
+        <input type="hidden" id="orderPayId" value="3">
+        <h3 class="itemTitle">支付方式<a class="edit" id="orderPayEditBtn">[修改]</a></h3>
+        <div class="itemContent">
+            <div id="payResult">
+                <%=opItem.pay_name%><%=(opItem.pay_id == 2 ?  ' ' + bankName : '')%>
+                <input type="hidden" id="selectedPay" value="<%=opItem.pay_id%>">
+                <input type="hidden" id="selectedBank" value="<%=bankCode%>">
+            </div>
+            <div id="payList" class="itemList">
+                <ul>
+                    <%
+                    for (var i = 0; i < payType.length; i++) {
+                    var pay = payType[i];
+                    %>
+                    <li>
+                        <input type="radio" name="payType" class="payType" value="<%=pay.pay_id%>" <%if (pay.pay_id == opid) {%>checked="checked"<%}%>>
+                        <span><%=pay.pay_name%></span>
+                        <%if (pay.pay_id == 2) {%>
+                        <div id="alipayBankList" style="display: <%=(opid == 2 ? 'block' : 'none')%>">
+                            <%for (var j = 0; j < alipayBankList.length; j++) {
+                            var bank = alipayBankList[j];
+                            %>
+                            <div class="inlineBlock"><input name="alipayBank" type="radio" class="alipayBank" value="<%=bank.code%>" <%if (bank.code == bankCode) {%>checked="checked"<%}%>><img alt="<%=bank.name%>" src="<%=imgPath+bank.icon%>"></div>
+                            <%}%>
+                        </div>
+                        <%}%>
+                    </li>
+                    <%}%>
+                </ul>
+
+                <a id="savePay" class="saveBtn" onclick="savePayType()">保存支付方式</a>
+            </div>
+        </div>
+    </div>
+    <div class="orderInfoItem" id="invoiceItem">
+        <input type="hidden" id="orderInvoiceId" value="-1">
+        <h3 class="itemTitle">发票信息<a class="edit" id="orderInvoiceEditBtn">[修改]</a></h3>
+        <div class="itemContent">
+            <div id="invoiceResult">
+                <p>不开发票<input type="hidden" id="selectInvoice" value="0"></p>
+                <p class="invoiceTip">温馨提示：发票的开票金额不包括桉树叶支付部分</p>
+            </div>
+            <div id="invoiceList" class="itemList">
+                <ul>
+                    <li><input type="radio" name="invoice" class="invoice" value="-1" checked><span>不开发票</span></li>
+                    <%
+                    for (var i = 0; i < invoice.length; i++) {
+                    var inItem = invoice[i];
+                    %>
+                    <li id="invoice_<%=inItem.invoice_id%>"><input type="radio" class="invoice" name="invoice" value="<%=inItem.invoice_id%>"/><span><%=inItem.invoice_type_name%>&nbsp;<%=inItem.title%>&nbsp;<%=inItem.content%></span><a class="delInvoice">删除</a>
+                    </li>
+                    <%}%>
+                    <li><input type="radio" name="invoice" class="invoice" value="0">使用新的发票信息</li>
+                </ul>
+                <div id="invoiceAddNew">
+                    <div class="invoiceItem">
+                        <div class="invoiceLabel inlineBlock">发票开具方式:</div>
+                        <div class="invoiceContent inlineBlock">
+                            <%for (var i = 0; i < invoiceType.length; i++) {%>
+                            <div class="invoiceTypeRadio inlineBlock">
+                                <input <%=(i==0 ? 'checked' : '')%> type="radio" name="invoiceType" value="<%=invoiceType[i].invoice_type_id%>"><%=invoiceType[i].invoice_type_name%>
+                            </div>
+                            <%}%>
+                        </div>
+                    </div>
+                    <div class="invoiceItem">
+                        <div class="invoiceLabel inlineBlock">发票抬头:</div>
+                        <div class="invoiceContent inlineBlock">
+                            <div class="invoiceTitleList inlineBlock">
+                                <input type="radio" name="invoiceTitle" class="invoiceTitle" value="1" checked>个人
+                            </div>
+                            <div class="invoiceTitleList inlineBlock">
+                                <input type="radio" name="invoiceTitle" class="invoiceTitle" value="2">公司
+                            </div>
+                            <div class="invoiceTitleList inlineBlock">
+                                <input type="text" name="invoiceTitleValue" id="invoiceTitleValue" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invoiceItem">
+                        <div class="invoiceLabel inlineBlock">发票内容:</div>
+                        <div class="invoiceContent inlineBlock">
+                            <div class="invoiceContent inlineBlock">
+                                <%for (var i = 0; i < invoiceContent.length; i++) {%>
+                                <div class="invoiceContentRadio inlineBlock">
+                                    <input <%=(i==0 ? 'checked' : '')%> type="radio" name="invoiceContent" value="<%=invoiceContent[i].content_id%>"><%=invoiceContent[i].content%>
+                                </div>
+                                <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a id="saveInvoice" class="saveBtn" onclick="saveInvoice()">保存发票信息</a>
+            </div>
+        </div>
+    </div>
+    <div class="orderInfoItem" id="goodsItem">
+        <h3 class="itemTitle">商品清单 <a id="backToCart" href="/cart">返回购物车修改</a></h3>
+        <%if (order.count > 0) {%>
+        <table class="bought-table">
+            <thead class="col-name">
+            <tr>
+                <td class="nobolr">商品</td>
+                <td class="nobolr">价格</td>
+                <td class="nobolr">数量</td>
+            </tr>
+            </thead>
+            <tbody class="col-body1">
+            <%
+            for (var i = 0; i < order.list.length; i++) {
+            var item = order.list[i];
+            %>
+            <tr id="cart-tr-<%=item.cart_id%>" class="cart-tr">
+                <td class="nobolr tl">
+                    <a href="/item-<%=item.sku_id%>.html" target="_blank">
+                        <img align="middle" src="<%=(item.img ? (productImgPath+item.img) : (imgPath+'lankaola_product.jpg'))%>" width="50" height="50" alt="<%=item.goods_name%>">
+                        <span><%=item.skuName%></span>
+                    </a>
+                </td>
+                <td class="nobolr"><%=item.price%></td>
+                <td class="nobolr"><%=item.count%></td>
+            </tr>
+            <%}%>
+            </tbody>
+        </table>
+        <div class="cart-toolbar">
+            <div class="amount">
+                <div class="fr amountR">
+                    <p>总计：<span id="totalSkuPrice">￥<%=parseFloat(order.sum).toFixed(2)%></span></p>
+
+                    <p>桉树叶：<span id="totalRePrice">-￥<em>0.00</em></span></p>
+                    <p>运费：<span id="freightPrice">+￥<%=parseFloat(order.freight).toFixed(2)%></span></p>
+                    <p>余额：<span id="totalCash">-￥<em>0.00</em></span></p>
+                </div>
+                <div class="fr amountL"><p><span id="selectedCount"><%=order.count%></span>件商品</p></div>
+                <div class="clear"></div>
+            </div>
+            <div class="total">
+                <p>
+                    应付总额：<span id="finalPrice">￥<em><%=parseFloat(order.sum+order.freight).toFixed(2)%></em></span>
+                </p>
+            </div>
+        </div>
+        <div id="leaves" class="item">
+            <%var allowedLeaves = leaves > order.allowedLeaves ? order.allowedLeaves : leaves%>
+            <a id="useLeaves" class="leavesHide toggle-title">使用桉树叶支付</a>
+            <div id="leavesD" class="toggle-wrap toggle-use">
+                <input type="hidden" id="orderLeavesUse" value="0">
+                <p id="leavesInput" class="toggle-input">本次使用<input type="text" name="leaves">页桉树叶支付 <a>使用</a> <span id="leavesAllowdTip" class="toggle-allowed-tip">您本次最多可使用<%= allowedLeaves%>片桉树叶</span></p>
+                <p id="leavesTips" class="toggle-tips">您有<b class="black"><%=leaves%></b>片桉树叶，本次可用<b id="leavesAllowed" class="red toggle-allowed"><%= allowedLeaves%></b>片<span id="leavesUseAmount" class="toggle-use-amount">，使用<b class="black">0</b>片， 折合人民币<b class="red">￥0.00</b>元</span><a href="/leaves" target="_blank">[查看我的桉树叶]</a></p>
+            </div>
+            <div id="leavesResult" class="toggle-wrap toggle-result">
+                <span></span><a>取消使用</a>
+            </div>
+        </div>
+        <div id="cash" class="item">
+            <%var
+                allowedCash = order.sum + order.freight > cash ? cash : (order.sum + order.freight);
+                allowedCash = parseFloat(allowedCash).toFixed(2);
+            %>
+            <a id="useCash" class="leavesHide toggle-title">使用余额支付</a>
+            <div id="cashD" class="toggle-wrap toggle-use">
+                <input type="hidden" id="orderCashUse" value="0">
+                <p id="cashInput" class="toggle-input">本次使用￥<input type="text" name="leaves">支付 <a>使用</a> <span id="cashAllowdTip" class="toggle-allowed-tip">您本次最多可使用￥<%=allowedCash%></span></p>
+                <p id="cashTips" class="toggle-tips">您有￥<b class="black"><%=parseFloat(cash).toFixed(2)%></b>余额，本次可用￥<b id="cashAllowed" class="red toggle-allowed"><%= allowedCash%></b><a href="/cash" target="_blank">[查看账户余额]</a></p>
+            </div>
+            <div id="cashResult" class="toggle-wrap toggle-result">
+                <span></span><a>取消使用</a>
+            </div>
+        </div>
+        <div class="item">
+            <p id="has_pay_pwd" class="p_pay_pwd">支付密码：<input type="password" name="pay_pwd" id="pay_pwd" /><a href="/user/payPwd" target="_blank">忘记支付密码？</a></p>
+            <p id="has_not_pay_pwd" class="p_pay_pwd">需要设置支付密码，才能使用账户余额或者桉树叶，<a href="/user/payPwd" target="_blank">立即开启支付密码</a></p>
+        </div>
+
+        <div id="submitOrderBar">
+            <a id="submitOrderBtn">提交订单</a>
+            <p>应付总额<b>￥<%=parseFloat(order.sum+order.freight).toFixed(2)%></b>元</p>
+        </div>
+        <%}%>
+    </div>
+</div>
+
+<script>
+    var totalSkuPrice = <%=parseFloat(order.sum)%>;
+    var freight = <%=parseFloat(order.freight)%>;
+    var allowedLeaves = <%=parseFloat(allowedLeaves)%>;
+    var leavesRatio = <%=leavesRatio%>;
+    var allowedCash = <%=allowedCash%>;
+</script>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js,v2.0/orderInfo.min.js"></script>
+<!--,orderInfo.min.js-->
+
+<%include footer.html%>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>忘记密码 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,regist.css,v2.0/common.css">
+</head>
+<body class="whitebg">
+<div class="headerBar gray">
+    <div class="topBar">
+        <div class="comWidth clearfix ohd">
+            <div class="fl"><span class="tel pr"><i></i>400-707-366</span></div>
+            <div class="fr"><a href="/order">我的订单</a>|<a href="/login">登录</a>|<a href="/register">快速注册</a></div>
+        </div>
+    </div>
+    <div class="logoBar">
+        <div class="comWidth pr">
+            <div class="logo"><a href="/"><img alt="蓝考拉" src="<%= imgPath %>logo_whitebg.jpg"></a></div>
+        </div>
+    </div>
+</div>
+<div class=" clear comWidth">
+    <input type="hidden" id="k" name="k" value="<%= crypted %>">
+
+    <div class="findPwd safe-sevi">
+        <h3 class="pwdt">密码重置</h3>
+
+        <div class="ltMw1">
+            <% if ( step == 2) { %>
+            <div class="step step01 mt10" id="step2">
+                <ul>
+                    <li class="fore1">1.填写账户名<b></b></li>
+                    <li class="fore2">2.验证身份<b></b></li>
+                    <li class="fore3">3.修改登录密码<b></b></li>
+                    <li class="fore4">4.完成<b></b></li>
+                </ul>
+            </div>
+            <div class="form form01 clearfix">
+                <form id="verifyForm" name="verifyForm">
+                    <div class="row-group">
+                        <div class="label_col">
+                            <label>已验证手机：</label>
+                        </div>
+                        <div class="con_col">
+                            <b class="icson_333"><%= phone %></b><br>
+                            <a id="sendCode" class="btn btn_blue btn_middle mt10">获取短信验证码</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="form form02 clearfix">
+                <div class="row-group">
+                    <div class="label_col">
+                        <label for="verification">请填写手机验证码：</label>
+                    </div>
+                    <div class="con_col">
+                        <input class="text type01 fl" name="verification" id="verification">
+                    </div>
+                </div>
+            </div>
+            <div class="clear mt20 step2btn">
+                <a class="btn btn_middle btn_blue mr15" id="submit2">下一步</a>
+            </div>
+        </div>
+        <% } else if ( step == 3 ) { %>
+        <div class="step step01 mt10" id="step3">
+            <ul>
+                <li class="fore1">1.填写账户名<b></b></li>
+                <li class="fore2">2.验证身份<b></b></li>
+                <li class="fore3">3.修改登录密码<b></b></li>
+                <li class="fore4">4.完成<b></b></li>
+            </ul>
+        </div>
+        <div class="form form03">
+            <form id="resetForm" name="resetForm">
+                <div class="row-group">
+                    <div class="label_col">
+                        <label>新密码：</label>
+                    </div>
+                    <div class="con_col">
+                        <input class="text type01 fl" name="password" type="password" id="password">
+                    </div>
+                </div>
+                <div class="row-group">
+                    <div class="label_col">
+                        <label>确认新密码：</label>
+                    </div>
+                    <div class="con_col">
+                        <input class="text type01 fl" name="password_confirm" type="password" id="password_confirm">
+                    </div>
+                </div>
+                <p class="tips" style="clear: both; margin-left: 150px;" id="resetTip"></p>
+            </form>
+        </div>
+        <div class="clear tc mt30">
+            <a class="btn btn_middle btn_blue mr15" id="submit3">提交</a>
+        </div>
+    </div>
+    <% } else if ( step == 4 ) { %>
+    <div class="step step01 mt10" id="step4">
+        <ul>
+            <li class="fore1">1.填写账户名<b></b></li>
+            <li class="fore2">2.验证身份<b></b></li>
+            <li class="fore3">3.修改登录密码<b></b></li>
+            <li class="fore4">4.完成<b></b></li>
+        </ul>
+    </div>
+    <div class="success">
+        <i class="duihao"></i>
+
+        <p>恭喜您，密码修改成功！<a style="color: #4879dc; font-size: 14px; display: block;" href="/login">返回登录</a></p>
+    </div>
+</div>
+</div>
+<% } else { %>
+<div class="step step01 mt10" id="step1">
+    <ul>
+        <li class="fore1">1.填写账户名<b></b></li>
+        <li class="fore2">2.验证身份<b></b></li>
+        <li class="fore3">3.修改登录密码<b></b></li>
+        <li class="fore4">4.完成<b></b></li>
+    </ul>
+</div>
+<div class="form form03 clearfix">
+    <form id="userForm" name="userForm">
+        <div class="row-group">
+            <div class="label_col">
+                <label for="username">账户名：</label>
+            </div>
+            <div class="con_col">
+                <label class="entry">
+                    <input type="text" class="text type03 fl rlf-input" name="username" id="username"
+                           placeholder="用户名/已验证手机">
+                </label>
+            </div>
+        </div>
+        <!--
+        <div class="row-group">
+            <div class="label_col">
+                <label for="">验证码：</label>
+            </div>
+            <div class="con_col">
+                <input class="text type05 fl"><div class="yzm fl"><img src="images/yzm.jpg"></div><a href="#" class="kbq">看不清？<b class="icson_blue">换一张</b></a>
+            </div>
+        </div>
+        -->
+    </form>
+</div>
+<div class="clear tc mt20">
+    <a class="btn btn_middle btn_blue mr15" id="submit1">下一步</a>
+</div>
+</div>
+<% } %>
+</div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,validate.min.js,findPwd.min.js"></script>
+<% include footer.html %>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单提交成功 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,v2.0/cart.css,v2.0/common.css">
+    <!--<link rel="stylesheet" type="text/css" href="/resource/css/cart.css">-->
+</head>
+<body>
+<% include header.html %>
+<div class="cartStep">
+    <div class="wrap">
+        <div id="cartStep">
+            <div id="cartStep3"></div>
+            <div id="stepDetail">
+                <span id="cartStepD1" class="orange">我的购物车</span>
+                <span id="cartStepD2" class="orange">填写核对订单</span>
+                <span id="cartStepD3" class="orange">订单提交成功</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear comWidth">
+
+    <h2 class="cartTitle">订单提交成功</h2>
+    <div id="orderSuccessWrap">
+        <div id="orderSuccessTitle">
+            <%if (!data.payType || data.payType == 1) {%>
+            <h3><i></i>订单已提交成功，我们将为您火速送达！</h3>
+            <%} else {%>
+            <h3><i></i>订单已提交成功，请您尽快付款，我们将为您火速送达！</h3>
+            <%}%>
+            <!--<p>请您在6小时内完成付款，超过后系统将自动取消订单</p>-->
+        </div>
+        <div id="orderSuccessC">
+            <p><strong>订单编号：</strong><%=data.order_id%></p>
+            <p><strong>商品总金额：</strong><b class="red">￥<%=parseFloat(data.amount).toFixed(2)%></b></p>
+            <p><strong>运费：</strong><b class="red">￥<%=parseFloat(data.freight).toFixed(2)%></b></p>
+            <p><strong>桉树叶使用：</strong><b class="green">￥<%=parseFloat(data.leaves / 100).toFixed(2)%></b></p>
+            <p><strong>账户余额使用：</strong><b class="green">￥<%=parseFloat(data.cash).toFixed(2)%></b></p>
+            <p><strong>支付金额：</strong><b class="red">￥<%=parseFloat(data.pay_amount).toFixed(2)%></b></p>
+            <p><strong>已选择付款方式：</strong><b><%=data.payName%></b></p>
+            <%if (data.payType == 2) {%>
+            <p><img src="<%=imgPath+data.bankImg%>"> </p>
+            <%}%>
+            <%if (data.payType == 2 || data.payType == 3) {%>
+            <a id="payBtn" href="<%=data.url%>">立即支付</a>
+            <%}%>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+<%include footer.html%>
+</body>
+</html>

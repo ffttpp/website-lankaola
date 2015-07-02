@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>购物流程 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,help.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <%include help_bread.html%>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include helpnav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent">
+                <div class="ltMw1">
+                    <h3 class="hf3">购物流程<!--<span class="n">（带<b class="icson_red">*</b>号的项目为必填项）</span>--></h3>
+                    <div class="helpPara">
+                        <p style="padding-top: 30px; text-align: center;"><img src="<%=imgPath%>shopping.png" /> </p>
+                    </div>
+                    <div class="helpPara">
+                        <h3>一、注册登录</h3>
+                        <p>1、填写账户名、密码等个人信息进行注册；</p>
+                        <p>2、选中“我已阅读并同意《蓝考拉用户注册协议》”，点击“立即注册”，完成注册。请在注册时务必详细填写个人信息；</p>
+                        <p><img src="<%=imgPath%>shopping-1.jpg"></p>
+                        <p>3、对于忘记密码，我们提供了找回密码的功能，请在找回密码的页面中输入您的用户名、注册时已验证的手机号，系统将帮助您找回密码。</p>
+                        <p><img src="<%=imgPath%>shopping-2.jpg"></p>
+                    </div>
+                    <div class="helpPara">
+                        <h3>二、提交订单</h3>
+                        <p>1、浏览要购买的商品，点击“加入购物车”商品会自动添加到购物车里</p>
+                        <p>3、对于忘记密码，我们提供了找回密码的功能，请在找回密码的页面中输入您的用户名、注册时已验证的手机号，系统将帮助您找回密码。</p>
+                        <p><img src="<%=imgPath%>shopping-3.jpg"></p>
+                        <p>2、如果需要更改商品数量，需在商品所在栏目后的商品数量框中输入购买数量；</p>
+                        <p><img src="<%=imgPath%>shopping-4.jpg"></p>
+                        <p>3、详细填写收货人信息、付款方式、发票信息等信息。</p>
+                        <p><img src="<%=imgPath%>shopping-5.jpg"></p>
+                        <p><img src="<%=imgPath%>shopping-6.jpg"></p>
+                        <p>4、确认无误后点击“提交订单”，生成新订单并显示订单编号。可进入“我的账户”→“订单中心”查看订单详细信息。</p>
+                        <p><img src="<%=imgPath%>shopping-7.jpg"></p>
+                        <p>5、桉树叶一经使用不可修改，若需要修改桉树叶的使用数量，请取消订单后重新下单；</p>
+                        <p>6、订单一经提交不可修改，若订单商品需要修改，请取消订单后重新选择商品；</p>
+                    </div>
+                    <div class="helpPara">
+                        <h3>修改订单</h3>
+                        <p>1、什么时候允许修改订单？</p>
+                        <p>订单生成后不可修改，建议在购物车内修改商品数量及增减商品，提交后订单锁定不可修改；</p>
+                        <p>2、我能修改购物车的哪些内容？</p>
+                        <p>(1) 修改购物车内的商品数量，增加或删除商品；</p>
+                        <p>(2) 修改收货人信息、配送方式、发票信息、订单备注；</p>
+                        <p>注：由于目前暂不支持修改支付方式，所以一些与支付方式相关联的收货地址可能也无法修改。</p>
+                    </div>
+                    <div class="helpPara">
+                        <h3>取消订单</h3>
+                        <p>1.已支付订单暂不支持自助退款，如需退款请联络客服</p>
+                        <p>2.付款前可自助取消订单，促销商品及特价商品可能因时间导致订单不可支付，如有疑问请参考促销活动说明。</p>
+                        <p>3.订单取消后所涉及的优惠券、抵用券及桉树叶将自动返还到您的账户中。</p>
+                        <p>ps：取消订单意味着您放弃当前订单所涉及的所有优惠，不可恢复，取消时意味着您同意此说明涉及的内容，蓝考拉不在其他位置再次说明。</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+<% include footer.html %>
+</body>
+</html>

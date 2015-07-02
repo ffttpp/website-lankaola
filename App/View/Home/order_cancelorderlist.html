@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>取消订单 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,tuihuanhuo.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <% include bread.html %>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include user_nav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent">
+                <div class="ltMw1 clearfix cancelOrder">
+                    <h3 class="hf3">取消订单记录</h3>
+                    <div class="clearfix mt20">
+                        <table class="bought-table cancelOrder_tab">
+                            <thead class="col-name">
+                            <tr>
+                                <td class="nobor cnl_no">订单编号</td>
+                                <td class="nobolr cnl_product"> 订单商品</td>
+                                <td class="nobolr"> 取消原因</td>
+                                <td class="nobolr cnl_subtime">桉树叶</td>
+                                <td class="cnl_tkstate">状态</td>
+                            </tr>
+                            </thead>
+                            <tbody class="col-body1">
+                            <%
+                            for (var i = 0; i < pagerData.data.length; i++) {
+                            var order = pagerData.data[i]
+                            %>
+                            <tr>
+                                <td><a href="/order/item?orderid=<%=order.order_id%>" target="_blank"><%=order.order_id%></a></td>
+                                <td>
+                                    <%
+                                    for (var j = 0; j < order.sku.length; j++) {
+                                        var sku = order.sku[j]
+                                        var title = [sku.brand_name, sku.goods_name, sku.skuName].join(' ');
+                                    %>
+                                    <a href="/item-<%=sku.sku_id%>.html" target="_blank"><img width="50" height="50" src="<%=(sku.img_50 ? (productImgPath+sku.img_50) : (imgPath+'lankaola_product.jpg'))%>" title="<%=title%>" alt="<%=title%>"></a>
+                                    <%}%>
+                                </td>
+                                <td><%=order.reason%></td>
+                                <td>￥<%=parseFloat(order.leaves/100).toFixed(2)%></td>
+                                <td>
+                                    <%if (order.cancel == 1) {%>
+                                    审核中
+                                    <%} else if(order.cancel == 2) {%>
+                                    取消成功
+                                    <%} else if(order.cancel == 3) {%>
+                                    审核不通过
+                                    <%}%>
+                                </td>
+                            </tr>
+                            <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+                    <%include pager.html%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+
+<%include footer.html%>
+</body>
+</html>

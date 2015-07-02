@@ -1,0 +1,5 @@
+@charset "utf-8";
+/* CSS Document */
+.collectionTab1 td.coll-product{ width:55%;}
+.addtocur{ display:block; width:95px; height:25px; background:url(http://img.lankaola.com/images/addtocur.png) 0 0 no-repeat; overflow:hidden; text-indent:-999px; margin:5px auto 0;}
+.collqx input{ vertical-align:-2px; margin-right:5px;}

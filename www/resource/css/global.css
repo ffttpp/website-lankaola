@@ -1,0 +1,373 @@
+@charset "utf-8";
+/* CSS Document */
+/*公用*/
+.comWidth { width: 1200px; margin: 0 auto 100px; position: relative;}
+html body {
+    height: 100%;
+    overflow-x: hidden;
+    width: 100%;
+}
+body { background-color: #fff; position: relative; }
+body.whitebg { background-color: #fff; }
+a, a:hover {text-decoration: none;}
+a{color: #4879dc;}
+.hide{display: none;}
+.lh23{line-height: 23px;}
+/*topBar*/
+.topBar { height: 28px; background-color: #3e6fd3; line-height: 31px; border-bottom: 1px solid #5082e7; color: #afc8fa; }
+.collection { padding-left: 19px; font-weight: bold; }
+.topBar a { color: #afc8fa; padding: 0 10px; }
+.topBar a:hover { color: #C00; }
+.tel { padding-left: 22px; position: relative; }
+.tel i { width: 18px; height: 13px; background: url(http://img.lankaola.com/images/icon/tel.png) left center no-repeat; position: absolute; left: 0; top: 0; }
+
+/*logo*/
+.logoBar { height: 98px; background-color: #5082e7; border-bottom: 1px solid #5082e7; }
+.location { position: absolute; left: 180px; }
+.location a { color: #fff; display: block; height: 30px; line-height: 30px; background-color: #4475db; position: relative; top: 30px; font-size: 14px; font-family: "Microsoft YaHei"; padding-left: 26px; padding-right: 10px; }
+.location a i { display: block; width: 11px; height: 14px; background: url(http://img.lankaola.com/images/icon/locationIcon.png) 0 0 no-repeat; position: absolute; left: 0; top: 9px; left: 8px; }
+/*search*/
+.search_box { width: 368px; padding-top: 23px; padding-left: 333px; }
+.search_text { width: 320px; height: 35px; line-height: 35 px\9; padding: 0 5px; background-color: #fff; }
+.search_btn { width: 38px; height: 35px; font-size: 14px; font-family: "Microsoft YaHei"; color: #fff; background: url(http://img.lankaola.com/images/icon/searchIcon.png) 6px 6px no-repeat #ee5457; cursor: pointer; }
+/*购物车 个人账户*/
+.glText { height: 100%; width: 93px; line-height: 27px; text-align: left; text-indent: 20px; font-size: 14px; color: #fff; font-family: "Microsoft YaHei", "微软雅黑"; }
+.glText.br { border-right: 1px solid #86aaf6; }
+.shopNum { display: block; width: 13px; height: 14px; background: url(http://img.lankaola.com/images/icon/shopNum.png) 0 0 no-repeat; position: absolute; top: 0; left: 20px; font-family: "Arial"; font-size: 12px; line-height: 15px; text-align: center; font-weight: bold; }
+.accountIcon, .shopIcon { display: block; width: 21px; height: 21px; background: url(http://img.lankaola.com/images/icon/accountIcon.png) left top no-repeat; margin-top: 5px; }
+.shopIcon { background: url(http://img.lankaola.com/images/icon/shopIcon.png) left top no-repeat; }
+.hotsearch { color: #fff; line-height: 22px; }
+/*导航*/
+.navBox { height: 45px; color: #fff; z-index: 11; background-color: #4979dd; }
+.navBox .m { position: relative; z-index: 11; }
+.shopClass { width: 170px; position: relative; -moz-box-shadow: 3px 0 4px rgba(0, 0, 0, 0.25); -o-box-shadow: 3px 0 4px rgba(0, 0, 0, 0.25); -webkit-box-shadow: 3px 0 4px rgba(0, 0, 0, 0.25); box-shadow: 3px 0 4px rgba(0, 0, 0, 0.25); height: 45px; z-index: 99; }
+.shopClass h3 { text-align: left; padding-left: 15px; line-height: 45px; background-color: #fff; color: #ee5457; font-family: "Microsoft YaHei", "微软雅黑"; font-size: 16px; }
+.shopClass i { width: 11px; height: 7px; overflow: hidden; background: url(http://img.lankaola.com/images/icon/down.jpg) left center no-repeat; display: inline-block; margin-left: 11px; }
+.nav { font-family: "Microsoft YaHei", "微软雅黑"; box-shadow: 0 3px 5px  rgba(0,0,0,.1); -moz-box-shadow: 0 3px 5px rgba(0,0,0,.1); min-width: 1200px; background: #fff;}
+.nav { line-height: 45px; }
+.nav li { float: left;}
+.nav li.th { position: relative; }
+.nav li.th i { display: block; width: 22px; height: 23px; background: url(http://img.lankaola.com/images/icon/thhot.png) 0 0 no-repeat; position: absolute; top: 0; left: 5px; }
+.nav a { display: inline-block; height: 45px; padding: 0 30px; font-size: 14px; color: #fff; font-family: "Microsoft YaHei", "微软雅黑"; }
+.nav a.active { background-color: #3a69ca; }
+.freeYf { display: block; width: 187px; height: 40px; background: url(http://img.lankaola.com/images/icon/freeYF.png) 0 0 no-repeat; float: right; }
+/*灰色版*/
+.headerBar.gray .topBar { background-color: #eeeeee; color: #666; border-bottom: 0; height: 35px; }
+.headerBar.gray .topBar a { color: #666; }
+.headerBar.gray .tel i { background: url(http://img.lankaola.com/images/icon/tel_gray.png) 0 0 no-repeat; }
+.headerBar.gray .logoBar { background-color: #fff; }
+.headerBar.gray .logoBar { border-bottom: 0; }
+/*商品弹出列表*/
+.shopClass_show { width: 100%; background-color: #fff; position: absolute; left: 0; top: 45px; }
+.shopClass_show li { height: 39px; line-height: 39px; border-top: 1px solid #efefef; color: #333333; font-size: 14px; border-left: 2px solid #fff; }
+.shopClass_show li b { display: block; width: 11px; height: 12px; background: url(http://img.lankaola.com/images/subNav_arrow.png) 0 0 no-repeat; position: absolute; right: 10px; top: 15px; z-index: 11; }
+.shopClass_show li a { color: #333333; padding-left: 15px; }
+.shopClass_show li.lihover span a { color: #4879dc; font-weight: bold; }
+.shopClass_item { padding: 14px 10px; border-bottom: 1px solid #4593fd; border-top: 1px solid #5aa1fe; }
+.shopClass_item dt { height: 22px; background: url(http://img.lankaola.com/images/icon/shop_sj.png) right center no-repeat; }
+.shopClass_item .b { font: 14px/1 "Microsoft YaHei", "微软雅黑"; }
+.shopClass_item a { color: #fff; }
+.shopClass_item .aLink { width: 48px; height: 20px; background: url(http://img.lankaola.com/images/icon/aLink_bg.png) left center no-repeat; display: inline-block; text-align: center; line-height: 20px; text-decoration: underline; }
+/*--sub二级导航*/
+.shopClass_show .lihover { border: 2px solid #4879dc; border-right: 0; height: 36px; line-height: 36px; }
+.submenu { width: 603px; left: 170px; min-height: 282px; position: absolute; top: -2px; border: 2px solid #4573d2; z-index: 4; background: white; display: none; padding: 0 10px; }
+.shopClass_show .lihover .submenu { display: block; }
+.shopClass_show s /*白色小方框*/ { background: #fff; display: inline-block; z-index: 20; width: 30px; height: 36px; float: right; right: -2px; top: 0; position: absolute; display: none; z-index: 111; }
+.shopClass_show .lihover s { display: inline; z-index: 11; }
+.shopClass_show span { position: absolute; display: block; width: 170px; position: relative; z-index: 100; }
+.shopClass_show .submenu dl { display: block; border-bottom: 1px solid #EEE; overflow: hidden; padding: 10px 0 8px; }
+.shopClass_show .submenu dl dt { display: block; float: left; width: 80px; text-align: right; text-align: left; height: 22px; line-height: 22px; padding-right: 6px; }
+.shopClass_show .submenu dl dt a { color: #4879dc; font-weight: bold; font-size: 12px; }
+.shopClass_show .submenu dl dd { display: block; overflow: hidden; }
+.shopClass_show .submenu dl dd a { display: block; float: left; display: inline; color: #737373; font-size: 9pt; padding: 0 8px; height: 14px; line-height: 14px; margin: 4px 0; }
+.headerbg { height: 146px; background-color: #4879dc; position: absolute; top: 126px; left: 0; width: 100%; }
+/*footer*/
+.footer { border-top: 1px solid #b9b9b9; border-bottom: 1px solid #b9b9b9; }
+.footerNav { width: 650px; padding-left: 20px; }
+.footer .item { float: left; display: inline-block; width: 143px; margin-right: 16px; padding-top: 15px; }
+.footer .item h3 { color: #464545; font: 14px/1 "Microsoft YaHei", "微软雅黑"; padding-bottom: 10px; border-bottom: 1px dotted #757575; }
+.footer .sublist { padding-top: 10px; }
+.footer .sublist li { line-height: 22px; color: #969595; }
+.footer .sublist a { color: #969595; }
+.footerBar { width: 280px; color: #969595; padding-left: 45px; padding-bottom: 10px; border-left: 1px solid #d7d7d7; }
+.footerBar .item { width: 94px; margin-right: 45px; text-align: center; }
+.footerBar .item img { padding-top: 10px; }
+.copyright p { line-height: 23px; }
+.copyright a { color: #757575; padding: 0 5px; }
+.sgnav { height: 31px; position: relative; border-bottom: 1px solid #4879dc; padding-left: 20px; }
+.hf3 { color: #333333; font-weight: bold; font-size: 14px; border-bottom: 1px solid #4879dc; padding-bottom: 10px;  font:14px/1.5 "Microsoft Yahei", simsun, Arial;}
+.hf3 .n { font-weight: normal; font-size: 12px; color: #666; }
+.sgnav span, .sgnav a { display: block; padding: 0 10px; height: 30px; line-height: 30px; text-align: center; border: 1px solid #4879dc; background-color: #fff; float: left; margin-right: 10px; position: relative; top: 0px; }
+.sgnav a.cur, .sgnav span { font-weight: bold; border-bottom: 1px solid #fff; color: #333333; }
+.mcontent { background-color: #fff; min-height: 320px; }
+.ltMw1 { padding: 10px 0 20px; color: #666; }
+.operate { height: 35px; }
+/*下拉框*/
+.select-box { position: relative; z-index: 12; font-size: 12px; background-color: #fff; width: 110px; height: 23px; border: 1px solid #e0e0e0; }
+.select-box span { color: #999999; font-size: 12px; width: 85px; padding-left: 5px; height: 23px; line-height: 23px; text-align: left; left: 5px; overflow: hidden; text-overflow: ellipsis; -o-text-overflow: ellipsis; white-space: nowrap; float: left; display: inline-block; }
+.select-box ul { display: none; max-height: 180px; overflow-y: auto; width: 100%; max-height: 180px; position: absolute; top: 25px; border: 1px solid #e5e5e5; left: -1px; }
+.select-box ul li { cursor: pointer; height: 20px; line-height: 20px; background-color: #fff; padding-left: 5px; color: #999999; }
+.select-box ul li:hover { background-color: #4879dc; color: #fff; }
+.fm-btn { display: inline-block; cursor: pointer; width: 20px; height: 23px; float: right; background: url(http://img.lankaola.com/images/selectbox1Arrow.png) center center no-repeat; }
+/*按钮*/
+.btn { display: inline-block; padding: 0 15px; color: #fff; cursor: pointer; }
+.btn:hover { text-decoration: none; }
+.btn_small { height: 20px; line-height: 20px; }
+.btn_middle { height: 25px; line-height: 25px; padding: 0 20px; }
+.btn_blue { background-color: #4879dc; }
+.btn_blue:hover { background-color: #3262c3; }
+.btn_red { background-color: #ee5457; }
+.btn_red:hover { background-color: #ed4145; }
+.btn_gray { background-color: #eeeeee; color: #666666; }
+.btn_gray:hover { background-color: #e6e6e6; }
+.btn_nod { background-color: #eeeeee; color: #999999; cursor: default; }
+.btneee { display: inline-block; height: 23px; line-height: 23px; background-color: #eee; color: #333; padding: 0 13px; border: 1px solid #e0e0e0; }
+/*弹窗*/
+.modal-backdrop { display: none; background-color: #595959; position: absolute; left: 0; top: 0; z-index: 1040; filter: alpha(opacity=25); opacity: 0.25; width: 100%; height: 100%; }
+.tab-box { width: 315px; margin: 30px auto 0; display: none; }
+.rl-modal { display: none; position: fixed; left: 50%; -webkit-transition: all 1s ease 0.5s; -moz-transition: all 1s ease 0.5s; -o-transition: all 1s ease 0.5s; transition: all 1s ease 0.5s; z-index: 1041; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; overflow: hidden; zoom: 1; top: 45%; }
+.rl-modal .tab-hd a { width: 50%; height: 45px; background-color: #edebeb; display: block; text-align: center; color: #000; float: left; line-height: 45px; font-size: 14px; }
+.rl-modal .tab-hd a.cur { background-color: #fff; }
+.dialog { width: 276px; height: 154px; margin-left: -188px; margin-top: -77px; }
+.dialog .bg { width: 100%; *width: 276px; height: 100%; background-color: #000; filter: alpha(opacity=14); opacity: 0.14; position: absolute; }
+.dialog .inner { margin: 6px; *width: 258px; height: 142px; background-color: #fff; position: relative; *left: 6px; *top: 6px; }
+.dialog .inner .m p { padding-top: 20px; text-align: center }
+.dialog .entry { width: 217px; }
+.dialog .rtitle { height: 25px; border-bottom: 1px solid #e5e5e5; background-color: #f5f5f5; position: relative; }
+.btncenter { margin-left: auto; margin-right: auto; text-align: center; }
+.dlgT { line-height: 25px; font-size: 14px; padding-left: 10px; color: #333; font-size: 12px; }
+.closeBtn { display: block; width: 10px; height: 10px; background: url(http://img.lankaola.com/images/dialogClose.png) 0 0 no-repeat; position: absolute; right: 10px; top: 8px; }
+.closeBtn:hover { background: url(http://img.lankaola.com/images/dialogClose_hover.png) 0 0 no-repeat; }
+.dlgtip { font: 14px/1 "Microsoft YaHei", "微软雅黑"; height: 40px; color: #666666; text-align: center; padding-top: 30px; position: relative; display: inline-block; padding-left: 40px; text-align: left; }
+.dlgtip i { display: block; width: 38px; height: 37px; background: url(http://img.lankaola.com/images/icon/warning.png) 0 0 no-repeat; position: absolute; top: 20px; left: 0; }
+/*表单*/
+.selectType1 { border: 1px solid #e0e0e0; height: 23px; line-height: 23px; color: #666; }
+.selectType1 option { border: 0; height: 22px; line-height: 22px; }
+.text { border: 1px solid #e0e0e0; padding-left: 10px; height: 23px; line-height: 23px; color: #666; }
+.type01 { width: 103px; }
+.type02 { width: 420px; }
+.type03, .type05 { width: 163px; height: 28px; line-height: 28px; color: #808080; }
+.type04 { width: 47px; }
+.type05 { width: 102px; }
+.bigtext { width: 466px; height: 146px; border: 1px solid #e0e0e0; overflow-y: auto; }
+.entry { position: relative; display: inline-block; }
+.entry span { position: absolute; line-height: 28px; color: #dadada; left: 10px; top: 0; }
+.entry .rlf-input { /* width:298px; height:40px; line-height:40px; color:#727272; padding-left:10px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px; background-color:#fff; border:1px solid #e5e5e5; */ cursor: text; }
+/*提示信息方式一*/
+.tiptype1 { background-color: #fffdf1; border: 1px solid #edcbb4; padding-top: 12px; padding-bottom: 12px; position: relative; }
+.tiptype1 .duihao, .safe-sevi .success .duihao { display: block; width: 39px; height: 38px; background: url(http://img.lankaola.com/images/duihao.png) 0 0 no-repeat; position: absolute; left: 13px; top: 18px; }
+.tiptype1 .rsuccess { padding-left: 75px; }
+.tiptype1 .greenSc { color: #82bb22; font-size: 18px; font-family: "Microsoft YaHei", "微软雅黑"; }
+
+/*面包屑*/
+.navigate { color: #999999; text-align: left; height: 30px; font-size: 12px; }
+.navigate a { color: #4879dc; }
+.navigate a:hover { text-decoration: underline; }
+/*表格形式*/
+.hdr, .hdr2 { height: 30px; background-color: #f7f7f7; border: 1px solid #e0e0e0; }
+.hdr2 { border-bottom: none; }
+.hdr li, .hdr2 li { float: left; display: inline-block; text-align: center; line-height: 30px; }
+.ow1 { width: 120px; }
+.ow2 { width: 140px; }
+.ow3 { width: 160px; }
+.ddItem { border: 1px solid #e0e0e0; margin-top: 10px; overflow: hidden; zoom: 1; }
+.ddItem ul { padding-top: 20px; padding-bottom: 10px; }
+.ddItem .ttop { display: block; height: 30px; line-height: 30px; padding-left: 20px; background-color: #f7f7f7; }
+.ddItem li { float: left; display: inline-block; }
+/**表格形式二*/
+.ddItem2 { border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; }
+.productSL { width: 78px; height: 64px; margin-left: 20px; }
+.dhp1 { text-align: center; }
+.dhp2 { line-height: 18px; text-align: center; }
+.ope { text-align: center; }
+.ope a { color: #4879dc; padding-top: 2px; }
+.ope a.topay { display: block; width: 47px; height: 20px; color: #fff; text-align: center; line-height: 20px; background-color: #ed4145; margin: 0 auto; padding: 0; }
+.ope a:hover { text-decoration: underline; }
+.noorder { text-align: center; padding: 30px 0 0; color: #999999; }
+/**表格*/
+.bought-table, .inner-tab {
+    width: 100%;
+    border-collapse: collapse; }
+.bought-table td, .bought-table th { padding: 10px 5px; line-height: 1.5; border: 1px solid #e0e0e0; color: #666666; text-align: center; word-break: break-all;}
+.nohasbor td { border: 0; }
+.bought-table td.nobolr { border-left: 0; border-right: 0; }
+.bought-table td.nobol { border-left: 0; }
+.bought-table td.nobor { border-right: 0; }
+.bought-table td.nobot { border-top: 0; }
+.bought-table td.nobob { border-bottom: 0; }
+.bought-table td.agcenter { text-align: center; }
+.bought-table td.bggray1 { background-color: #f7f7f7; padding: 0 0 0 10px; height: 30px; line-height: 30px; }
+.bought-table td.agleft { text-align: left; }
+.bought-table td.agright { text-align: right; }
+.bought-table td .thhPdes { width: 98%; display: inline-block; }
+.bought-table .col-name td { text-align: center; background-color: #f7f7f7; height: 20px; line-height: 20px; padding: 5px 10px;}
+.spbox { width: 342px; margin-bottom: 10px; }
+.spbox input.ck { margin-right: 10px; margin-top: 10px; }
+.spbox .csDec { width: 195px; float: left; margin-left: 20px; }
+.chooseJs { width: 70px; }
+.bought-table .sep-row td { padding: 0; height: 10px; }
+/*内部表格*/
+.inner-tab td { padding: 5px; }
+.inner-tab .check_box { width: 4%; }
+.inner-tab .goods_img { width: 12%; }
+.inner-tab .goods_detail { width: 55%; }
+.inner-tab .goods_num { width: 25%; }
+/*信息表单*/
+.row-group { padding-top: 20px; *padding-top: 10px; clear: both; }
+.row-group .label_col { width: 150px; float: left; text-align: right; height: 23px; line-height: 23px; }
+.row-group .label_col .required { color: #d70100; font-family: "SimSun"; }
+.row-group .label_col label { color: #666666; }
+.row-group .con_col { float: left; padding-left: 10px; min-height: 28px; }
+.row-group .tip{display: none;}
+.row-group .tip, .row-group .tishi { display: inline-block; color: #ed4145; line-height: 1; position: relative;  padding-left: 30px; margin-top: 5px; }
+.row-group .tip i { display: block; width: 12px; height: 12px; background: url(http://img.lankaola.com/images/tipth.png) 0 0 no-repeat; position: absolute; top: 0; left: 10px; }
+.radio_wrap { padding-right: 20px; line-height: 23px; }
+.radio_wrap input { vertical-align: -2px; }
+.row-group .tishi { padding-left: 10px; color: #999999; float: none; }
+/*无边框*/
+.noborder-table td, .noborder-table .inner-tab td { border: 0; }
+.noborder-table tbody td { border-bottom: 1px solid #eeeeee; }
+/*----我的账户*/
+.leftMenu { width: 120px; height: 318px; border: 1px solid #e0e0e0; float: left; background-color: #fff; }
+.rightBox { width: 1064px; float: right; }
+.leftMenu-group { padding-top: 15px; }
+.leftMenu-group a { color: #666; }
+.leftMenu-group a:hover { color: #4879dc; text-decoration: underline; }
+.leftMenu-group dt { font-size: 14px; font-weight: bold; color: #333; padding-left: 15px; padding-bottom: 10px; }
+.leftMenu-group dd { color: #666; padding-left: 26px; height: 20px; line-height: 20px; }
+.leftMenu-group dd.cur { background-color: #4879dc; color: #fff; }
+.leftMenu-group dd.cur a { color: #fff; }
+.operate-tip1 { color: #999; line-height: 22px; }
+/*分页*/
+.pagination { margin-top: 20px; height: 30px; font-size: 0; float: right;clear: both;}
+.pagination li{display: inline-block; *display: inline; zoom: 1; font-size: 12px; vertical-align: middle; line-height: 28px; text-align: center; margin: 0 3px; }
+.pagination li.pagelist a{width: 29px; height: 28px; color: #4879dc; display: block; border-radius: 2px;}
+.pagination li.pagelist a:hover{color: white; background: #4879dc;}
+.pagination .ct { float: right; }
+.pagination .prev, .pagination .next { position: relative; background-color: #fff; border: 1px solid #999999; border-radius: 2px; color: #999999; font-size: 12px; width: 48px; height: 24px; line-height: 24px; text-align: center; }
+.pagination .prev { padding-left: 10px; margin-right: 5px;}
+.pagination .next { padding-right: 10px; margin-left: 5px;}
+.pagination .prev i, .pagination .next i { display: block; height: 10px; position: absolute; top: 8px; width: 6px; }
+.pagination .prev i { background: url(http://img.lankaola.com/images/grpagin_prev.png) 0 0 no-repeat; left: 5px; }
+.pagination .next i { background: url(http://img.lankaola.com/images/grpagin_next.png) 0 0 no-repeat; right: 5px; }
+.pagination li.current a { color: #ed4145; font-size: 12px; font-weight: bold;  }
+.pagination .noprev, .pagination .nonext { border-color: #e0e0e0; color: #e0e0e0; cursor: default; }
+.pagination .noprev i { background: url(http://img.lankaola.com/images/grpagin_noprev.png) 0 0 no-repeat; }
+.pagination .nonext i { background: url(http://img.lankaola.com/images/grpagin_nonext.png) 0 0 no-repeat; }
+
+.bx_commit { /* height:152px;*/ border: 1px solid #e0e0e0; }
+.bx_commit_tit { height: 30px; line-height: 30px; font-size: 14px; background-color: #eeeeee; padding-left: 10px; }
+.bx_commit_tit h3 { color: #333; font-weight: bold; }
+.bx_commit_list { margin: 27px 0 20px 0; overflow: hidden; padding-left: 25px; }
+.bx_commit_list li { float: left; width: 505px; padding-right: 10px; overflow: hidden; }
+.bx_commit_list li .bx_commit_icon { float: left; margin-right: 5px; width: 64px; height: 67px; background: url(/icson/img/service_center/bg.png) no-repeat; }
+.bx_commit_list li.seven_days .bx_commit_icon { background: url(http://img.lankaola.com/images/7day.png) 0 0 no-repeat; }
+.bx_commit_list li.after_7days .bx_commit_icon { background: url(http://img.lankaola.com/images/8to15day.png) 0 0 no-repeat; }
+.bx_commit_list .bx_commit_cont { float: left; width: 393px; height: 65px;  border-right: #eeeeee solid 1px; padding: 10px 0 0 15px; }
+.bx_commit_list li.after_7days .bx_commit_cont { border-right: none; }
+
+.js-f { color: #666666; font-size: 14px; text-align: right; width: 170px; float: right; padding-bottom: 13px; }
+.js-c { clear: both; color: #333333; font-size: 14px; font-weight: bold; text-align: right; padding-top: 15px; padding-bottom: 20px; }
+.topInfo { border-bottom: 1px dotted #aba9a0; padding-bottom: 10px; }
+.topInfo span { color: #666666; font-weight: bold; font-size: 14px; }
+.topInfo span .icols_green { color: #82bb22; font-size: 14px; }
+.topInfo span .icols_red { color: #ed4145; font-size: 14px; }
+.topInfo  em { font-size: 12px; }
+
+.thickframe { position: fixed; top: 0; left: 0; z-index: 10000000; width: 100%; height: 100%; background: #000; border: 0; filter: alpha(opacity=0); opacity: 0 }
+.thickdiv { position: fixed; top: 0; left: 0; z-index: 10000001; width: 100%; height: 100%; background: #000; border: 0; filter: alpha(opacity=15); opacity: .15 }
+.thickbox { position: fixed; z-index: 10000002; overflow: hidden; padding: 0; border: 4px solid rgba(0, 0, 0, .1); border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; left: 50%; top: 50%; }
+.thicktitle { height: 27px; padding: 0 10px; border: solid #C4C4C4; border-width: 1px 1px 0; background: #F3F3F3; line-height: 27px; font-family: arial, "\5b8b\4f53"; font-size: 14px; font-weight: 700; color: #333 }
+.thickwrap .thicktitle { height: 31px; padding: 0 10px; background: #f5f5f5; line-height: 31px; font-family: arial, "\5b8b\4f53"; font-size: 14px; font-weight: 700; color: #333; border: 0 }
+.thickclose:link, .thickclose:visited { display: block; position: absolute; z-index: 100000; top: 7px; right: 12px; overflow: hidden; width: 15px; height: 15px; background: url(http://img.lankaola.com/images/bg_thickbox.gif) no-repeat 0 -18px; font-size: 0; line-height: 100px }
+.thickwrap .thickclose:link, .thickwrap .thickclose:visited { display: block; position: absolute; z-index: 100000; top: 5px; right: 10px; overflow: hidden; width: 21px; height: 21px; background: url(http://img.lankaola.com/images/thickbox_close.png) no-repeat 0 0; font-size: 0; line-height: 100px }
+.thickcon { overflow: auto; background: #fff; padding: 10px }
+.thickwrap { border: 1px solid #c4c4c4 }
+.thickwrap .thickcon { background: 0 }
+.thickwrap { border: 1px solid #c4c4c4; background: #fff }
+.thickloading { background: url(http://img.lankaola.com/images/loading-lankaola.gif) #fff no-repeat center center }
+.thickcountdown { height: 20px; padding-right: 6px; margin-top: -20px; text-align: right; color: #999 }
+*html .thickframe { position: absolute }
+*html .thickdiv { position: absolute }
+#thicktitler { }
+#thickcloser:link, #thickcloser:visited { }
+#thickconr iframe { display: block }
+
+*html{background-image:url(about:blank);  background-attachment:fixed; /*fix IE6闪烁抖动*/}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+.mt10{margin-top: 10px;}
+.hide{display: none;}
+.center{text-align: center;}
+.top, .head .nav, .main, .focus, .footer{min-width: 1200px;}
+.block{width: 1200px; margin-left: auto; margin-right: auto; position: relative;}
+.top{background-color: #295087; border-bottom: 1px solid #3465aa; font:14px/1.5 "Microsoft Yahei", simsun, Arial;}
+.btop{}
+.top-tel{color: #fff; line-height: 40px; float: left;}
+.top-tel .tel,.head-pos .pos, .head-rgt .ico, .sear-icon, .block-tit .toggle .ico, .cnav-item .ico, .cartbtn a .cartico, .toggle-abtn .arrow, .earrow, .subnav-tit .ico,.telnum .telico, .focusbar .arr{background-image: url("http://img.lankaola.com/images/lankaola.png"); background-repeat: no-repeat;}
+.top-tel .tel{display: inline-block; float: left; margin-top: 7px; width: 24px;height: 24px; background-position: -6px -6px; font-family: Arial;  }
+.top-rgt{float: right; font-size: 0;}
+.top-rgt a{display: inline-block;  width: 89px; line-height: 40px; text-align: center; border-left: 1px solid #3c5f92; color: #fff; *display: inline; zoom: 1; font-size: 14px;}
+.top-rgt a:last-child{border-right: 1px solid #3c5f92; border-right-style: expression(this.nextSibling==null?"none":"solid");}
+.top-rgt a:hover{background-color: #f5f5f5; color: #3465aa;}
+
+.head{background-color: #3465aa; height: 119px; font:14px/1.5 "Microsoft Yahei", simsun, Arial; min-width: 1200px;}
+.head h1{float: left;}
+.logo img{margin: 18px 18px 0 2px;}
+.head-pos{ display: inline-block; float: left; cursor: pointer; margin-top: 42px; padding: 0 12px 0 0;  height: 33px; line-height: 33px; border: 1px solid #658abe; color: #fff;}
+.head-pos .pos{display: inline-block; float: left; width: 24px; height: 24px; margin-top: 5px; background-position: -3px -69px; padding-right: 3px;}
+.head-rgt{float: right; margin-top: 36px;}
+.head-rgt a{display: inline-block; position: relative; width: 156px; height: 45px; line-height: 45px; border: 2px solid #fff; color: #fff; font-size: 16px;}
+.head-rgt a:hover{color: #f29120; background-color: #fff; cursor: pointer;}
+.head-rgt .ico{display: inline-block; width:27px; height:24px; cursor: pointer; position: absolute; top: 10px; left: 26px;}
+.head-rgt .account{margin-right: 20px;}
+.account .ico{background-position: -5px -131px;}
+.cart{position: relative;}
+.cart .ico{background-position: -4px -197px;}
+.head-rgt .txt{position: absolute; left: 66px; top: 0;}
+.head-rgt a.account:hover .ico{background-position: -776px -70px;}
+.head-rgt a.cart:hover .ico{background-position: -884px -68px;}
+.cart .num{position: absolute; top: 2px; left: 47px; display: inline-block; text-align: center; width: 20px; height: 20px;  color: #fff; background: url("http://img.lankaola.com/images/lankaola.png") -188px -426px no-repeat; font:12px/20px Arial; text-align: center;}
+
+
+.fixednav{position: fixed; top: 0; _position:absolute; _top:expression(eval(document.documentElement.scrollTop)); left: 0; width: 100%; z-index: 1000; background-color: RGBA(255,255,255,1) !important; background: #fff; -webkit-opacity:1; -moz-opacity:1; opacity: 1; filter:alpha(opacity=100);}
+.bnav{position: relative; height: 60px;   font:14px/1.5 "Microsoft Yahei", simsun, Arial; line-height: 60px; font-size: 0; z-index: 1000; width: 1200px; margin: 0 auto;}
+.bnav .nav-item{font-size: 14px; display: inline-block; *display: inline; zoom: 1; vertical-align: top; position: relative;}
+.bnav a{display: block; height: 100%; color: #515659; padding: 0 36px; text-align: center;  border-right: 1px solid #ededed;}
+.bnav a.first-item{border-left: 1px solid #ededed;}
+.bnav a.nav-sel, .bnav a:hover{background-color: #d33; color: #fff;}
+.nav-item ul{width: 180px; position: absolute; left: 0; top: 60px; z-index: 1001; background: #fff; box-shadow: 0px 2px 6px rgba(12, 4, 7, .25); overflow: hidden; height: auto; display: none;}
+.nav-item ul li{width: 100%; height: 40px; line-height: 40px;}
+.nav-item ul li a{display: block; width: 100%; height: 100%; color: #515659; padding: 0; text-align: left; text-indent: 35px;}
+.nav-item ul li a:hover{background-color: #d33; color: #fff;}
+
+.search{float: right; margin-top: 12px;}
+.sear{ float: left;  height: 34px; position: relative; width: 161px; }
+.sear-icon{ display: inline-block; float: left; width:27px;height:34px; background-position: -5px -262px; cursor: pointer; position: absolute; right: 5px; top: 0;}
+.search-input{display: inline-block; float: left; width: 120px; height: 19px; line-height: 19px; padding: 5px 32px 6px 5px;    font-size: 12px; color: #666; border: 2px solid #efefef; }
+
+.smain{background: url("http://img.lankaola.com/images/bggap.jpg") repeat-x 0 0; border-bottom: 1px solid #dedfe1; *zoom:1; font:14px/1.5 "Microsoft Yahei", simsun, Arial;}
+.snav{padding: 30px 0 20px;}
+.subnav-item{float: left; width: 158px; margin-right: 25px;}
+.subnav-tit{font-size: 16px; color: #3465aa; margin-bottom: 10px;}
+.subnav-tit .ico{display: inline-block; width: 6px; height: 20px; background-position: -98px -134px; vertical-align: middle; margin-right: 12px;}
+.subnav-des a{display: inline-block; width: 100%; height: 24px; color: #515659; line-height: 24px;}
+.subnav-des a:hover{color: #3465aa; }
+.contact{width: 400px; float: right; border-left: 1px solid #dedfe1; }
+.contact .subnav-item{width: 120px;}
+.subnav-contact{ margin-left: 80px;}
+.telnum{float: left; padding: 30px 80px 0 80px; border-top: 1px solid #dedfe1; margin-top: 30px; }
+.telnum .telico{display: inline-block; width: 35px; height: 35px; background-position: -5px -585px; margin-right: 8px;}
+.number .telico,.number img{vertical-align: middle;}
+.telnum .stime{color: #515659; padding: 10px 0 40px 45px;}
+
+.blinks{color: #8e8e8e; font: 12px/150% simsun,Arial,sans-serif; padding: 10px 0;}
+.blinks a{color: #8e8e8e; padding: 0 5px;}
+
+.footer{background-color: #3465aa; padding: 13px 0; color: #fff; font:12px/150% simsun;}
+.copyright{text-align: center;}
+
+#gotoTop{display: none; width: 55px; height: 55px; position: fixed; right: 50px; bottom: 50px; background: url("http://img.lankaola.com/images/gotoTop.png") left top no-repeat; cursor: pointer; z-index: 10001;}
+#gotoTop{_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+#gotoTop:hover{background-position: right top;}
+

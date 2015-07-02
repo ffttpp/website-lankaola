@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品已经成功加入购物车 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,v2.0/common.css">
+    <style>
+        .success{font-size: 0; padding-top: 80px; text-align: center;}
+        .success-b, .cart-next, .success-i{display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+        .success-i{background: url("<%=imgPath%>lankaola.png") 20px -417px no-repeat; width: 56px; height: 40px; }
+        .success-b{ width: 304px; height: 40px; }
+        .success-b h3{font-size: 24px; line-height: 40px; color: #7abd54;}
+        .cart-next a{display: inline-block; *display: inline; zoom: 1; vertical-align: top; height: 36px; line-height: 36px; font-size: 16px; text-align: center; margin-right: 20px; color: #666;}
+        .btn-continue{width: 94px; height: 36px; border: 1px solid #ccc;}
+        #goToCart{padding: 0 45px 0 30px; color: #fff; background: url("<%=imgPath%>lankaola.png") #ee5457 120px -907px no-repeat;}
+    </style>
+</head>
+<body>
+<%include header.html%>
+<div class="clear comWidth">
+    <div class="success">
+        <div class="success-i"></div>
+        <div class="success-b">
+            <h3>商品已成功加入购物车！</h3>
+        </div>
+        <div class="cart-next">
+            <a class="btn-continue" href="/item-<%=sku_id%>.html">继续购物</a>
+            <a id="goToCart" href="/cart">去购物车结算</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+<%include footer.html%>
+</body>
+</html>

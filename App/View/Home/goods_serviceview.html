@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%=sku.goods_name%> - 时效服务、正品低价、品质保障、货到付款、配送及时、放心服务、享受服务！- 蓝考拉</title>
+    <meta name="Keywords" content="企业服务,企业服务平台,办公服务，办公服务平台，笔记本,电脑,办公耗材，办公服务，企业服务，法律服务，注册服务，公司注册，蓝考拉企业服务平台">
+    <meta name="description" content="蓝考拉LANKAOLA.COM-专业企业服务综合平台，在线销售办公用品、企业服务、法律服务、公司注册、办公服务、办公设备、电脑、办公家具、耗材、文具/耗材、食品、在线产品定制等数千牌千万种优质商品。便捷、诚信的服务，为您提供愉悦的办公服务体验!">
+    <link rel="stylesheet" type="text/css" href="<%=cssPath%>reset.css,v2.0/common.css,v2.0/goods2.css" />
+</head>
+<body>
+<%include header.html%>
+<div id="section1">
+    <img src="<%=imgPath%>v2.0/service-banner.jpg">
+</div>
+<div id="section2">
+    <div class="wrap">
+        <div class="main_title"><%=sku.goods_name%></div>
+        <div class="main_content">
+            <div class="main_left">
+                <div id="process">
+                    <div id="process_title">服务流程</div>
+                    <ul>
+                        <li>预付定金99元</li>
+                        <li>预订成功后客服会主动和您联系，确定价格和服务，不满意可退款</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main_right">
+                <div class="price">
+                    <i>￥</i>
+                    <span><%=parseFloat(sku.price).toFixed(2)%></span>
+                </div>
+                <a id="book" href="/cart/add?pid=<%=sku.sku_id%>&pcount=1">
+                    <span class="product-btn-text">立即预定</span>
+                    <span class="product-btn-arrow"><img src="<%=imgPath%>v2.0/product-btn-arrow-white.png" /></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="section5">
+    <div class="wrap" style="border-top: 1px solid #c5c5c5">
+        <div id="intro">
+            <%-sku.goods_desc%>
+        </div>
+
+    </div>
+</div>
+<div id="section4">
+    <div class="wrap">
+        <div id="slogo">
+            <img src="<%=imgPath%>v2.0/slogo.jpg" />
+        </div>
+    </div>
+</div>
+<%include footer.html%>
+<script src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+<script>
+    $(function () {
+        $('#book').hover(function () {
+            $(this).find('.product-btn-text').stop().animate({left: -15}, 200);
+            $(this).find('.product-btn-arrow').stop().animate({right: 15, opacity: 1}, 200);
+        }, function () {
+            $(this).find('.product-btn-text').stop().animate({left: 0}, 200);
+            $(this).find('.product-btn-arrow').stop().animate({right: 35, opacity: 0}, 200);
+        })
+    })
+</script>
+
+</body>
+</html>

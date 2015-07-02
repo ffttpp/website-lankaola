@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+#loginWrap{width: 660px; height: 600px; background: url("http://img.lankaola.com/images/v2.0/loginBg.jpg"); margin: 182px auto 50px; font-family: "Microsoft YaHei", "微软雅黑";}
+#backToHome{width: 180px; height: 100px; margin: 0 auto; display: block; padding-top: 110px; position: relative; left: -8px;}
+#login{width: 320px; height: 250px; margin: 30px auto; text-align: center;}
+#login p{margin-bottom: 30px;}
+#login input{height: 22px; line-height: 22px; padding: 10px; border-radius: 4px; color: #777777; border: 1px solid #dfdfdf; width: 298px;}
+#submit{width: 320px; height: 42px; line-height: 42px; border-radius: 4px; background: #1c8ce0; display: block; color: #fff; text-decoration: none; font-size: 14px;}
+#submit:hover{background: #0069cb;}
+#bar{margin-top: -20px; line-height: 30px; color: #999999;}
+#findPwd{float: left; color: #999999;}
+#bar span{float: right;}
+#bar span a{color: #ffc000;}
+.footer{text-align: center; margin-bottom: 50px;}
+

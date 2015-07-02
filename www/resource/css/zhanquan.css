@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+.step{overflow:hidden;background:#e0e0e0;color:#666666;zoom:1}/*m*/
+.step li{float:left;position:relative;padding-left:22px;padding-right:35px;line-height:25px;height:25px;overflow:hidden;}
+.step li b{position:absolute;width:22px;height:25px;background:url(http://img.lankaola.com/images/flow.jpg) 0 0 no-repeat;top:0;right:-1px;}
+.step01 li{width:297px;text-align:center}
+/*.step01 li.fore3{ width:219px;}*/
+.step01 li.fore3 b{ background:none;}
+#step1 .fore1,#step2 .fore2,#step3 .fore3,#step4 .fore4{background:#4879dc;color:#fff;}
+#step1 .fore1 b,#step2 .fore2 b,#step3 .fore3 b{background-position:0 -26px;}
+#step2 .fore1 b,#step3 .fore2 b,#step4 .fore3 b{background-position:0 -52px;}
+
+.safe-sevi .form01{border-bottom:1px solid #eeeeee; padding-bottom:5px;}
+.safe-sevi .form01 .con_col{ line-height:23px;}
+.safe-sevi  .form03{width:760px; margin:30px auto 0;}
+.safe-sevi .success{width:252px; margin:60px auto 0; position:relative; }
+.safe-sevi .success p{ display:inline-block; width:250px; float:left; padding-left:58px; padding-top:30px; font-size:16px; font-family:"Microsoft YaHei","微软雅黑";}
+.safe-sevi .success .duihao{ float:left;}
+
+.pwd_group{font-size: 0; padding: 30px 0; border-bottom: 1px solid #e6e6e6;}
+.pwd_group > div {display: inline-block; *display: inline; zoom: 1; vertical-align: middle;}
+.pwd_status{width: 56px; height: 40px; background: url("http://img.lankaola.com/images/lankaola.png") 20px -417px no-repeat; margin-right: 33px;}
+.pwd_status_warming{background-position: -57px -492px;}
+.pwd_type{font-size: 18px; color: #666; width: 120px; height: 40px; line-height: 40px; border-right: 1px solid #e6e6e6;}
+.pwd_text{line-height: 40px; font-size: 12px; padding-left: 20px; width: 700px;}
+.pwd_oper{width: 100px; text-align: center; font-size: 12px;}
+
+#submit2{position: relative; left: -125px; margin-top: 15px;}
+.form03 input{width: 150px;}
+
+
+

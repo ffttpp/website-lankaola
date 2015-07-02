@@ -1,0 +1,39 @@
+.comWidth{font-size: 0;}
+.dotBorderBot{border-bottom: 1px dashed #e0e0e0;}
+.serviceItem{display: inline-block; *display: inline; zoom: 1; font-size: 12px; vertical-align: top; padding: 0 14px; width: 262px; height: 490px; position: relative; overflow: hidden; border: 1px solid #e6e5e6; color: #666666; margin: 35px 10px 0 0; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -o-border-radius: 10px;}
+.serviceTitle{height: 60px; line-height: 60px; font: 14px/60px "Microsoft Yahei", simsun, Arial;}
+.serviceTitle span, .serviceTitle h3{display: inline-block; *display: inline; zoom: 1; vertical-align: middle;}
+.serviceTitle span{width: 30px; height: 30px; margin-right: 5px; background-image: url("http://img.lankaola.com/images/sicon-s.png"); background-repeat: no-repeat;}
+#companyReg h3 a{color: #5bc98a;}
+#companyReg .serviceTitle span{background-position: 0 0;}
+#companyReg .serviceItemBot{background: #5bc98a;}
+#foreignReg h3 a{color: #5cc5e5;}
+#foreignReg .serviceTitle span{background-position: -46px 0;}
+#foreignReg .serviceItemBot{background: #5cc5e5;}
+#HKReg h3 a{color: #f47676;}
+#HKReg .serviceTitle span{background-position: -91px 0;}
+#HKReg .serviceItemBot{background: #f47676;}
+#investment{margin-right: 0;}
+#investment h3 a{color: #f0ac3a;}
+#investment .serviceTitle span{background-position: -137px 0;}
+#investment .serviceItemBot{background: #f0ac3a;}
+#legal{}
+#legal h3 a{color: #b397bb;}
+#legal .serviceTitle span{background-position: -183px 0;}
+#legal .serviceItemBot{background: #b397bb;}
+#patent h3 a{color: #64d9da;}
+#patent .serviceTitle span{background-position: -229px 0;}
+#patent .serviceItemBot{background: #64d9da;}
+#trademark h3 a{color: #ce7bc5;}
+#trademark .serviceTitle span{background-position: -274px 0;}
+#trademark .serviceItemBot{background: #ce7bc5;}
+#copyright{margin-right: 0;}
+#copyright h3 a{color: #878ea3;}
+#copyright .serviceTitle span{background-position: -320px 0;}
+#copyright .serviceItemBot{background: #878ea3;}
+
+.serviceContent h3{font-size: 14px; line-height: 36px;}
+.serviceContentItem{padding-bottom: 15px;}
+
+.serviceItemBot{height: 50px; line-height: 50px; color: #fff; width: 262px; padding: 0 14px; position: absolute; left: 0; bottom: 0; border-radius: 0 0 10px 10px; -webkit-border-radius: 0 0 10px  10px; -moz-border-radius: 0 0 10px  10px; -o-border-radius: 0 0 10px  10px; font-size: 14px;}
+.serviceItemBot a{color: #fff; float: right; line-height: 50px;}

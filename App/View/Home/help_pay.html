@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>支付方式 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,help.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <%include help_bread.html%>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include helpnav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent">
+                <div class="ltMw1">
+                    <h3 class="hf3">支付方式<!--<span class="n">（带<b class="icson_red">*</b>号的项目为必填项）</span>--></h3>
+                    <div class="helpPara">
+                        <h3>1. 货到付款</h3>
+                        <p>蓝考拉支持现金支付：货物送到订单指定的收货地址后，由收货人支付货款给蓝考拉送货人员。</p>
+                        <p>蓝考拉支持POS机刷卡支付：货物送到订单指定的收货地址后，由收货人刷卡支付订单金额。</p>
+                        <p>签收时，请您仔细核对款项，务必做到货款两清，若事后发现款项错误，我们将无法再核实确认。</p>
+                        <p>【特别提示】如果您选择了货到付款，当发生现场拒收部分商品的时候，我们只支持现金支付。对此给您造成的不便谨致歉意；限量产品、特别指定商品或订单超过2000元的商品，蓝考拉不支持货到付款方式。</p>
+                    </div>
+                    <div class="helpPara">
+                        <h3>2. 网上银行支付</h3>
+                        <table class="bought-table">
+                            <thead class="col-name">
+                            <tr>
+                                <td class="nobor" colspan="2">银行名称</td>
+                                <td class="nobolr">支持卡种和限额</td>
+                                <td class="nobol">服务热线</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <%for (var i = 0; i < alipayBankList.length; i++) {
+                            var bank = alipayBankList[i];
+                            %>
+                            <tr>
+                                <td class="nobor textAlignRight"><img src="<%=imgPath+bank.icon%>" alt="<%=bank.name%>"></td>
+                                <td class="nobol textAlignLeft"><%=bank.name%></td>
+                                <td><a href="<%=bank.url%>" target="_blank">点击查看</a></td>
+                                <td><%=bank.tel%></td>
+                            </tr>
+                            <%}%>
+                            </tbody>
+                        </table>
+                        <p>蓝考拉支持北京地区主要的17家银行借记卡及信用卡，即时到帐，准确快捷，蓝考拉推荐您在支付货款时使用。</p>
+                    </div>
+                    <div class="helpPara">
+                        <h3>3. 支付宝</h3>
+                        <p>使用您已有的支付宝账号进行订单付款；如果您还未有属于自己的支付宝账户，则您需要注册一个以您的 Email 地址为账户名的支付宝账户，使用您的银行帐号或卡号对该支付宝帐户进行充值，之后使用支付宝帐号进行支付。</p>
+                        <p>关于支付宝的金额限制：支付宝的即时到帐功能每天付款限额是500元，对于已经安装了数字证书的用户，每天即时到账的限额为2000元。</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+<% include footer.html %>
+</body>
+</html>

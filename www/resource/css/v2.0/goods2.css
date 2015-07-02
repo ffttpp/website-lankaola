@@ -1,0 +1,43 @@
+body { font-family: "Microsoft YaHei", "微软雅黑"; min-width: 1200px; }
+
+#section1{width: 100%; height: 433px; position: relative; overflow: hidden;}
+#section1 img{width: 1920px; height: 433px; position: absolute; left: 50%; top: 0; margin-left: -960px;}
+
+#section2{width: 100%; padding: 35px 0;}
+.main_title{font-size: 28px;}
+.main_content{font-size: 0;}
+.main_left, .main_right{display: inline-block; *display: inline; zoom: 1; vertical-align: top; font-size: 14px;}
+.main_left{width: 880px; padding-top: 15px; line-height: 40px; color: #666666;}
+.main_item{font-size: 0;}
+.main_item label, .main_item > div{display: inline-block; *display: inline; zoom: 1; vertical-align: top; width: 750px;}
+.main_item label{ font-size: 14px; width: 80px; line-height: 40px;}
+.main_item a{display: inline-block; *display: inline; zoom: 1; font-size: 14px; vertical-align: middle; height: 38px; line-height: 38px; border: 1px solid #d3d3d3; border-radius: 2px; padding: 0 22px; margin: 0 10px 10px; }
+.main_item a.sel{border: 1px solid #487bd5;}
+.price{font-size: 0;}
+.price i{font-size: 24px;}
+.price span{font-size: 36px;}
+#book{display: block; text-align: center; width: 130px; height: 40px; line-height: 40px; color: white; background: #487bd5; margin: 5px 0; position: relative;}
+#book span{display: block;}
+.product-btn-text{display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
+.product-btn-arrow{display: block; width: 19px; height: 40px; position: absolute; right: 35px; opacity: 0; filter: alpha(opacity=0);}
+.main_right p{font-size: 12px;}
+
+#section3{width: 100%; background: #f9f9f9; padding: 30px 0;}
+#img_list{width: 1200px; height: 280px; position: relative; margin-top: 20px;}
+#img_list::after{ content: '.'; height: 0; overflow: hidden; clear: both;}
+#img_list > a{display: block; width: 29px; height: 54px; position: absolute; top: 110px; background: url("http://img.lankaola.com/images/v2.0/sprite.png") no-repeat;}
+#img_list #prev{left: -40px; background-position: -113px -60px;}
+#img_list #next{right: -40px; background-position: -156px -60px;}
+#img_list li{margin:0 10px; float:left; _display:inline; overflow:hidden; text-align:center;}
+#img_list img{width: 280px; height: 280px;}
+
+#section4{width: 100%;}
+#process{padding: 30px 0 20px;}
+#process_title{font-size: 18px; color: #333333; line-height: 30px; margin-bottom: 15px;}
+#process ul{padding-left: 38px; background: url("http://img.lankaola.com/images/v2.0/decoration-list-style.jpg") left top no-repeat;}
+#process li{line-height: 36px; font-size: 14px; color: #666666;}
+#tips{padding: 40px 0; border-top: 1px solid #dbdbdb;}
+#tips_title{font-size: 18px; color: #333333; line-height: 30px; margin-bottom: 15px; text-indent: 10px;}
+#tips_title i{display: block; float: left; width: 22px; height: 30px; background: url("http://img.lankaola.com/images/v2.0/sprite.png") -256px 5px no-repeat;}
+#tips p{line-height: 36px; font-size: 14px; color: #666666;}
+#slogo{text-align: center;}

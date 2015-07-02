@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>办公用品 - 时效服务、正品低价、品质保障、货到付款、配送及时、放心服务、享受服务！- 蓝考拉</title>
+    <meta name="Keywords" content="企业服务,企业服务平台,办公服务，办公服务平台，笔记本,电脑,办公耗材，办公服务，企业服务，法律服务，注册服务，公司注册，蓝考拉企业服务平台">
+    <meta name="description" content="蓝考拉LANKAOLA.COM-专业企业服务综合平台，在线销售办公用品、企业服务、法律服务、公司注册、办公服务、办公设备、电脑、办公家具、耗材、文具/耗材、食品、在线产品定制等数千牌千万种优质商品。便捷、诚信的服务，为您提供愉悦的办公服务体验!">
+    <link rel="stylesheet" type="text/css" href="<%=cssPath%>reset.css,v2.0/common.css,v2.0/supply.css" />
+</head>
+<body>
+<%include header.html%>
+<div id="section1">
+    <div class="hd">
+        <a id="prev"></a>
+        <a id="next"></a>
+    </div>
+    <div class="bd">
+        <ul>
+            <li><a href="/aboutus" target="_blank"><img src="<%=imgPath%>v2.0/supply-banner-1.jpg"></a> </li>
+            <li><a href="/help/leaves" target="_blank"><img src="<%=imgPath%>v2.0/supply-banner-2.jpg"></a> </li>
+            <li><a href="/aboutus" target="_blank"><img src="<%=imgPath%>v2.0/supply-banner-3.jpg"></a> </li>
+            <li><a href="/item-100734.html" target="_blank"><img src="<%=imgPath%>v2.0/supply-banner-4.jpg"></a> </li>
+            <li><a href="/aboutus" target="_blank"><img src="<%=imgPath%>v2.0/supply-banner-5.jpg"></a> </li>
+        </ul>
+    </div>
+</div>
+<div id="section2">
+    <div class="wrap">
+        <div id="section2_title">每日新品推荐</div>
+        <div id="tab_area">
+            <ul>
+                <li class="sel"><a fid="0">全部</a></li>
+                <li><a fid="4">办公文具</a></li>
+                <li><a fid="2">办公用纸</a></li>
+                <li><a fid="3">办公耗材</a></li>
+                <li><a fid="5">办公设备</a></li>
+            </ul>
+            <div id="search">
+                <input>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="section3">
+    <div class="wrap">
+        <ul id="product_list">
+            <%for (var i = 0; i < smallItem.length; i++) {
+                var small = smallItem[i];
+                var title = [small.brand_name, small.goods_name, small.skuName].join(' ')
+            %>
+                <li>
+                    <div class="item">
+                        <a class="item_cover" target="_blank" href="/item-<%=small.sku_id%>.html"><img width="160" height="160" class="lazy" data-original="<%=(small.img.img_160 ? (productImgPath+small.img.img_160) : (imgPath + 'lazyload.png'))%>" src="<%=imgPath%>lazyload.png" alt="<%=title%>" title="<%=title%>" /> </a>
+                        <div class="item_info">
+                            <p class="item_price">￥<%=parseFloat(small.price).toFixed(2)%></p>
+                            <p class="item_name"><a target="_blank" href="/item-<%=small.sku_id%>.html"> <%=title%></a></p>
+                        </div>
+                        <a class="addCart" target="_blank" href="/cart/add?pid=<%=small.sku_id%>&pcount=1"></a>
+                    </div>
+                    <div class="item_hover_border"></div>
+                </li>
+                <%if (i == 2 || i == 10) {
+                    var j = parseInt(i/6);
+                    var title2 = [bigItem[j].brand_name, bigItem[j].goods_name, bigItem[j].skuName].join(' ');
+                %>
+                    <li class="big_item<%=j ? '' : ' right'%>">
+                        <div class="item">
+                            <a class="item_cover" target="_blank" href="/item-<%=bigItem[j].sku_id%>.html"><img width="350" height="350" class="lazy" data-original="<%=(bigItem[j].img.img_350 ? (productImgPath+bigItem[j].img.img_350) : (imgPath + 'lazyload.png'))%>" src="<%=imgPath%>lazyload.png" alt="<%=title2%>" title="<%=title2%>" /> </a>
+                            <div class="item_info">
+                                <p class="item_price">￥<%=parseFloat(bigItem[j].price).toFixed(2)%></p>
+                                <p class="item_name"><a target="_blank" href="/item-<%=bigItem[j].sku_id%>.html"> <%=title2%></a></p>
+                            </div>
+                            <a class="addCart" target="_blank" href="/cart/add?pid=<%=bigItem[j].sku_id%>&pcount=1"></a>
+                        </div>
+                        <div class="item_hover_border"></div>
+                    </li>
+                <%}%>
+            <%}%>
+        </ul>
+        <a id="more" href="/list-1-0-0.html">查看更多</a>
+        <div id="ad">
+            <a href="http://www.mimujiang.com" target="_blank"> <img src="<%=imgPath%>v2.0/ad.jpg"></a>
+        </div>
+    </div>
+</div>
+<%include footer.html%>
+<script src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,jquery.lazyload.js,v2.0/move-min.js,global.min.js,v2.0/supply.min.js"></script>
+</body>
+</html>

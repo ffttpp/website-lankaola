@@ -1,0 +1,31 @@
+<div class="top">
+    <div class="block btop clearfix">
+
+        <div class="top-rgt">
+            <%if (loginStatus) {%>
+            <a href="/user"><%=userInfo.username%></a>
+            <a href="/order">我的订单</a>
+            <a href="/logout">退出</a>
+            <%} else {%>
+            <a href="/login">登录</a>
+            <a href="/register">快速注册</a>
+            <a href="/order">我的订单</a>
+            <%}%>
+
+        </div>
+        <div class="top-tel"><span class="tel"></span>4006-707-366</div>
+    </div>
+
+</div>
+<div class="head">
+    <div class="block">
+        <div class="head-rgt">
+            <a href="/user" class="account"><i class="ico"></i><span class="txt">我的账户</span></a>
+            <a href="/cart" class="cart"><i class="ico"></i><b id="cartNum" class="num">0</b><span class="txt">购物车</span></a>
+        </div>
+        <h1><a class="logo" href="/" title="蓝考拉"><img src="<%=imgPath%>logo.jpg" alt="蓝考拉"></a></h1>
+        <!--<div class="head-pos"><span class="pos"></span>北京</div>-->
+
+    </div>
+
+</div>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的购物车 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,v2.0/common.css,v2.0/cart.css">
+</head>
+<body>
+<%include header.html%>
+<div class="cartStep">
+    <div class="wrap">
+        <div id="cartStep">
+            <div id="cartStep1"></div>
+            <div id="stepDetail">
+                <span id="cartStepD1" class="orange">我的购物车</span>
+                <span id="cartStepD2">填写核对订单</span>
+                <span id="cartStepD3">订单提交成功</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear comWidth">
+
+    <h2 class="cartTitle">我的购物车</h2>
+    <%if (cart.count > 0) {%>
+    <table class="bought-table">
+        <thead class="col-name">
+        <tr>
+            <td class="nobor cart-td-check"><input type="checkbox" id="cartCheckAll" name="cartCheckAll" value="-1" checked="checked">&nbsp;全选</td>
+            <td class="nobolr cart-td-goods">商品</td>
+            <td class="nobolr">价格</td>
+            <td class="nobolr">数量</td>
+            <td class="nobol">操作</td>
+        </tr>
+        </thead>
+        <tbody class="col-body1">
+        <%
+        for (var i = 0; i < cart.list.length; i++) {
+        var item = cart.list[i];
+        %>
+        <tr id="cart-tr-<%=item.cart_id%>" class="cart-tr">
+            <td class="nobor"><input type="checkbox" name="cart" class="cartItem" value="<%=item.cart_id%>" checked="checked"></td>
+            <td class="nobolr cart-td-goods">
+                <a href="/item-<%=item.sku_id%>.html" target="_blank">
+                    <img align="middle" src="<%=(item.img_50 ? (productImgPath+item.img_50) : (imgPath+'lankaola_product.jpg'))%>" width="50" height="50" alt="<%=item.goods_name%>">
+                    <span><%=item.brand_name || ''%>&nbsp;<%=item.goods_name%>&nbsp;<%=item.skuName || ''%></span>
+                </a>
+            </td>
+            <td class="nobolr"><%=item.price%></td>
+            <td class="nobolr"><div class="wrap_input"><a class="btn-reduce">-</a><span class="input">
+                            <input class="cartInput" type="text"  value="<%=item.count%>">
+                            </span><a class="btn-add">+</a></div>件</td>
+            <td class="nobol"><a class="del">删除</a> </td>
+        </tr>
+        <%}%>
+        </tbody>
+    </table>
+    <a id="remove-batch">清空购物车</a>
+    <div class="cart-toolbar">
+        <div class="amount">
+
+            <div class="fr amountR">
+                <p>总计：<span id="totalSkuPrice">￥<%=parseFloat(cart.sum).toFixed(2)%></span></p>
+                <p>优惠：<span id="totalRePrice">-￥0.00</span></p>
+            </div>
+            <div class="fr amountL"><p><span id="selectedCount"><%=cart.count%></span>件商品</p></div>
+            <div class="clear"></div>
+        </div>
+        <div class="total">
+            <p>
+                商品总价（不含运费）：<span id="finalPrice">￥<%=parseFloat(cart.sum).toFixed(2)%></span>
+            </p>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    <p><a id="submitCart" href="/order/orderInfo">去结算</a> </p>
+    <%} else {%>
+    <div class="cart-empty"><div class="cart-empty-i"></div> <p>购物车内暂时没有商品，您可以<a href="/">去首页</a>挑选喜欢的商品</p></div>
+    <%}%>
+</div>
+<script>
+    var cart = {
+            <%
+    for (var i = 0; i < cart.list.length; i++) {
+        var item = cart.list[i];
+    %>
+        '<%=item.cart_id%>': {
+            count: <%=item.count%>,
+                    price: <%=item.price%>
+        },
+    <%}%>
+    'nothing': {count: 0, price: 0}
+    };
+</script>
+<script src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js,cart.min.js"></script>
+<%include footer.html%>

@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+.zrziliao .label_col{ width:100px;}
+.zrziliao .row-group{ padding-top:10px;}
+.zrziliao .con_col{ padding-left:2px;}
+.zrziliao .btnarea{ padding-left:103px;}
+.saveTip{ display:inline-block; float:left; padding-left:25px; position:relative; margin-left:40px;}
+.saveTip .duihao{ display:block; background:url(http://img.lankaola.com/images/duihao_small_hover.png) 0 0 no-repeat; width:17px; height:17px; position:absolute; left:0;}
+.text.error{ border-color:#ed4145;}
+.zrziliao .mg{ width:170px; height:23px; line-height:23px;}

@@ -1,0 +1,19 @@
+<dl class="leftMenu-group">
+    <dt>交易管理</dt>
+    <dd <%=(user_nav_index == 'order_index' ? 'class=\'cur\'' : '')%>><a href="/order">我的订单</a></dd>
+    <dd <%=(user_nav_index == 'cash_index' ? 'class=\'cur\'' : '')%>><a href="/cash">账户余额</a></dd>
+    <dd <%=(user_nav_index == 'cash_charge' ? 'class=\'cur\'' : '')%>><a href="/cash/charge">账户充值</a></dd>
+    <dd <%=(user_nav_index == 'leaves_list' ? 'class=\'cur\'' : '')%>><a href="/leaves">我的桉树叶</a></dd>
+    <!--<dd <%=(user_nav_index == 'follow_index' ? 'class=\'cur\'' : '')%>><a href="/follow">我的收藏</a></dd>-->
+</dl>
+<dl class="leftMenu-group">
+    <dt>账户管理</dt>
+    <dd <%=(user_nav_index == 'user_index' ? 'class=\'cur\'' : '')%>><a href="/user">个人资料</a></dd>
+    <dd <%=(user_nav_index == 'user_easybuy' ? 'class=\'cur\'' : '')%> ><a href="/user/easybuy">收货信息</a></dd>
+    <dd <%=(user_nav_index == 'user_safety' ? 'class=\'cur\'' : '')%>><a href="/user/safety">账户安全</a></dd>
+</dl>
+<dl class="leftMenu-group">
+    <dt>客户服务</dt>
+    <dd <%=(user_nav_index == 'refund_index' ? 'class=\'cur\'' : '')%>><a href="/refund">退换货</a></dd>
+    <dd <%=(user_nav_index == 'order_cancelOrderList' ? 'class=\'cur\'' : '')%>><a href="/order/cancelOrderList">取消订单记录</a></dd>
+</dl>

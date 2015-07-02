@@ -1,0 +1,14 @@
+.charge{margin-left: 10px; position: relative; top: -2px;}
+.charge_cash{margin-top: 20px; clear: both;}
+.charge_cash h3{border-bottom: 1px solid #eeeeee; line-height: 36px;}
+.charge_cash input[name=pay_type]{cursor: pointer;}
+.charge_cash input[name=pay_type] + label{margin-left: 10px; cursor: pointer;}
+.charge_submit{margin-left: 182px;}
+
+.inlineBlock{display: inline-block; *display: inline; zoom: 1;}
+#alipayBankList{ width: 825px; padding: 10px; padding-left: 20px; border: 1px solid #eeeeee; font-size: 0; display: none;}
+#alipayBankList > div{margin-right: 20px; height: 60px; line-height: 60px;}
+#alipayBankList input, #alipayBankList img{line-height: 60px; vertical-align: middle;}
+#alipayBankList input{margin-right: 10px; cursor: pointer;}
+
+#card_charge input{width: 250px;}

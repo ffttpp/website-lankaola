@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>个人中心 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,grzl.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <% include bread.html %>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include user_nav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent">
+                <div class="ltMw1">
+                    <h3 class="hf3">个人资料管理<!--<span class="n">（带<b class="icson_red">*</b>号的项目为必填项）</span>--></h3>
+
+                    <div class="zrziliao">
+                        <div class="clearfix">
+                            <div class="row-group">
+                                <div class="label_col">
+                                    <!--<span class="required">*</span>--><label>登录账户：</label>
+                                </div>
+                                <div class="con_col">
+                                    <p class="lh23"><%= data.username %></p>
+                                </div>
+                            </div>
+                            <div class="row-group">
+                                <div class="label_col">
+                                    <!--<span class="required">*</span>--><label>验证手机：</label>
+                                </div>
+                                <div class="con_col">
+                                    <p class="lh23"><%= data.phone %></p>
+
+                                    <!--<p class="tip"><i></i>请输入正确的手机号码</p>-->
+                                </div>
+                            </div>
+                            <div class="row-group">
+                                <div class="label_col">
+                                    <label for="truename">真实姓名：</label>
+                                </div>
+                                <div class="con_col">
+                                    <input class="text type03 fl" type="text" readonly name="truename" id="truename" value="<%if (data.truename){%><%=data.truename%><%}%>">
+                                    <a id="edit" style="line-height: 30px; margin-left: 10px;">修改</a>
+                                    <p class="tip" style="display: none;"><i></i>姓名中含有非法字符</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear btnarea mt25">
+                            <a style="display: none;" id="submit" class="btn btn_middle btn_red fl">保存</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+
+<script>
+    $(function () {
+        $('#edit').bind('click', function (e) {
+            e.preventDefault();
+            $(this).hide();
+            $('#truename').attr('readonly', false).focus();
+            $('#submit').show();
+        });
+        $('#submit').bind('click', function (e) {
+            e.preventDefault();
+            var truename = $('#truename').val();
+            if (is_forbid(truename)) {
+                $.post('/user', {truename: truename}, function (data) {
+                    if (data.code == 1) {
+                        showTips('修改成功', function () {
+                            window.location.reload();
+                        })
+                    } else {
+                        $('#truename').next('.tip').html(data.info).css('display', 'inline-block')
+                    }
+                })
+            } else {
+                $('#truename').next('.tip').css('display', 'inline-block');
+            }
+        })})
+</script>
+<% include footer.html %>
+</body>
+</html>

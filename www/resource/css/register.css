@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+#regWrap{width: 909px; height: 781px; margin: 80px auto 30px; background: url("http://img.lankaola.com/images/registerBg.jpg"); font-family: "Microsoft YaHei", "微软雅黑";}
+#backToHome{margin-left: 175px; padding-top: 60px; display: block; width: 160px;}
+#register{width: 320px; margin: 50px auto;}
+#register p{margin-bottom: 30px; position: relative; height: 44px;}
+#register input{height: 22px; line-height: 22px; padding: 10px; border-radius: 4px; color: #777777; border: 1px solid #dfdfdf; width: 298px; display: block;}
+#register #verification{width: 140px; float: left;}
+#sendCode{display: block; width: 140px; margin-left: 15px; color: #999999; background: #f4f4f4; border: 1px solid #ebeaea; border-radius: 4px; height: 42px; line-height: 42px; text-align: center; float: left; text-decoration: none;}
+#sendCode:hover{background: #ebeaea;}
+#submit{width: 320px; height: 42px; line-height: 42px; border-radius: 4px; background: #1c8ce0; display: block; color: #fff; text-decoration: none; font-size: 14px; text-align: center;}
+#submit:hover{background: #0069cb;}
+#protocol{line-height: 30px; clear: both; margin-bottom: 0 !important;}
+#protocol input{width: auto; float: left; vertical-align: middle; margin-right: 10px; line-height: 30px; height: 30px;}
+#bar{margin-top: -30px; line-height: 30px; color: #999999;}
+#findPwd{float: left; color: #999999;}
+.tips{display: block; position: absolute; left: 0; top: 50px;}
+#bar span{float: right;}
+#bar span a{color: #ffc000;}
+#register #toLogin{margin-top: -30px; line-height: 30px; color: #999999;}
+#toLogin a{ color: #ffc000; }
+#toLogin a:hover{text-decoration: underline;}
+.regFooter{text-align: center; margin-bottom: 100px;}
+
+.thickdiv{display: none;}
+.thickbox{width: 800px; height: 575px; padding-top: 25px; overflow: hidden; margin-left: -400px; margin-top: -300px; display: none;}
+.thicktitle{position: absolute; top: 0; left: 0; right: 0; text-align: center; }
+.thickwrap{ height: 575px; overflow: auto;}
+.thickwrap p {line-height: 1.8;}
+
+

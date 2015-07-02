@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%=sku.goods_name%> - 时效服务、正品低价、品质保障、货到付款、配送及时、放心服务、享受服务！- 蓝考拉</title>
+    <meta name="Keywords" content="企业服务,企业服务平台,办公服务，办公服务平台，笔记本,电脑,办公耗材，办公服务，企业服务，法律服务，注册服务，公司注册，蓝考拉企业服务平台">
+    <meta name="description" content="蓝考拉LANKAOLA.COM-专业企业服务综合平台，在线销售办公用品、企业服务、法律服务、公司注册、办公服务、办公设备、电脑、办公家具、耗材、文具/耗材、食品、在线产品定制等数千牌千万种优质商品。便捷、诚信的服务，为您提供愉悦的办公服务体验!">
+    <link rel="stylesheet" type="text/css" href="<%=cssPath%>reset.css,v2.0/common.css,v2.0/goods2.css" />
+</head>
+<body>
+<%include header.html%>
+<div id="section1">
+    <img src="<%=imgPath%>goods/<%=sku.sku_id%>.jpg">
+</div>
+<div id="section2">
+    <div class="wrap">
+        <div class="main_title"><%=sku.goods_name%></div>
+        <div class="main_content">
+            <div class="main_left">
+                <p><%=sku.goods_brief%></p>
+                <%for(var i = 0; i < attribute.length; i++) {%>
+                <div class="main_item" style="display:<%=(attribute[i].data.length > 1 ? 'block' : 'none')%>;" >
+                    <label>选择属性：</label>
+                    <div>
+                        <%
+                        for (var j = 0; j < attribute[i].data.length; j++) {
+                        var attr = attribute[i].data[j];
+                        %>
+                        <a class="<%=sku.sku_op.indexOf(attr.op_id) >=0 ? 'sel' : '' %>" attr_id="<%=attr.op_id%>" href="#"><%=attr.options_name%></a>
+                        <%}%>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+            <div class="main_right">
+                <div class="price">
+                    <i>￥</i>
+                    <span><%=parseFloat(sku.sku_sn).toFixed(2)%></span>
+                </div>
+                <a id="book" href="/cart/add?pid=<%=sku.sku_id%>&pcount=1">
+                    <span class="product-btn-text">立即预定</span>
+                    <span class="product-btn-arrow"><img src="<%=imgPath%>v2.0/product-btn-arrow-white.png" /></span>
+                </a>
+                <p>预付99元抵200元</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="section3">
+    <div class="wrap">
+        <div id="intro">
+            <%-sku.goods_desc%>
+        </div>
+        <div id="img_list">
+            <ul>
+                <%
+                for (var i = 0; i < sku.img.length; i++) {
+                var img = sku.img[i];
+                %>
+                <li>
+                    <img src="<%=productImgPath%><%=img.img_350%>" width="280" height="280" />
+                </li>
+                <%}%>
+            </ul>
+
+            <%if (sku.img.length >= 5){%>
+            <a id="prev"></a>
+            <a id="next"></a>
+            <%}%>
+        </div>
+    </div>
+</div>
+<div id="section4">
+    <div class="wrap">
+        <div id="process">
+            <div id="process_title">服务流程</div>
+            <ul>
+                <li>免费上门测量</li>
+                <li>销售人员会使用我们自主研发的app为您现场快速出设计图</li>
+                <li>免费为您制作办公室的3D效果图</li>
+                <li>为您提供报价，签订合同</li>
+                <li>免费为您上门安装</li>
+            </ul>
+        </div>
+        <!--
+        <div id="tips">
+            <div id="tips_title"><i></i>温馨提示</div>
+        </div>
+        -->
+        <div id="slogo">
+            <img src="<%=imgPath%>v2.0/slogo.jpg" />
+        </div>
+    </div>
+</div>
+<%include footer.html%>
+<script src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+<script>
+    var sku = JSON.parse('<%-sku_attr%>');
+    $(function () {
+        <%if (sku.img.length >= 5){%>
+        $('#img_list').slide({
+            mainCell: 'ul',
+            autoPage: true,
+            effect: 'leftLoop',
+            autoPlay: true,
+            vis: 4,
+            prevCell: '#prev',
+            nextCell: '#next',
+            interTime: 5000
+        });
+        <%}%>
+        $('.main_item a').bind('click', function (e) {
+            e.preventDefault();
+            $(this).parents('.main_item').find('a').removeClass('sel');
+            $(this).addClass('sel');
+            var checked = [];
+            $('.main_item').each(function (index) {
+                checked[index] = $(this).find('a.sel').attr('attr_id');
+            });
+            var key = checked.join('_');
+            window.location.href = '/furniture/view/' + sku[key];
+        })
+        $('#book').hover(function () {
+            $(this).find('.product-btn-text').stop().animate({left: -15}, 200);
+            $(this).find('.product-btn-arrow').stop().animate({right: 15, opacity: 1}, 200);
+        }, function () {
+            $(this).find('.product-btn-text').stop().animate({left: 0}, 200);
+            $(this).find('.product-btn-arrow').stop().animate({right: 35, opacity: 0}, 200);
+        })
+    })
+</script>
+
+</body>
+</html>

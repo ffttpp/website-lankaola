@@ -1,0 +1,63 @@
+
+/*我的订单*/
+/*我的订单--订单取消申请*/
+.cancelOrder{ width:451px; height:356px; margin-left:-225px; margin-top:-178px;}
+.cancelOrder .bg{ *width:451px;}
+.dialog.cancelOrder .inner{ height:344px;*width:432px;}
+.quxbox{ width:320px; margin:0 auto; position:relative;}
+.quxbox .t{ display:block; position:absolute; height:23px; line-height:23px; left:0; color:#666666;}
+.quxbox .quxk{ padding-left:60px;}
+.quxk-inner{ width:254px; float:right; height:23px; border:1px solid #e0e0e0; line-height:23px;}
+.quxk-inner .ctnarea{ display:block; width:220px; float:left; padding-left: 10px;}
+.quxk-inner .xlarrow{ display:block; float:right; width:13px; height:7px; background:url(http://img.lankaola.com/images/quxxlIcon.png) 0 0 no-repeat; margin:7px 10px 0 0;}
+.yylist{ position:absolute; background-color:#fff;top:24px; border:1px solid #e0e0e0; width:320px; padding:10px;height: auto; right:0; display: none;}
+.yylist li{ width:150px; float:left; color:#666666; padding-top:5px;}
+.yylist .radio{ margin-right:3px; vertical-align:-2px; cursor: pointer;}
+.cancelOrder .tip{ line-height:25px; padding-top:20px; text-align: left !important;}
+.cancelOrder .tip span{ padding-left:30px; display:block;}
+.cancelOrder .btncenter{*margin-top:70px;}
+/*确定取消弹窗*/
+.sureDialog{height:132px; margin-top:-66px;}
+.sureDialog .inner{ height:120px;}
+.sureDialog p{ color:#666666; text-align:center; padding-top:30px;}
+
+/*订单查看*/
+
+.liuc{ height:115px; padding:25px 0 25px 95px;*padding:25px 0 25px 30px;}
+.liuc .spet{ float:left; text-align:center; height:115px; position:relative;}
+.liuc .spet{*width:110px;}
+.liuc .iconarea{ margin:20px auto 0;  height:50px;}
+.liuc .iconarea i{ display:block; margin:0 auto;}
+.liuc .spet1 .iconarea i{ width:39px; height:47px; background:url(http://img.lankaola.com/images/setp1.png) 0 0 no-repeat;}
+.liuc .spet2 .iconarea i{ width:40px; height:47px; background:url(http://img.lankaola.com/images/setp2.png) 0 0 no-repeat;}
+.liuc .spet3 .iconarea i{ width:44px; height:52px; background:url(http://img.lankaola.com/images/setp3.png) 0 0 no-repeat;}
+.liuc .spet4 .iconarea i{ width:72px; height:45px; background:url(http://img.lankaola.com/images/setp4.png) 0 3px no-repeat;}
+.liuc .spet5 .iconarea i{ width:62px; height:49px; background:url(http://img.lankaola.com/images/setp5.png) 0 0 no-repeat;}
+.liuc .duihao{ display:block; width:17px; height:17px; margin:15px auto 0;background:url(http://img.lankaola.com/images/duihao_small.png) 0 0 no-repeat;}
+.liuc .spet-over .duihao{ background:url(http://img.lankaola.com/images/duihao_small_hover.png) 0 0 no-repeat;}
+.liuc .arrow{ display:block; width:82px; height:13px; margin:55px 20px 0;*margin:45px 0 0; background:url(http://img.lankaola.com/images/stepArrow.png) 0 0 no-repeat; float:left;}
+.liuc .arrow-over{ background:url(http://img.lankaola.com/images/stepArrow_over.png) 0 0 no-repeat;}
+.liuc .iconarea{}
+.liuc .spet-over.spet2 .iconarea i{ background:url(http://img.lankaola.com/images/setp2_over.png) 0 0 no-repeat;}
+.liuc .spet-over.spet3 .iconarea i{ background:url(http://img.lankaola.com/images/setp3_over.png) 0 0 no-repeat;}
+.liuc .spet-over.spet4 .iconarea i{ background:url(http://img.lankaola.com/images/setp4_over.png) 0 3px no-repeat;}
+.liuc .spet-over.spet5 .iconarea i{ background:url(http://img.lankaola.com/images/setp5_over.png) 0 0 no-repeat;}
+.orderInfo_group{ padding:16px 10px 25px 30px; border-bottom:1px solid #eeeeee;  color:#666;}
+.orderInfo_list{  margin: 16px 0 0;}
+.orderInfo_list p {margin-right: 20px;}
+.orderInfo_group em,.orderInfo_list em{ color:#333333; font-weight:bold;}
+.orderInfo_list em{ margin-left:30px;}
+.orderInfo_group p{ line-height:20px;}
+.bought-table td.qd_name{ width:282px;}
+.bought-table .col-name td.qd_pic{ width:110px;}
+.qdlist{ margin-top:10px; margin-bottom:20px;}
+
+.paybtn{ display:inline-block;width:43px; height:18px; line-height:18px; text-align:center; color:#fff; font-weight:bold; border:1px solid #d82c2f; background:url(http://img.lankaola.com/images/pay_redbtn.jpg) 0 0 repeat-x;font-size:12px;}
+.confirmReceive{ display: inline-block; *display: inline; zoom: 1; width: 63px; height: 25px; margin: 0 4px; background: url("http://img.lankaola.com/images/btn0330.jpg") no-repeat 0 -25px; color: #fff; vertical-align: middle; line-height: 25px; text-align: center; cursor: pointer; font-weight: normal; float: right;}
+
+#timeList{cursor: pointer;}
+#timeList ul a{ color: #999999; display: block; width: 100%; height: 100%;}
+#timeList ul a:hover{color: #fff;}
+
+
+/*---\我的账户*/

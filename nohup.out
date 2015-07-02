@@ -1,0 +1,5 @@
+{ [Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'10.0.0.50' (using password: YES)]
+  code: 'ER_ACCESS_DENIED_ERROR',
+  errno: 1045,
+  sqlState: '28000',
+  fatal: true }

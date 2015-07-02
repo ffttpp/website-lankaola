@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% var skuName = [sku.brand_name, sku.goods_name].join('');
+    for (var i = 0; i < sku.sku.length; i++) {
+    skuName = [skuName, sku.sku[i].options_name].join(' ');
+    }
+    %>
+    <title><%=skuName%> - 时效服务、正品低价、品质保障、货到付款、配送及时、放心服务、享受服务！- 蓝考拉</title>
+    <meta name="Keywords" content="企业服务,企业服务平台,办公服务，办公服务平台，笔记本,电脑,办公耗材，办公服务，企业服务，法律服务，注册服务，公司注册，蓝考拉企业服务平台">
+    <meta name="description" content="蓝考拉LANKAOLA.COM-专业企业服务综合平台，在线销售办公用品、企业服务、法律服务、公司注册、办公服务、办公设备、电脑、办公家具、耗材、文具/耗材、食品、在线产品定制等数千牌千万种优质商品。便捷、诚信的服务，为您提供愉悦的办公服务体验!">
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,goods.css,,v2.0/common.css">
+</head>
+<body>
+<%include header.html%>
+
+<div class=" clear comWidth">
+    <div class="navigate mt18"><a href="/">首页</a> &gt; <a href="<%=bread.fc[0]%>"><%=bread.fc[1]%></a> &gt; <a href="<%=bread.sc[0]%>"><%=bread.sc[1]%></a> &gt; <a href="<%=bread.tc[0]%>"><%=bread.tc[1]%></a> &gt; <span><%=skuName%></span></div>
+    <div class="goodsItem">
+        <div class="preview" style="<%=((!showPic) ? 'width:380px;' : '')%>">
+            <%if (showPic) {%>
+            <div class="spec-list">
+                <a href="javascript:;" class="spec-control" id="spec-forward"></a>
+                <a href="javascript:;" class="spec-control" id="spec-backward"></a>
+                <div class="spec-items">
+                    <ul id="spec-items-list">
+                        <%
+                        for (var i = 0; i < sku.img.length; i++) {
+                            var img = sku.img[i];
+                        %>
+                            <li class="<%=(i == 0 ? 'cur' : '')%>">
+                                <img src="<%=productImgPath%><%=img.img_100%>" data-url="<%=productImgPath%><%=img.img_350%>" data-jqimg="<%=productImgPath%><%=img.img_800%>" />
+                            </li>
+                        <%}%>
+                    </ul>
+                </div>
+            </div>
+            <%}%>
+            <div id="spec-n1">
+                <%if (sku.img.length > 0) {%>
+                <img src="<%=productImgPath%><%=sku.img[0].img_350%>" jqimg="<%=productImgPath%><%=sku.img[0].img_800%>" />
+                <%}%>
+            </div>
+        </div>
+        <div class="summary">
+            <div id="goods-name">
+                <h3><%=skuName%></h3>
+                <strong><%=sku.goods_brief%></strong>
+            </div>
+            <div class="summary-item" id="summary-price">
+                <div class="summary-label">价格：</div>
+                <div class="summary-content">
+                    <span class="summary-price-s">￥</span>
+                    <span class="summary-price-t"><%=parseFloat(sku.price).toFixed(2)%></span>
+                </div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-label">商品编号：</div>
+                <div class="summary-content">
+                    <%=sku.sku_id%>
+                </div>
+            </div>
+            <%for(var i = 0; i < attribute.length; i++) {%>
+            <div class="summary-item sku_attr" style="display:<%=(attribute[i].data.length > 1 ? 'block' : 'none')%>;" >
+                <div class="summary-label"><%=attribute[i].attr_name%>：</div>
+                <div class="summary-content">
+                    <%
+                    for (var j = 0; j < attribute[i].data.length; j++) {
+                    var attr = attribute[i].data[j];
+                    %>
+                    <a class="sku-item <%=sku.sku_op.indexOf(attr.op_id) >=0 ? 'cur' : '' %>" attr_id="<%=attr.op_id%>" href="#"><%=attr.options_name%></a>
+                    <%}%>
+                </div>
+            </div>
+            <%}%>
+
+            <div class="summary-item" id="summary-num">
+                <div class="summary-label">购买数量：</div>
+                <div class="summary-content">
+                    <a id="btn-reduce">-</a>
+                    <input id="buy-num" type="text" value="1" />
+                    <a id="btn-add">+</a>
+                </div>
+            </div>
+            <div class="summary-item" id="summary-btn">
+                <div class="summary-label"></div>
+                <div class="summary-content">
+                    <a href="/cart/add?pid=<%=sku.sku_id%>&pcount=1" target="_blank" id="addCart"><i></i>加入购物车</a>
+                    <!--<a id="addFollow"></a>-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="goods-intro">
+        <h3 class="goods-intro-title">商品介绍</h3>
+        <div class="goods-intro-brief">
+            <div class="goods-intro-item">
+                商品名称：<%=sku.goods_name%>
+            </div>
+            <div class="goods-intro-item">
+                商品编号：<%=sku.sku_id%>
+            </div>
+            <div class="goods-intro-item">
+                品牌：<%=sku.brand_name%>
+            </div>
+            <%
+            for(var i = 0; i < sku.spu.length; i++){
+            var spu = sku.spu[i];
+            %>
+            <%if (spu.spu_attr_name && spu.spu_attr_name != '价格' && spu.spu_attr_name != '数量') {%>
+            <div class="goods-intro-item">
+                <%=spu.spu_attr_name%>：<%=spu.spu_op_name%>
+            </div>
+            <%}%>
+            <%}%>
+        </div>
+        <div class="goods-pack-list">
+            <h4 class="goods-pack-list-title">包装清单</h4>
+            <div class="goods-pack-list-content"><%=sku.pack_list%></div>
+        </div>
+        <div class="goods-intro-content">
+            <%-sku.goods_desc%>
+        </div>
+        <div class="goods-intro-promise">
+            <h4 class="goods-pack-list-title">服务承诺</h4>
+            <div class="goods-pack-list-content"><%=sku.services%></div>
+        </div>
+    </div>
+</div>
+<script>
+    var sku = JSON.parse('<%-sku_attr%>');
+</script>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,jqueryzoom.js,v2.0/move-min.js,global.min.js,goods.min.js"></script>
+<%include footer.html%>
+</body>
+</html>

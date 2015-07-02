@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>账户余额 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,myasy.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class="clear comWidth">
+    <!--面包屑-->
+    <% include bread.html %>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include user_nav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent">
+                <div class="ltMw1">
+                    <h3 class="hf3">账户余额</h3>
+                    <div class="myasy">
+                        <div class="clearfix"> <i class="asicon"></i>
+                            <div class="asyInfo"><div> 账户余额：￥<span class="asy-count icson_red"><%=parseFloat(data.charge_cash + data.gift_cash).toFixed(2)%></span><a class="charge" href="/cash/charge">充值</a></div>
+                                <div class="tiptype1 mt10"> 其中有<b class="icson_red"><%=parseFloat(data.charge_cash).toFixed(2)%></b>是预充金额，有<span class="icson_red"><%=parseFloat(data.gift_cash).toFixed(2)%></span>是返利金额。 </div>
+                                <!--<div class="rules"> <a href="/help/leaves" class="icson_blue"> 如何获取？</a> <a href="/help/leaves" class="icson_blue"> 使用规则</a> </div>-->
+                            </div>
+                        </div>
+                        <div class="clear sgnav mt40"><a href="/cash">充值明细</a><a class="cur" href="/cash/consume">消费明细</a></div>
+                        <table class="bought-table asytab mt10">
+                            <thead class="col-name">
+                            <tr>
+                                <td class="nobor asy_data">时间</td>
+                                <td class="nobolr asy_dedao">金额</td>
+                                <td class="nobolr asy_dedao">金额类型</td>
+                                <td class="nobol asy_shuom">详细说明</td>
+                            </tr>
+                            </thead>
+                            <tbody class="col-body1">
+                            <%
+                            for (var i = 0; i < pagerData.data.length; i++) {
+                            var consume = pagerData.data[i]
+                            %>
+                            <tr>
+                                <td class="nobor asy_data"><%=consume.date%></td>
+                                <td class="nobolr"><span class="icson_green"><%=parseFloat(consume.cash).toFixed(2)%></span></td>
+                                <td class="nobolr"><%=(consume.cash_type == 1 ? '预充金钱' : '返利金钱')%></td>
+                                <td class="asy_shuom nobol">
+                                    订单<a href="/order/item?orderid=<%=consume.order_id%>" target="_blank"><%=consume.order_id%></a>消费
+                                </td>
+                            </tr>
+                            <%}%>
+
+                            </tbody>
+                        </table>
+                        <%include pager.html%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+
+<%include footer.html%>
+</body>
+</html>

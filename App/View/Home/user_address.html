@@ -1,0 +1,72 @@
+<div class="mc">
+    <div class="form">
+        <div class="item">
+            <span class="label"><em>*</em>收货人：</span>
+            <div class="fl">
+                <% var province,city,county %>
+                <input id="consigneeName" type="text" class="text" onblur="checkConsigneeName()" value="<%= data.address.name %>">
+                <span id="consigneeNameNote" class="error-msg hide"></span>
+            </div>
+            <div class="clr"></div>
+        </div>
+        <div class="item">
+            <span class="label"><em>*</em>所在地区：</span>
+            <div class="fl">
+                <select id="provinceDiv" class="sele" onchange="loadCity()">
+                    <option value="0">请选择</option>
+                    <% for (var i = 0; i < data.province.length; i++) { %>
+                    <option value="<%= data.province[i].city_id %>" <% if (data.province[i].city_id == data.address.province) {  province =data.province[i].city_name; %>selected="selected"<% } %> ><%= data.province[i].city_name %></option>
+                    <% } %>
+                </select>
+                <select id="cityDiv" class="sele" onchange="loadCounty()">
+                    <option value="0">请选择</option>
+                    <% for (var i = 0; i < data.city.length; i++) { %>
+                    <option value="<%= data.city[i].city_id %>" <% if (data.city[i].city_id == data.address.city) { city =data.city[i].city_name;
+%>selected="selected"<% } %> ><%= data.city[i].city_name %></option>
+                    <% } %>
+                </select>
+                <select id="countyDiv" class="sele" onchange="loadTown()">
+                    <option value="0">请选择</option>
+                    <% for (var i = 0; i < data.county.length; i++) { %>
+                    <option value="<%= data.county[i].city_id %>" <% if (data.county[i].city_id == data.address.county) { county =data.county[i].city_name;%>selected="selected"<% } %> ><%= data.county[i].city_name %></option>
+                    <% } %>
+                </select>
+                <span class="error-msg hide" id="areaNote">请您填写完整的地区信息</span>
+            </div>
+            <div class="clr"></div>
+        </div>
+        <div class="item">
+            <span class="label"><em>*</em>详细地址：</span>
+            <div class="fl">
+                <span style="float: left;margin-right: 5px;line-height:32px;" id="areaName"><%= province + city + county %></span>
+                <input id="consigneeAddress" type="text" class="text text1" onblur="checkConsigneeAddress()" value="<%= data.address.address %>">
+            </div>
+            <span class="error-msg hide" id="consigneeAddressNote"></span>
+            <div class="clr"></div>
+        </div>
+        <div class="item">
+            <div class="fl">
+                <span class="label"><em>*</em>手机号码：</span>
+                <input id="consigneeMobile" type="text" maxlength="11" class="text" onblur="checkMobile()" value="<%= data.address.phone %>">
+                <span class="error-msg hide" id="consigneeMobileNote">请您填写收货人手机号码</span>
+            </div>
+            <div class="clr"></div>
+            <div class="item">
+                <div class="item">
+                    <span class="label"><em></em>地址别名：</span>
+                    <div class="fl">
+                        <input id="consigneeAlias" type="text" class="text" value="<% if (data.address.alias) { %><%= data.address.alias %><% } %>">
+                        <span class="ftx-03">设置一个易记的名称，如：“送到家里”、“送到公司”</span>
+                        <span class="error-msg hide" id="consigneeAliasNote"></span>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+                <div class="btns">
+                    <a href="javascript:;" onclick="editAddress(<%= data.address.address_id %>);" class="e-btn btn-9 save-btn">保存收货地址</a>
+                    <span class="error-msg hide" id="submitNote"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

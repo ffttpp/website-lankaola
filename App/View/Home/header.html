@@ -1,0 +1,37 @@
+<div id="top">
+    <div id="logo">
+        <a href="/"><img src="<%=imgPath%>v2.0/logo.png"></a>
+    </div>
+    <div id="nav">
+        <ul id="nav-ul" class="inline-block">
+            <li><a <%if(globalFid == 1){%>class="cur"<%}%> href="/supply">办公用品</a> </li>
+            <li><a <%if(globalFid == 94){%>class="cur"<%}%> href="/decoration">办公装修</a> </li>
+            <li><a <%if(globalFid == 77){%>class="cur"<%}%> href="/furniture">办公家具</a> </li>
+            <li><a <%if(globalFid == 78){%>class="cur"<%}%> href="/plant">绿植服务</a> </li>
+            <li><a <%if(globalFid == 80){%>class="cur"<%}%> href="/list-80-0-0.html">休闲小食</a> </li>
+            <li><a <%if(globalFid == 79){%>class="cur"<%}%> href="/service">工商服务</a> </li>
+            <div class="nav-cur"></div>
+        </ul>
+        <div id="top-rgt" class="inline-block">
+            <%if (loginStatus) {%>
+            <div id="username" class="inline-block">
+                <span class="ava"></span>
+                <span class="name"><%=userInfo.username%></span>
+                <span class="arrow"></span>
+                <ul>
+                    <li><a href="/order">我的订单</a> </li>
+                    <li><a href="/user">我的账户</a> </li>
+                    <li><a href="/logout">退出</a> </li>
+                </ul>
+            </div>
+            <%} else {%>
+            <a id="goto-login" href="/login">登录</a>
+            <%}%>
+            <a id="goto-cart" href="/cart"><span class="red-dot"></span></a>
+            <p class="inline-block">
+                4006-4007-01<br>
+                全国服务电话
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,loginWreg.css">
+</head>
+<body>
+<div id="loginWrap">
+    <a id="backToHome" href="/"><img src="<%=imgPath%>v2.0/logo.png"></a>
+    <form id="login" name="login" style="position: relative;">
+        <p><input type="text" name="username" id="username" placeholder="用户名"></p>
+        <p><input type="password" name="password" id="password" placeholder="密码"></p>
+        <p><a id="submit">登&nbsp;录</a></p>
+        <p class="tips" style="text-align: left; position: absolute; left: 0; top: 125px;">账号或者密码不正确</p>
+        <p id="bar"><a id="findPwd" href="/findPwd">忘记密码？</a><span>没有账号？<a href="/register">注册</a></span></p>
+
+        <input type="hidden" name="returnUrl" id="returnUrl" value="<%= returnUrl %>" />
+    </form>
+</div>
+<div class="footer">
+    <p>
+        Copyright@2014 lankaola.com All rights reserved 京ICP备14029475号-2
+    </p>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,validate.min.js,login.min.js"></script>
+</body>
+</html>

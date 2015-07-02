@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的订单 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,tuihuanhuo.css,order.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <% include bread.html %>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include user_nav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="sgnav"><span>我的订单</span></div>
+            <div class="mcontent">
+                <div class="ltMw1">
+                    <div class="operate">
+                        <div id="timeList" class="select-box select-md01 fr"><span><%=orderTimeText%></span>
+                            <input type="hidden" value="" name="code" class="searchVal">
+                            <a href="javascript:;" class="fm-btn"></a>
+                            <ul>
+                                <%for (var i = 0; i < timeList.length; i++) {%>
+                                <li value="<%=timeList[i].text%>"><a href="/order?d=<%=timeList[i].value%>"><%=timeList[i].text%></a></li>
+                                <%}%>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab2">
+                        <table class="bought-table">
+                            <thead class="col-name">
+                            <tr>
+                                <td class="nobor">订单信息</td>
+                                <td class="nobolr">收货人</td>
+                                <td class="nobolr">订单金额</td>
+                                <td class="nobolr">时间</td>
+                                <td class="nobolr">状态</td>
+                                <td class="nobol">操作</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <%
+                            if (pagerData.count > 0) {
+                            var list = pagerData.data;
+                            for (var i = 0; i < list.length; i++) {
+                            var order = list[i];
+                            %>
+                            <%if (order.order_status == 2 || !order.subOrder) {%>
+                            <tr class="sep-row"><td colspan="6" class="nobolr"></td></tr>
+                            <tr>
+                                <td class="bggray1 nobob agleft" colspan="6">订单编号：<a href="/order/item?orderid=<%=order.order_id%>" target="_blank"><%=order.order_id%></a></td>
+                            </tr>
+                            <tr>
+                                <td class="nobor tl">
+                                    <%if (order.subOrder) {%>
+                                        <%
+                                        for (var k = 0; k < order.subOrder.length; k++) {
+                                        var subOrder =order.subOrder[k];
+                                        %>
+
+                                            <%
+                                            for (var j = 0; j < subOrder.sku.length; j++) {
+                                            var sku = subOrder.sku[j];
+                                            var title = [sku.brand_name, sku.goods_name, sku.skuName].join(' ');
+                                            %>
+                                            <a href="/item-<%=sku.sku_id%>.html" target="_blank"><img width="50" height="50" title="<%=title%>" src="<%=(sku.img_50 ? (productImgPath+sku.img_50) : (imgPath+'lankaola_product.jpg'))%>" alt="<%=title%>"></a>
+                                            <%}%>
+                                        <%}%>
+                                    <%} else {%>
+                                        <%
+                                        for (var j = 0; j < order.sku.length; j++) {
+                                        var sku = order.sku[j];
+                                        var title = [sku.brand_name, sku.goods_name, sku.skuName].join(' ');
+                                        %>
+                                        <a href="/item-<%=sku.sku_id%>.html" target="_blank"><img width="50" height="50" title="<%=title%>" src="<%=(sku.img_50 ? (productImgPath+sku.img_50) : (imgPath+'lankaola_product.jpg'))%>" alt="<%=title%>"></a>
+                                        <%}%>
+                                    <%}%>
+
+                                </td>
+                                <td class="nobolr nobot agcenter">
+                                    <%=order.name%>
+                                </td>
+                                <td class="nobolr nobot">
+                                    <span class="red"><%=parseFloat(order.pay_amount + order.cash).toFixed(2)%></span><br>
+                                    <%=order.pay_name%>
+                                </td>
+                                <td class="nobolr nobot"><%=order.order_time%></td>
+                                <td class="nobolr nobot"><%= order.cancel == 2 ? '已取消' : order.order_name%></td>
+                                <td class="agcenter nobol nobot">
+                                    <%if (order.cancel == 1) {%>
+                                    <p><a href="/order/item?orderid=<%=order.order_id%>" target="_blank">查看</a></p>
+                                    <p><a href="/order/cancelOrderList" target="_blank">查看取消进度</a></p>
+                                    <%} else if (order.cancel == 2 || order.cancel == 3) {%>
+                                    <p><a href="/order/item?orderid=<%=order.order_id%>" target="_blank">查看</a></p>
+                                    <%} else {%>
+                                    <%if (order.order_status == 2 && (order.pay_type == 2 || order.pay_type == 3)) {%>
+                                    <p><a class="btn btn_small btn_red" href="javascript:;" onclick="toPayment(<%=order.order_id%>)">去付款</a></p>
+                                    <%}%>
+                                    <p><a href="/order/item?orderid=<%=order.order_id%>" target="_blank">查看</a></p>
+                                    <% if (order.order_status == 2) { %>
+                                    <p>
+                                        <a href="javascript:;" onclick="cancelOrder('<%=order.order_id%>')">取消订单</a>
+                                    </p>
+                                    <!--<p>
+                                        <a href="javascript:;">确认收货</a>
+                                    </p>-->
+                                    <%} else if(order.order_status == 3 || order.order_status == 4 || order.order_status == 5 || order.order_status == 6) {%>
+                                    <p><a href="/refund?orderid=<%=order.order_id%>">申请退/换货</a></p>
+                                    <%} else if (order.order_status == 8) {%>
+                                    <%}%>
+                                    <%}%>
+                                </td>
+                            </tr>
+                            <%} else {%>
+                                <%
+                                    for (var k = 0; k < order.subOrder.length; k++) {
+                                    var subOrder =order.subOrder[k];
+                                %>
+                                <tr class="sep-row"><td colspan="6" class="nobolr"></td></tr>
+                                <tr>
+                                    <td class="bggray1 nobob agleft" colspan="6">订单编号：<a href="/order/item?orderid=<%=order.order_id%>" target="_blank"><%=subOrder.order_id%>（子订单）</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="nobor tl">
+                                        <%
+                                        for (var j = 0; j < subOrder.sku.length; j++) {
+                                        var sku = subOrder.sku[j];
+                                        var title = [sku.brand_name, sku.goods_name, sku.skuName].join(' ');
+                                        %>
+                                        <a href="/item-<%=sku.sku_id%>.html" target="_blank"><img width="50" height="50" title="<%=title%>" src="<%=(sku.img_50 ? (productImgPath+sku.img_50) : (imgPath+'lankaola_product.jpg'))%>" alt="<%=title%>"></a>
+                                        <%}%>
+                                    </td>
+                                    <td class="nobolr nobot agcenter">
+                                        <%=subOrder.name%>
+                                    </td>
+                                    <td class="nobolr nobot">
+                                        <span class="red"><%=parseFloat(subOrder.amount).toFixed(2)%></span><br>
+                                        <%=order.pay_name%>
+                                    </td>
+                                    <td class="nobolr nobot"><%=order.order_time%></td>
+                                    <td class="nobolr nobot"><%=order.order_name%></td>
+                                    <td class="agcenter nobol nobot">
+                                        <%if (order.cancel == 1) {%>
+                                        <p><a href="/order/item?orderid=<%=order.order_id%>" target="_blank">查看</a></p>
+                                        <p><a href="/order/cancelOrderList" target="_blank">查看取消进度</a></p>
+                                        <%} else {%>
+                                        <p><a href="/order/item?orderid=<%=order.order_id%>" target="_blank">查看</a></p>
+                                        <% if (order.order_status == 2) { %>
+                                        <p>
+                                            <a href="javascript:;" onclick="cancelOrder('<%=order.order_id%>')">取消订单</a>
+                                        </p>
+                                        <!--<p>
+                                            <a href="javascript:;">确认收货</a>
+                                        </p>-->
+                                        <%} else if(subOrder.order_status == 3 || subOrder.order_status == 4 || subOrder.order_status == 5 || subOrder.order_status == 6) {%>
+                                        <p><a href="/refund?orderid=<%=subOrder.order_id%>">申请退/换货</a></p>
+                                        <%}%>
+                                        <%}%>
+                                    </td>
+                                </tr>
+                                <%}%>
+                            <%}%>
+                            <%}%>
+                            <%}%>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <%include pager.html%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--删除提示-->
+<div class="rl-modal dialog cancelOrder">
+    <div class="bg"></div>
+    <div class="inner">
+        <div class="rtitle"><h3 class="dlgT">提示</h3><a href="javascript:;" class="closeBtn"></a></div>
+        <div class="m">
+            <p class="dlgtip ml165"><i></i>订单取消申请</p>
+            <div class="quxbox">
+                <div class="clearfix">
+                    <label class="t">取消原因：</label>
+                    <div class="quxk">
+                        <div class="quxk-inner">
+                            <span class="ctnarea"></span><a href="javascript:;" class="xlarrow"></a>
+                        </div>
+                        <div class="yylist">
+                            <ul id="reasonList">
+                            </ul>
+                            <input type="hidden" id="cancelReason" name="cancelReason" value="0" />
+                            <input type="hidden" id="cancelOrderid" name="cancelOrderid" value="0" />
+                        </div>
+                    </div>
+
+                </div>
+                <p class="tip red">
+                    温馨提示：<br>
+                        <span>在线支付付款前可申请取消订单<br>
+                        货到付款或者已付款请申请退换货</span>
+                </p>
+            </div>
+            <div class="mt50 btncenter"><a id="submitCancel" class="btn btn_small btn_blue mr15">确定</a><a id="cancelCancel" class="btn btn_small btn_gray">取消</a></div>
+        </div>
+    </div>
+</div>
+<!--弹窗遮罩层-->
+<div class="modal-backdrop"></div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js,order.min.js"></script>
+
+<%include footer.html%>
+</body>
+</html>

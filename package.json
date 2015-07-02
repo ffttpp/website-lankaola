@@ -1,0 +1,22 @@
+{
+  "name": "project-name",
+  "description": "project created by thinkjs",
+  "version": "0.1.0",
+  "author": {},
+  "dependencies": {
+    "libxmljs": "^0.12.0",
+    "moment": "~2.8.3",
+    "superagent": "~0.21.0",
+    "thinkjs": "~1.0.4",
+    "underscore": "~1.7.0"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "readmeFilename": "README.md"
+}

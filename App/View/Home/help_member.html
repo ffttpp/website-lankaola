@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>会员规则 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,help.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <%include help_bread.html%>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include helpnav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent">
+                <div class="ltMw1">
+                    <h3 class="hf3">会员规则<!--<span class="n">（带<b class="icson_red">*</b>号的项目为必填项）</span>--></h3>
+                    <div class="helpPara">
+                        <h3>一、会员级别</h3>
+                        <p>各位亲爱的蓝考拉用户，蓝考拉商城会员级别及其规则如下：</p>
+                        <p>新会员级别共分为2个等级，分别为：普通会员、VIP会员</p>
+
+                        <p>普通会员可自由注册，全场产品随意购买，随时付款、随时发货，轻松便捷；</p>
+                        <p>VIP会员为公司采购账号，根据贵司与蓝考拉签订的服务协议可选择即使付款、月结、季度结算等不同的结算方式。</p>
+                    </div>
+                    <div class="helpPara">
+                        <h3>会员等级升降说明：</h3>
+                        <h3>会员升级：</h3>
+                        <p>普通会员注册即可，普通会员需要长久持续性地与米木匠达成固定合作关系，需要以公司名义与蓝考拉签订固定服务协议，升级普通账号为VIP账号，届时，此VIP账号即可享受蓝考拉全场特惠价和贴心服务保障。</p>
+                        <h3>会员降级</h3>
+                        <p>1.协议到期</p>
+                        <p>VIP账号降级与蓝考拉协议到期并无续签要求的，该账号自动降级为普通账号，不再享受VIP账号独享的所有权益；</p>
+                        <p>2.违反协议</p>
+                        <p>VIP账号违反与蓝考拉签订的固定服务协议内容，并屡次不改者，则该账号自动降级为普通账号，不再享受VIP账号独享的所有权益，违反内容涉及到双方利益，则蓝考拉有权利采用法律途径维护正当权益。</p>
+                        <p>蓝考拉将会根据不同级别会员的相对应权益，增加更多的会员服务内容，敬请期待。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js"></script>
+<% include footer.html %>
+</body>
+</html>

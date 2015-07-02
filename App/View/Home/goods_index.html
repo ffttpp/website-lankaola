@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%=htmlTitle%> - 时效服务、正品低价、品质保障、货到付款、配送及时、放心服务、享受服务！- 蓝考拉</title>
+    <meta name="Keywords" content="企业服务,企业服务平台,办公服务，办公服务平台，笔记本,电脑,办公耗材，办公服务，企业服务，法律服务，注册服务，公司注册，蓝考拉企业服务平台">
+    <meta name="description" content="蓝考拉LANKAOLA.COM-专业企业服务综合平台，在线销售办公用品、企业服务、法律服务、公司注册、办公服务、办公设备、电脑、办公家具、耗材、文具/耗材、食品、在线产品定制等数千牌千万种优质商品。便捷、诚信的服务，为您提供愉悦的办公服务体验!">
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,list.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <div class="navigate mt18"><a href="/">首页</a> &gt; <%-data.breadNav%></div>
+    <div class="listMenu">
+        <%for (var i = 0; i < data.catList.length; i++) {
+        var cat = data.catList[i]
+        %>
+        <div class="menuItem">
+            <div class="menuTitle<%=(cat.cat_id == sc ? ' menuShow' : '')%><%=(i == data.catList.length - 1 ? ' menuTitleLast' : '')%>"><%=cat.cat_name%></div>
+            <div class="menuList<%=(cat.cat_id == sc ? ' ulShow' : '')%><%=(i == data.catList.length - 1 ? ' menuListLast' : '')%>">
+                <%for (var j = 0; j < cat.cl.length; j++ ) {
+                var cl = cat.cl[j];
+                %>
+                <a class="<%=(cl.cat_id == tc ? 'sel' : '')%>" href="/list-<%=fc%>-<%=cat.cat_id%>-<%=cl.cat_id%>.html"><%=cl.cat_name%></a>
+                <%}%>
+            </div>
+        </div>
+        <%}%>
+    </div>
+    <div class="listCon">
+        <%if (pagerData.data.length > 0) {%>
+        <div class="sortBar">
+            <a>排序</a>
+            <a id="sortDefault" class="<%=!sortItem ? 'selected' : ''%>" href="<%=defaultSortUrl%>">默认</a>
+            <a id="sortPrice"
+               class="<%if (priceSortKey == 'asc') {%>priceAsc<%} else if (priceSortKey == 'desc') {%>priceDesc<%}%>"
+               href="<%=priceUrl%>">价格</a>
+        </div>
+        <ul id="goodsList">
+            <%
+            for (var i = 0; i < pagerData.data.length; i++) {
+            var item = pagerData.data[i];
+            var title = [item.brand_name, item.goods_name, item.skuName].join(' ')
+            %>
+            <li>
+                <a href='/item-<%=item.sku_id%>.html' target="_blank">
+                    <img class="lazy" data-original="<%=(item.img_220 ? (productImgPath+item.img_220) : (imgPath + 'lazyload.png'))%>" src="<%=imgPath%>lazyload.png" alt="<%=title%>" title="<%=title%>" />
+                </a>
+
+                <h3><a href='/item-<%=item.sku_id%>.html' target="_blank"><%=title%></a>
+                </h3>
+
+                <div class="goodsOp">
+                    <span>￥<%=parseFloat(item.price).toFixed(2)%></span>
+                    <a href="/cart/add?pid=<%=item.sku_id%>" target="_blank">
+                        <i></i>
+                        <b>加入购物车</b>
+                    </a>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+        <% include pager.html %>
+        <%} else {%>
+        <div id="listnotfound">
+            <div id="listnotfoundicon"></div>
+            <div id="listnotfoundtext">
+                抱歉，没有找到此类产品，<br>您可以去<a href="/">首页</a>挑选其他商品
+            </div>
+        </div>
+        <%}%>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,jquery.lazyload.js,global.min.js"></script>
+<script>
+    $(function () {
+        $('img.lazy').lazyload({ threshold: 200 });
+        $('.menuTitle').each(function (index) {
+            $(this).bind('click', function (e) {
+                e.preventDefault();
+                if ($(this).hasClass('menuShow')) {
+                    $(this).removeClass('menuShow');
+                    $(this).next('.menuList').hide()
+                } else {
+                    $(this).parents('.listMenu').find('.menuTitle').removeClass('menuShow')
+                    $(this).parents('.listMenu').find('.menuList').stop().hide();
+                    $(this).addClass('menuShow');
+                    $(this).next('.menuList').stop().show();
+                }
+            })
+        });
+        if ($(window).scrollTop() > 360) {
+            $('#gotoTop').show()
+        }
+
+        $(window).scroll(function () {
+            if($(this).scrollTop() > 360){
+                $('#gotoTop').show()
+            }else{
+                $('#gotoTop').hide()
+            }
+        });
+
+        $('#gotoTop').bind('click', function (e) {
+            e.preventDefault();
+            $('body, html').animate({scrollTop: 0}, 500)
+        })
+
+    })
+</script>
+<%include footer.html%>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>账户充值 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,myasy.css,v2.0/common.css,v2.0/cash.css">
+</head>
+<body>
+<% include header.html %>
+<div class="clear comWidth">
+    <!--面包屑-->
+    <% include bread.html %>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include user_nav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent">
+                <div class="ltMw1">
+                    <h3 class="hf3">充值</h3>
+                    <div class="charge_cash">
+                        <h3>在线充值</h3>
+                        <div class="row-group">
+                            <div class="label_col">充值金额：</div>
+                            <div class="con_col"><input class="text" type="text" name="cash" id="cash"></div>
+                        </div>
+                        <div class="row-group">
+                            <div class="label_col">充值方式：</div>
+                            <div class="con_col">
+                                <p><input type="radio" name="pay_type" value="3" id="alipay" checked><label for="alipay">支付宝</label></p>
+                                <p><input type="radio" name="pay_type" value="2" id="yl"><label for="yl">网银</label></p>
+                                <div id="alipayBankList" class="mt20">
+                                    <%for (var j = 0; j < alipayBankList.length; j++) {
+                                    var bank = alipayBankList[j];
+                                    %>
+                                    <div class="inlineBlock"><input name="alipayBank" type="radio" class="alipayBank" value="<%=bank.code%>" <%if (bank.code == bankCode) {%>checked="checked"<%}%>><img alt="<%=bank.name%>" src="<%=imgPath+bank.icon%>"></div>
+                                    <%}%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear pt20">
+                            <a class="charge_submit btn btn_middle btn_blue mr15" id="charge_submit1">充值</a>
+                        </div>
+                    </div>
+                    <div class="charge_cash" id="card_charge">
+                        <h3>充值卡充值</h3>
+                        <div class="row-group">
+                            <div class="label_col">卡号：</div>
+                            <div class="con_col"><input class="text" type="text" name="serial" id="serial"></div>
+                        </div>
+                        <div class="row-group">
+                            <div class="label_col">密码：</div>
+                            <div class="con_col"><input class="text" type="text" name="password" id="password"></div>
+                        </div>
+                        <div class="clear pt20">
+                            <a class="charge_submit btn btn_middle btn_blue mr15" id="charge_submit2">充值</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js,/v2.0/charge.min.js"></script>
+
+<%include footer.html%>
+</body>
+</html>

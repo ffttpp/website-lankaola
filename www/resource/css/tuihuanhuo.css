@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**----申请退换货*/
+.bought-table td.goods-info{ padding:10px;}
+.bought-table td.order_no{ width:13%;}
+.bought-table td.goods{ width:50%;}
+.bought-table td.goods_amounts{ width:20%;}
+.bought-table td.opt{ width:15%;}
+.wrap_input{ overflow:hidden;zoom:1;margin-left:10px;padding-bottom:10px; display:inline-block;*display:inline;*zoom:1; font-size:12px; font-weight:normal;vertical-align:-16px;*vertical-align:-10px;margin-right:10px;}
+.wrap_input .input{ border:1px solid #e0e0e0;float:left;margin-left:-1px;font-size:0;}
+.wrap_input input{ width:30px;  height:20px;line-height:20px;*height:18px;*line-height:18px;text-align:center; color:#666666; background-color:#fff; font-size:12px;}
+.wrap_input .jia,
+.wrap_input .jian{border:1px solid #e0e0e0;float:left; margin-left:-1px; width:20px; height:20px; line-height:20px; font-size:16px; cursor:pointer; text-align:center; background-color:#eeeeee;
+}
+.wrap_input .jian{margin-left:0;}
+.bought-table .goods_img img{ width:80px; height:80px; }
+/*服务承诺*/
+
+/*申请退换货填写详细信息*/
+.inner-tab td.thh_img{ padding-left:15px;}
+.bought-table td.thh_info{ width:48%;}
+.bought-table td.thh_num{ width:25%;}
+.bought-table td.thh_amounts{ width:25%;}
+/*信息表单*/
+.row-group{ padding-top:20px; clear:both;}
+.row-group .label_col{ width:150px; float:left; text-align:right; height:23px; line-height:23px;}
+.row-group .label_col .required{color: #d70100;font-family: "SimSun";}
+.row-group .label_col label{ color:#666666;}
+.row-group .con_col{ float:left; padding-left:10px; min-height:28px;}
+.row-group .tip{ display:none; color:#ed4145; line-height:1; position:relative; float:left; padding-left:30px; margin-top:5px;}
+.row-group .tip i{ display:block; width:12px; height:12px; background:url(http://img.lankaola.com/images/tipth.png) 0 0 no-repeat; position:absolute; top:0; left:10px;}
+.radio_wrap{ padding-right:20px; line-height:23px;}
+.radio_wrap input{ vertical-align:-2px;}
+/*上传图片*/
+.viewImg{ position:relative; width:auto; overflow:hidden;zoom:1;margin-right:10px; float:left;}
+.viewImg .prev,.viewImg .next{ display:block; width:13px; height:48px; background-color:#f7f7f7; position:relative; border:1px solid #e0e0e0; float:left;}
+.viewImg .prev i,.viewImg .next i{ display:block; width:6px; height:10px; position:absolute; top:20px;}
+.viewImg .prev i{background:url(http://img.lankaola.com/images/showImgprev.png) 0 0 no-repeat; left:2px;}
+.viewImg .next i{background:url(http://img.lankaola.com/images/showImgnext.png) 0 0 no-repeat; left:3px;}
+.viewImg .imgbox{ float:left; margin-left:10px;}
+.viewImg .imgbox li{ border:1px solid #e0e0e0; width:48px; height:48px; float:left; margin-right:10px; position:relative;}
+.viewImg .imgbox li a{ display:block; position:absolute; width:10px;  height:10px; background:url(http://img.lankaola.com/images/uploadImgDEL.png)  2px 3px no-repeat #999999; bottom:0px; right:0px; cursor: pointer;}
+/*退换货记录*/
+.thhjl .jl_name{ width:210px;}
+.thhjl .jl_ope{ width:75px;}
+.thhjl .jl_no{ width:115px;}
+.orderInfo_list{   margin: 16px 10px 0; overflow:hidden;zoo:1;}
+.orderInfo_group em,.orderInfo_list em{ color:#333333; font-weight:bold;}
+.orderInfo_list em{ margin-left:30px;}
+.orderInfo_group p{ line-height:20px;}
+.bought-table td.qd_name{ width:282px;}
+.bought-table .col-name td.qd_pic{ width:110px;}
+.qdlist{ margin-top:10px; margin-bottom:20px;}
+.tuihuan{ margin-bottom:20px;}
+.tuihuan td.thd-name{ width:370px;}
+.tuihuan  tbody td{ border-bottom:1px dotted #999999; padding-top:15px; padding-bottom:15px;}
+/*包裹跟踪*/
+.liuc{ height:115px; padding:25px 0 25px 95px;*padding:25px 0 25px 30px;}
+.liuc .spet{ float:left; text-align:center; height:115px; position:relative;}
+.liuc .spet{*width:110px;}
+.liuc .iconarea{ margin:20px auto 0;  height:50px;}
+.liuc .iconarea i{ display:block; margin:0 auto;}
+.liuc .duihao{ display:block; width:17px; height:17px; margin:15px auto 0;background:url(http://img.lankaola.com/images/duihao_small.png) 0 0 no-repeat;}
+.liuc .spet-over .duihao{ background:url(http://img.lankaola.com/images/duihao_small_hover.png) 0 0 no-repeat;}
+.liuc .arrow{ display:block; width:82px; height:13px; margin:55px 20px 0;*margin:45px 0 0; background:url(http://img.lankaola.com/images/stepArrow.png) 0 0 no-repeat; float:left;}
+.liuc .arrow-over{ background:url(http://img.lankaola.com/images/stepArrow_over.png) 0 0 no-repeat;}
+.tuihuan .spet1 .iconarea i{width:49px; height:52px;background:url(http://img.lankaola.com/images/sqdd_over.png) 0 0 no-repeat;}
+.tuihuan .spet2 .iconarea i{ width:38px; height:59px;background:url(http://img.lankaola.com/images/yiwanch.png) 0 0 no-repeat;}
+.tuihuan .spet3 .iconarea i{ width:41px; height:47px;background:url(http://img.lankaola.com/images/yiwanch.png) 0 0 no-repeat;}
+
+.tuihuan .spet-over.spet2 .iconarea i{ background:url(http://img.lankaola.com/images/waitCL_over.png) 0 0 no-repeat;}
+.tuihuan .spet-over.spet3 .iconarea i{ background:url(http://img.lankaola.com/images/setp1.png) 0 0 no-repeat;}
+.tuihuan .liuc{ padding-left:40px;}
+.tuihuan .js-f{ font-size:12px; padding-top:20px; padding-bottom:20px;}
+
+/*取消订单记录*/
+.cancelOrder_tab .cnl_spname{ width:180px; text-align:left;}
+/*取消订单记录查看*/
+.cancelProgress{ border:1px solid #e0e0e0;}
+.cancelProgress .cpro_info{ width:360px; text-align:left;}
+.cancelProgress .col-name td{ background-color:#eeeeee; color:#333333;}

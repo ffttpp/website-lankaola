@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>账户安全 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css,global.css,zhanquan.css,v2.0/common.css">
+</head>
+<body>
+<% include header.html %>
+<div class=" clear comWidth">
+    <!--面包屑-->
+    <% include bread.html %>
+    <!--面包屑 end-->
+    <div class="main clearfix">
+        <div class="leftMenu fl">
+            <% include user_nav.html %>
+        </div>
+        <div class="rightBox">
+            <div class="mcontent safe-sevi">
+                <div class="ltMw1">
+                    <h3 class="hf3">账户安全管理</h3>
+                    <div>
+                        <div class="pwd_group">
+                            <div class="pwd_status"></div>
+                            <div class="pwd_type"><strong>登录密码</strong></div>
+                            <div class="pwd_text red">互联网账号存在被盗风险，建议您定期更改密码以保护账户安全。</div>
+                            <div class="pwd_oper"><a href="/user/pwd">修改</a> </div>
+                        </div>
+                        <div class="pwd_group">
+                            <%if (pay_pwd) {%>
+                            <div class="pwd_status"></div>
+                            <div class="pwd_type"><strong>支付密码</strong></div>
+                            <div class="pwd_text">互联网账号存在被盗风险，建议您定期更改密码以保护账户安全。</div>
+                            <div class="pwd_oper">
+                                <a href="/user/payPwd">修改</a>
+                            </div>
+                            <%} else {%>
+                            <div class="pwd_status pwd_status_warming"></div>
+                            <div class="pwd_type"><strong>支付密码</strong></div>
+                            <div class="pwd_text">启用支付密码后，才能使用账户余额、桉树叶等资产</div>
+                            <div class="pwd_oper">
+                                <a href="/user/payPwd">立即启用</a>
+                            </div>
+                            <%}%>
+                        </div>
+                    </div>
+
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<%=jsPath%>jquery-1.8.0.min.js,jquery.SuperSlide.2.1.1.js,v2.0/move-min.js,global.min.js,safety.min.js"></script>
+
+<% include footer.html %>
+</body>
+</html>

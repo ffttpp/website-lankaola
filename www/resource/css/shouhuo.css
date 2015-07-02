@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+.shouhuoManager td.sh_address{ width:490px; padding-left:20px; padding-right:20px;}
+.shouhuoManager tbody td{ padding-top:15px; padding-bottom:15px;}
+.shouhuoManager tbody td.sh_address{text-align:left;}
+.changeBt{}
+.shouhuoManager .hgh{ padding-left:20px;}
+.shouhuoManager .hgh .text{ margin:0 10px;}

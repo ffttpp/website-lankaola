@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录 - 蓝考拉</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>reset.css">
+    <link rel="stylesheet" type="text/css" href="<%= cssPath %>loginWreg.css">
+</head>
+<body>
+<div class="header w990">
+    <h2 class="logo"><a href="/"><img src="<%= imgPath %>logo_whitebg.jpg"></a></h2>
+    <h3 class="welcomeLogin">欢迎登录</h3>
+</div>
+<div class="main w990">
+    <div class="leftBanner"><img src="<%= imgPath %>loginBanner.jpg"> </div>
+    <div class="rightMain">
+        <h3>登录</h3><h3 id="toReg"><a href="/register"> 注册</a></h3>
+        <div class="line"></div>
+        <form id="login" name="login">
+            <p><label for="username">用户名：</label><input type="text" name="username" id="username"></p>
+            <p><label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label><input type="password" name="password" id="password"></p>
+            <a id="findPwd" href="/findPwd">忘记密码？</a>
+            <p class="tips">账号或者密码不正确</p>
+            <p><input type="submit" id="submit" value="登陆"></p>
+            <input type="hidden" name="returnUrl" id="returnUrl" value="<%= returnUrl %>" />
+        </form>
+    </div>
+    <!--<div id="right_top_corner"><img src="<%= imgPath %>qczd.png"></div>-->
+    <!--<div id="right_bottom_corner">
+        <a href="/register">免费注册>></a>
+    </div>-->
+
+</div>
+<script src="<%= jsPath %>jquery-1.8.0.min.js"></script>
+<script src="<%= jsPath %>validate.js"></script>
+<script src="<%= jsPath %>login.js"></script>
+</body>
+</html>
