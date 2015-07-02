@@ -1,4 +1,4 @@
 ## README
 website for lankaola
 
-[蓝考拉网站地址](http://www.lankaola.com)
+[蓝考拉主页](http://www.lankaola.com)
