@@ -1,2 +1,2 @@
 ## README
-蓝考拉前台
+website for lankaola
