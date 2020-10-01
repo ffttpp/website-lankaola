@@ -1,2 +1,2 @@
-## README
-website for lankaola
+## Whats This Website all about: 
+-> Website for lankaola
